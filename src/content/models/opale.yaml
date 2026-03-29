@@ -1,0 +1,48 @@
+name: Opale
+slug: opale
+category: large
+buildingArea: 112.2
+livingArea: 90.11
+terrace: 39.7
+dimensions:
+  length: 17000
+  width: 6600
+rooms:
+  - key: bedroom_1
+    area: 11.25
+  - key: bedroom_2
+    area: 11.25
+  - key: kitchen_living
+    area: 28.0
+  - key: bathroom
+    area: 7.0
+  - key: corridor
+    area: 8.61
+  - key: utility_room
+    area: 8.0
+  - key: restroom
+    area: 3.0
+features:
+  - premium
+  - two_bedrooms
+  - large_terrace
+  - utility_room
+  - separate_restroom
+  - spacious_kitchen_living
+hasGableRoof: false
+hasSauna: false
+hasTerrace: true
+variants: []
+heroImage: /images/models/opale/hero.webp
+galleryImages:
+  - /images/models/opale/exterior-1.webp
+  - /images/models/opale/interior-1.webp
+floorplanImage: /images/models/opale/floorplan.webp
+description:
+  nl: "De Opale is ons meest luxueuze model met een indrukwekkende woonkeuken van 28 m² en een terras van bijna 40 m². Twee royale slaapkamers, een badkamer van 7 m² en apart toilet maken dit tot een volwaardig premium tiny house. Met meer dan 90 m² leefruimte herverdefinieert de Opale wat mogelijk is in compact bouwen."
+  fr: "L'Opale est notre modele le plus luxueux avec un impressionnant sejour-cuisine de 28 m² et une terrasse de pres de 40 m². Deux chambres generеuses, une salle de bain de 7 m² et des toilettes separees en font une veritable tiny house premium. Avec plus de 90 m² habitables, l'Opale redefinit les possibilites de la construction compacte."
+tagline:
+  nl: "Premium wonen zonder grenzen"
+  fr: "L'habitat premium sans limites"
+featured: true
+sortOrder: 14

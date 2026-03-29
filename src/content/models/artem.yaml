@@ -1,0 +1,41 @@
+name: Artem
+slug: artem
+category: special
+buildingArea: 34.8
+livingArea: 26.4
+dimensions:
+  length: 11600
+  width: 3000
+rooms:
+  - key: steam_room
+    area: 5.0
+  - key: shower
+    area: 3.0
+  - key: kitchen_living
+    area: 12.0
+  - key: bathroom
+    area: 3.4
+  - key: corridor
+    area: 3.0
+features:
+  - steam_room
+  - wellness
+  - terrace_variant
+hasGableRoof: false
+hasSauna: true
+hasTerrace: false
+variants:
+  - "Artem met Vergroot Terras"
+heroImage: /images/models/artem/hero.webp
+galleryImages:
+  - /images/models/artem/exterior-1.webp
+  - /images/models/artem/interior-1.webp
+floorplanImage: /images/models/artem/floorplan.webp
+description:
+  nl: "De Artem is een uniek wellnessmodel met een ingebouwde stoomcabine en aparte doucheruimte voor de ultieme ontspanning. De woonkeuken van 12 m² biedt een gezellige plek om tot rust te komen na je wellnessritueel. Ook beschikbaar met een vergroot terras voor nog meer buitenbeleving."
+  fr: "L'Artem est un modele wellness unique avec un hammam integre et une douche separee pour une relaxation ultime. Le sejour-cuisine de 12 m² offre un endroit convivial pour se detendre apres votre rituel bien-etre. Egalement disponible avec une terrasse agrandie pour encore plus de vie en plein air."
+tagline:
+  nl: "Wellness als levenskunst"
+  fr: "Le bien-etre comme art de vivre"
+featured: false
+sortOrder: 16

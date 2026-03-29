@@ -1,0 +1,33 @@
+name: Liora
+slug: liora
+category: entry
+buildingArea: 19.5
+livingArea: 14.2
+dimensions:
+  length: 6500
+  width: 3000
+rooms:
+  - key: bathroom
+    area: 3.5
+  - key: kitchen_living
+    area: 10.7
+features:
+  - two_floorplan_options
+  - open_plan
+hasGableRoof: false
+hasSauna: false
+hasTerrace: false
+variants: []
+heroImage: /images/models/liora/hero.webp
+galleryImages:
+  - /images/models/liora/exterior-1.webp
+  - /images/models/liora/interior-1.webp
+floorplanImage: /images/models/liora/floorplan.webp
+description:
+  nl: "De Liora combineert slim ruimtegebruik met twee verschillende indelingsopties, zodat je jouw ideale leefruimte kunt creeren. Met 14,2 m² woonoppervlakte biedt dit instapmodel verrassend veel comfort en flexibiliteit. Kies de indeling die het beste bij jouw levensstijl past."
+  fr: "La Liora combine une utilisation intelligente de l'espace avec deux options d'agencement, vous permettant de creer votre espace de vie ideal. Avec 14,2 m² habitables, ce modele d'entree offre un confort et une flexibilite surprenants. Choisissez l'agencement qui correspond le mieux a votre style de vie."
+tagline:
+  nl: "Twee indelingen, eindeloze mogelijkheden"
+  fr: "Deux plans, des possibilites infinies"
+featured: false
+sortOrder: 2

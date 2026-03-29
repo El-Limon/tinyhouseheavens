@@ -1,0 +1,38 @@
+# build output
+dist/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# astro
+.astro/
+
+# wrangler
+.wrangler/
+
+# catalogue source (too large for git)
+catalogue/
+
+# Salesforce metadata (not part of website)
+.sfdx/
+
+# Screenshots (root level only)
+/homepage-*.png
+/model-*.png
+
+# Claude settings
+.claude/

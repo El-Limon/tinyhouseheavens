@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "models": "Modeles",
+    "about": "A propos",
+    "services": "Services",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Simple living, great thinking",
+    "subtitle": "Tiny houses modulaires concues pour un habitat durable et abordable au Benelux",
+    "cta": "Decouvrez nos modeles",
+    "quote_cta": "Demander un devis"
+  },
+  "models": {
+    "building_area": "Surface de construction",
+    "living_area": "Surface habitable",
+    "dimensions": "Dimensions",
+    "view_model": "Voir le modele",
+    "all_models": "Tous les modeles",
+    "filter_all": "Tous",
+    "rooms": {
+      "bedroom": "Chambre",
+      "bathroom": "Salle de bain",
+      "kitchen_living": "Cuisine-sejour",
+      "corridor": "Couloir",
+      "sauna": "Sauna",
+      "terrace": "Terrasse",
+      "restroom": "Toilette",
+      "living_room": "Salon",
+      "steam_room": "Cabine de vapeur",
+      "utility_room": "Debarras"
+    }
+  },
+  "categories": {
+    "entry": "Entree de gamme",
+    "small": "Petit",
+    "medium": "Moyen",
+    "large": "Grand",
+    "special": "Special"
+  },
+  "finishing": {
+    "house_kit": "House Kit",
+    "basic": "Finition Basic",
+    "optima": "Finition Optima",
+    "house_kit_desc": "Structure portante avec sol, murs et plafond isoles",
+    "basic_desc": "Maison entierement finie avec installations de base",
+    "optima_desc": "Maison cle en main avec finition premium"
+  },
+  "pillars": {
+    "innovative": {
+      "title": "Innovant",
+      "desc": "Designs modernes avec rangement intelligent et technologie domotique"
+    },
+    "scalable": {
+      "title": "Evolutif",
+      "desc": "Systemes modulaires extensibles sans grandes renovations"
+    },
+    "affordable": {
+      "title": "Abordable",
+      "desc": "Couts d'entree et charges courantes reduits"
+    },
+    "eco": {
+      "title": "Ecologique",
+      "desc": "Materiaux durables et systemes economes en energie"
+    }
+  },
+  "how_it_works": {
+    "title": "Comment ca marche",
+    "step1": {
+      "title": "Choisissez votre modele",
+      "desc": "Decouvrez nos 18 modeles et trouvez la tiny house parfaite"
+    },
+    "step2": {
+      "title": "Selectionnez la finition",
+      "desc": "Choisissez entre House Kit, Basic ou Optima"
+    },
+    "step3": {
+      "title": "Nous livrons et installons",
+      "desc": "Nous assurons le transport, les fondations et l'installation"
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "name": "Nom",
+    "email": "E-mail",
+    "phone": "Telephone",
+    "message": "Message",
+    "model_interest": "Quel modele vous interesse?",
+    "has_land": "Avez-vous deja un terrain?",
+    "yes": "Oui",
+    "no": "Non",
+    "submit": "Envoyer",
+    "quote_title": "Demander un devis",
+    "success": "Merci! Nous vous contacterons bientot.",
+    "select_model": "Selectionnez un modele"
+  },
+  "about": {
+    "title": "A propos",
+    "mission": "Notre mission est de construire des Tiny House Units modulaires, economes en energie, confortables et d'une valeur incomparable."
+  },
+  "services": {
+    "title": "Nos services"
+  },
+  "faq": {
+    "title": "Questions frequentes"
+  },
+  "blog": {
+    "title": "Blog",
+    "read_more": "Lire la suite",
+    "all_posts": "Tous les articles"
+  },
+  "footer": {
+    "rights": "Tous droits reserves",
+    "privacy": "Politique de confidentialite",
+    "terms": "Conditions generales",
+    "address": "Fort 15, 2860 St-Katelijne-Waver, Belgique",
+    "follow": "Suivez-nous"
+  },
+  "common": {
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Precedent",
+    "related_models": "Modeles associes",
+    "specifications": "Specifications",
+    "gallery": "Galerie",
+    "floor_plan": "Plan d'etage",
+    "request_quote": "Demander un devis",
+    "square_meters": "m²",
+    "construction": "Construction",
+    "variants": "Variantes"
+  },
+  "seo": {
+    "home_title": "Tiny House Heavens | Tiny Houses Modulaires en Belgique",
+    "home_desc": "Decouvrez notre collection de 18 tiny houses modulaires. Habitat durable, abordable et ecologique au Benelux. Demandez un devis aujourd'hui.",
+    "models_title": "Nos Modeles | Tiny House Heavens",
+    "models_desc": "Decouvrez nos 18 modeles de tiny houses de 13m² a 112m². Modeles entree de gamme, petits, moyens, grands et speciaux avec finition flexible."
+  }
+}

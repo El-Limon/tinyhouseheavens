@@ -1,0 +1,39 @@
+name: Auxin
+slug: auxin
+category: large
+buildingArea: 40.0
+livingArea: 31.95
+dimensions:
+  length: 8000
+  width: 5000
+rooms:
+  - key: bedroom
+    area: 8.0
+  - key: kitchen_living
+    area: 16.0
+  - key: bathroom
+    area: 4.5
+  - key: corridor
+    area: 3.45
+features:
+  - gable_roof
+  - corner_windows
+  - spacious_kitchen_living
+  - separate_bedroom
+hasGableRoof: true
+hasSauna: false
+hasTerrace: false
+variants: []
+heroImage: /images/models/auxin/hero.webp
+galleryImages:
+  - /images/models/auxin/exterior-1.webp
+  - /images/models/auxin/interior-1.webp
+floorplanImage: /images/models/auxin/floorplan.webp
+description:
+  nl: "De Auxin valt op door zijn brede opzet met hoekramen die een panoramisch uitzicht bieden en de ruimte met natuurlijk licht vullen. Het zadeldak en de royale woonkeuken van 16 m² geven dit model een echte huiselijke uitstraling. Compact in footprint, maar groots in beleving."
+  fr: "L'Auxin se distingue par sa conception large avec des fenetres d'angle offrant une vue panoramique et baignant l'espace de lumiere naturelle. Le toit a deux pans et le genereux sejour-cuisine de 16 m² conferent a ce modele une veritable atmosphere de maison. Compact en empreinte, mais grandiose en experience."
+tagline:
+  nl: "Panoramisch wonen met karakter"
+  fr: "Habiter en panoramique avec caractere"
+featured: false
+sortOrder: 12

@@ -1,0 +1,226 @@
+---
+import type { Locale } from '../i18n/utils';
+import { t, getPagePath, getAlternateLocale } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const altLocale = getAlternateLocale(locale);
+const year = new Date().getFullYear();
+
+const navItems = [
+  { key: 'home', path: `/${locale}` },
+  { key: 'models', path: getPagePath(locale, 'models') },
+  { key: 'about', path: getPagePath(locale, 'about') },
+  { key: 'services', path: getPagePath(locale, 'services') },
+  { key: 'contact', path: getPagePath(locale, 'contact') },
+  { key: 'faq', path: getPagePath(locale, 'faq') },
+  { key: 'blog', path: getPagePath(locale, 'blog') },
+];
+
+const contactPath = getPagePath(locale, 'contact');
+const ctaTitle = locale === 'nl' ? 'Klaar om te beginnen?' : 'Pr\u00eat \u00e0 commencer?';
+const ctaSubtitle = locale === 'nl'
+  ? 'Ontdek hoe uw tiny house er uit kan zien.'
+  : 'D\u00e9couvrez \u00e0 quoi pourrait ressembler votre tiny house.';
+const ctaButton = t(locale, 'hero.quote_cta');
+
+const currentPath = Astro.url.pathname;
+const altPath = currentPath.replace(`/${locale}`, `/${altLocale}`)
+  .replace('/modellen', altLocale === 'fr' ? '/modeles' : '/modellen')
+  .replace('/modeles', altLocale === 'nl' ? '/modellen' : '/modeles')
+  .replace('/over-ons', altLocale === 'fr' ? '/a-propos' : '/over-ons')
+  .replace('/a-propos', altLocale === 'nl' ? '/over-ons' : '/a-propos')
+  .replace('/diensten', altLocale === 'fr' ? '/services' : '/diensten');
+---
+
+<footer class="bg-thh-charcoal text-thh-cream/90">
+
+  <!-- Top CTA Banner -->
+  <div class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-thh-green-700 via-thh-green-600 to-thh-green-800"></div>
+    <!-- Subtle pattern overlay -->
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('data:image/svg+xml,<svg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"none\" fill-rule=\"evenodd\"><g fill=\"%23ffffff\" fill-opacity=\"1\"><path d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/></g></g></svg>');"></div>
+
+    <div class="relative max-w-4xl mx-auto text-center px-6 py-16 sm:py-20">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4" style="font-family: 'Playfair Display', serif;">
+        {ctaTitle}
+      </h2>
+      <p class="text-lg text-white/80 mb-8 max-w-xl mx-auto">
+        {ctaSubtitle}
+      </p>
+      <a
+        href={contactPath}
+        class="inline-flex items-center gap-2 px-8 py-4 bg-white text-thh-green-700 font-bold rounded-full hover:bg-thh-cream hover:shadow-xl transition-all duration-300 active:scale-[0.98]"
+      >
+        {ctaButton}
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Footer Grid -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+
+      <!-- Col 1: Brand -->
+      <div class="sm:col-span-2 lg:col-span-1">
+        <a href={`/${locale}`} class="inline-flex items-center gap-2.5 mb-5">
+          <div class="w-8 h-8 flex items-center justify-center">
+            <svg viewBox="0 0 36 36" fill="none" class="w-full h-full" aria-hidden="true">
+              <path d="M18 3L3 16h4v14h22V16h4L18 3z" fill="currentColor" class="text-thh-green-500" />
+              <path d="M14 30V21h8v9" stroke="currentColor" stroke-width="1.5" fill="none" class="text-thh-cream" />
+            </svg>
+          </div>
+          <div class="flex flex-col leading-none">
+            <span class="text-sm font-semibold tracking-[0.2em] uppercase text-thh-cream" style="font-family: 'Playfair Display', serif;">
+              Tiny House
+            </span>
+            <span class="text-[10px] tracking-[0.35em] uppercase text-thh-green-400 font-medium">
+              Heavens
+            </span>
+          </div>
+        </a>
+        <p class="text-thh-green-400 font-medium italic text-sm mb-4" style="font-family: 'Playfair Display', serif;">
+          Simple living, great thinking
+        </p>
+        <p class="text-sm text-thh-cream/60 leading-relaxed max-w-xs">
+          {locale === 'nl'
+            ? 'Modulaire tiny houses ontworpen voor duurzaam en comfortabel wonen. Belgisch vakmanschap met Scandinavisch design.'
+            : 'Tiny houses modulaires con\u00e7ues pour un habitat durable et confortable. Savoir-faire belge, design scandinave.'
+          }
+        </p>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-thh-cream/40 mb-6" style="font-family: 'DM Sans', sans-serif;">
+          {locale === 'nl' ? 'Navigatie' : 'Navigation'}
+        </h3>
+        <ul class="space-y-3">
+          {navItems.map(item => (
+            <li>
+              <a
+                href={item.path}
+                class="text-sm text-thh-cream/70 hover:text-thh-green-400 transition-colors duration-200"
+              >
+                {t(locale, `nav.${item.key}`)}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Col 3: Contact -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-thh-cream/40 mb-6" style="font-family: 'DM Sans', sans-serif;">
+          Contact
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-thh-green-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0115 0z" />
+            </svg>
+            <span class="text-sm text-thh-cream/70 leading-relaxed">
+              {t(locale, 'footer.address')}
+            </span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-thh-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+            <a href="tel:+32XXXXXXXXX" class="text-sm text-thh-cream/70 hover:text-thh-green-400 transition-colors">
+              +32 (0)XX XXX XX XX
+            </a>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-thh-green-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+            <a href="mailto:info@tinyhouseheavens.be" class="text-sm text-thh-cream/70 hover:text-thh-green-400 transition-colors">
+              info@tinyhouseheavens.be
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Social + Language -->
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-thh-cream/40 mb-6" style="font-family: 'DM Sans', sans-serif;">
+          {t(locale, 'footer.follow')}
+        </h3>
+        <div class="flex items-center gap-3 mb-8">
+          <a
+            href="https://www.facebook.com/tinyhouseheavens"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-thh-cream/10 hover:bg-thh-green-500 text-thh-cream/70 hover:text-white transition-all duration-300"
+            aria-label="Facebook"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </a>
+          <a
+            href="https://www.instagram.com/tinyhouseheavens"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-thh-cream/10 hover:bg-thh-green-500 text-thh-cream/70 hover:text-white transition-all duration-300"
+            aria-label="Instagram"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Language -->
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-thh-cream/40 mb-3" style="font-family: 'DM Sans', sans-serif;">
+          {locale === 'nl' ? 'Taal' : 'Langue'}
+        </h3>
+        <div class="flex items-center bg-thh-cream/10 rounded-full p-0.5 w-fit text-sm font-semibold">
+          <a
+            href={locale === 'nl' ? currentPath : altPath}
+            class:list={[
+              'px-4 py-1.5 rounded-full transition-all duration-300',
+              locale === 'nl' ? 'bg-thh-green-500 text-white' : 'text-thh-cream/60 hover:text-thh-cream',
+            ]}
+          >NL</a>
+          <a
+            href={locale === 'fr' ? currentPath : altPath}
+            class:list={[
+              'px-4 py-1.5 rounded-full transition-all duration-300',
+              locale === 'fr' ? 'bg-thh-green-500 text-white' : 'text-thh-cream/60 hover:text-thh-cream',
+            ]}
+          >FR</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-thh-cream/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-thh-cream/40">
+      <div class="flex items-center gap-1">
+        <span>&copy; {year} Tiny House Heavens.</span>
+        <span>{t(locale, 'footer.rights')}.</span>
+      </div>
+      <div class="flex items-center gap-4 sm:gap-6">
+        <a href={getPagePath(locale, 'privacy')} class="hover:text-thh-cream/70 transition-colors">
+          {t(locale, 'footer.privacy')}
+        </a>
+        <span class="text-thh-cream/20">|</span>
+        <a href={getPagePath(locale, 'terms')} class="hover:text-thh-cream/70 transition-colors">
+          {t(locale, 'footer.terms')}
+        </a>
+        <span class="text-thh-cream/20">|</span>
+        <span>BTW BE0403.670.250</span>
+      </div>
+    </div>
+  </div>
+</footer>

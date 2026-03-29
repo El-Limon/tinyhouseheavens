@@ -1,0 +1,41 @@
+name: Evoke
+slug: evoke
+category: medium
+buildingArea: 54.0
+livingArea: 42.6
+dimensions:
+  length: 12000
+  width: 4500
+rooms:
+  - key: bedroom
+    area: 9.0
+  - key: kitchen_living
+    area: 19.1
+  - key: bathroom
+    area: 5.0
+  - key: utility_room
+    area: 5.0
+  - key: corridor
+    area: 4.5
+features:
+  - gable_roof
+  - utility_room
+  - spacious_kitchen_living
+  - separate_bedroom
+hasGableRoof: true
+hasSauna: false
+hasTerrace: false
+variants: []
+heroImage: /images/models/evoke/hero.webp
+galleryImages:
+  - /images/models/evoke/exterior-1.webp
+  - /images/models/evoke/interior-1.webp
+floorplanImage: /images/models/evoke/floorplan.webp
+description:
+  nl: "De Evoke is ons populairste middenklasse model met een indrukwekkende woonkeuken van 19 m² en een stijlvol zadeldak. De bergruimte en ruime badkamer maken dit tot een volwaardig alternatief voor een traditionele woning. Met 42,6 m² leefruimte biedt de Evoke alles wat je nodig hebt, zonder concessies."
+  fr: "L'Evoke est notre modele milieu de gamme le plus populaire, avec un impressionnant sejour-cuisine de 19 m² et un elegant toit a deux pans. Le cellier et la salle de bain spacieuse en font une veritable alternative a une habitation traditionnelle. Avec 42,6 m² habitables, l'Evoke offre tout ce dont vous avez besoin, sans compromis."
+tagline:
+  nl: "Waar comfort en design samenkomen"
+  fr: "La ou confort et design se rencontrent"
+featured: true
+sortOrder: 9

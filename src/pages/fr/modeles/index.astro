@@ -1,0 +1,96 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import ModelCard from '../../../components/ModelCard.astro';
+import CTASection from '../../../components/CTASection.astro';
+import { getCollection } from 'astro:content';
+import { t, getPagePath } from '../../../i18n/utils';
+
+const locale = 'fr';
+const models = (await getCollection('models')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+const categories = ['all', 'entry', 'small', 'medium', 'large', 'special'] as const;
+---
+
+<PageLayout locale={locale} title={t(locale, 'seo.models_title')} description={t(locale, 'seo.models_desc')}>
+
+  <!-- Page Header -->
+  <section class="pt-32 pb-12 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-thh-charcoal">Nos Modeles</h1>
+      <p class="text-lg text-thh-charcoal/70 max-w-2xl mx-auto">
+        Decouvrez notre collection de 18 tiny houses modulaires. Des modeles compacts d'entree de gamme aux maisons familiales spacieuses.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter & Grid -->
+  <section class="py-12 bg-thh-cream">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10">
+        {categories.map((cat) => (
+          <button
+            data-filter={cat}
+            class:list={[
+              'px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 border',
+              cat === 'all'
+                ? 'bg-thh-green-600 text-white border-thh-green-600 active'
+                : 'bg-white text-thh-charcoal/70 border-gray-200 hover:border-thh-green-400 hover:text-thh-green-600',
+            ]}
+          >
+            {cat === 'all' ? t(locale, 'models.filter_all') : t(locale, `categories.${cat}`)}
+          </button>
+        ))}
+      </div>
+
+      <!-- Models Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="models-grid">
+        {models.map((model) => (
+          <div data-model-category={model.data.category}>
+            <ModelCard locale={locale} model={model.data} />
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection
+    locale={locale}
+    title="Pas sur du modele?"
+    subtitle="Contactez-nous et nous vous aiderons a choisir la tiny house parfaite"
+    ctaText={t(locale, 'hero.quote_cta')}
+    ctaLink={getPagePath(locale, 'contact')}
+  />
+
+</PageLayout>
+
+<script>
+  document.querySelectorAll('[data-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.getAttribute('data-filter');
+      document.querySelectorAll('[data-filter]').forEach(b => {
+        b.classList.remove('bg-thh-green-600', 'text-white', 'border-thh-green-600', 'active');
+        b.classList.add('bg-white', 'text-thh-charcoal/70', 'border-gray-200');
+      });
+      btn.classList.remove('bg-white', 'text-thh-charcoal/70', 'border-gray-200');
+      btn.classList.add('bg-thh-green-600', 'text-white', 'border-thh-green-600', 'active');
+      document.querySelectorAll('[data-model-category]').forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-model-category') === cat) {
+          (card as HTMLElement).style.display = '';
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  @reference "tailwindcss";
+  @reference "../../../styles/global.css";
+  [data-filter].active {
+    @apply bg-thh-green-600 text-white border-thh-green-600;
+  }
+</style>

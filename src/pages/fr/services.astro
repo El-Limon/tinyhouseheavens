@@ -1,0 +1,100 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import { t, getPagePath } from '../../i18n/utils';
+
+const locale = 'fr';
+
+const services = [
+  {
+    title: 'Conception & Conseil',
+    description: 'Notre equipe vous accompagne dans le choix du modele ideal et de la configuration optimale pour votre situation. Nous discutons de vos souhaits, budget et emplacement pour offrir une solution sur mesure.',
+    icon: '<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" /></svg>',
+  },
+  {
+    title: 'Selection du Modele',
+    description: 'Choisissez parmi notre collection de 18 modeles uniques. Des unites compactes de 13 m² aux maisons familiales spacieuses de 112 m², il y a toujours un modele adapte a votre style de vie.',
+    icon: '<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>',
+  },
+  {
+    title: 'Finition sur Mesure',
+    description: 'Choisissez entre trois niveaux de finition: House Kit (kit d\'autoconstruction), Basic (finition de base) ou Optima (cle en main). Chaque niveau peut etre personnalise selon vos souhaits.',
+    icon: '<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>',
+  },
+  {
+    title: 'Livraison & Transport',
+    description: 'Nous organisons le transport complet de votre tiny house vers l\'emplacement souhaite. Nos unites modulaires sont concues pour etre transportees en toute securite et efficacement.',
+    icon: '<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H16.5V6.375c0-.621-.504-1.125-1.125-1.125H2.25" /></svg>',
+  },
+  {
+    title: 'Fondation & Installation',
+    description: 'Des fondations a vis aux dalles en beton, nous conseillons et realisons la bonne fondation. Apres placement, nous assurons tous les raccordements et une installation correcte.',
+    icon: '<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.384-3.204A1 1 0 015 11.075V8.25a1 1 0 01.553-.894l5.447-2.724a1 1 0 01.894 0l5.447 2.724A1 1 0 0118 8.25v2.825a1 1 0 01-1.036.891L11.42 15.17z" /></svg>',
+  },
+  {
+    title: 'Service Apres-Vente',
+    description: 'Apres la livraison, nous restons a votre disposition. Notre service apres-vente comprend le travail sous garantie, des conseils d\'entretien et de l\'aide pour toute question concernant votre tiny house.',
+    icon: '<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>',
+  },
+];
+---
+
+<PageLayout locale={locale} title={`${t(locale, 'services.title')} | Tiny House Heavens`} description="Decouvrez nos services: de la conception et du conseil a la livraison, l'installation et le service apres-vente de votre tiny house modulaire.">
+
+  <!-- Hero -->
+  <section class="pt-32 pb-16 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-thh-charcoal">{t(locale, 'services.title')}</h1>
+      <p class="text-lg text-thh-charcoal/70 max-w-2xl mx-auto">
+        De la premiere conception a la livraison et au-dela: nous vous accompagnons a chaque etape
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service, i) => (
+          <div class="group bg-thh-cream/50 rounded-2xl p-8 hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-thh-green-100">
+            <div class="w-14 h-14 bg-thh-green-100 text-thh-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-thh-green-500 group-hover:text-white transition-colors">
+              <Fragment set:html={service.icon} />
+            </div>
+            <div class="text-sm font-bold text-thh-green-500/50 mb-2">{String(i + 1).padStart(2, '0')}</div>
+            <h3 class="text-xl font-bold mb-3 text-thh-charcoal">{service.title}</h3>
+            <p class="text-sm text-thh-charcoal/70 leading-relaxed">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Timeline -->
+  <section class="py-16 bg-thh-cream">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 text-thh-charcoal text-center">Le Processus</h2>
+      <div class="space-y-8">
+        {['Premier contact et analyse des besoins', 'Selection du modele et configuration', 'Devis et accord', 'Production dans notre atelier', 'Transport et placement', 'Livraison et service apres-vente'].map((step, i) => (
+          <div class="flex items-start gap-6">
+            <div class="w-12 h-12 shrink-0 bg-thh-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+              {i + 1}
+            </div>
+            <div class="pt-2.5">
+              <p class="text-lg font-medium text-thh-charcoal">{step}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection
+    locale={locale}
+    title="Pret a demarrer?"
+    subtitle="Contactez-nous pour un entretien sans engagement sur votre projet"
+    ctaText={t(locale, 'hero.quote_cta')}
+    ctaLink={getPagePath(locale, 'contact')}
+  />
+
+</PageLayout>

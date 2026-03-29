@@ -1,0 +1,124 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import { t, getPagePath } from '../../i18n/utils';
+
+const locale = 'fr';
+
+const faqs = [
+  {
+    question: 'Qu\'est-ce qu\'une tiny house modulaire?',
+    answer: 'Une tiny house modulaire est une habitation compacte produite dans notre atelier avec une construction modulaire a ossature. La structure se compose d\'un chassis en acier avec une ossature bois, entierement isolee avec 150 a 200mm d\'isolation. Comme tout est construit en atelier, nous garantissons une qualite de construction constante independamment des conditions meteorologiques. Les modules sont ensuite transportes et places sur votre emplacement.',
+  },
+  {
+    question: 'Quel est le delai de livraison?',
+    answer: 'Le delai de livraison depend du modele choisi et du niveau de finition. Un House Kit (kit d\'autoconstruction) peut etre livre dans un delai de 4 a 6 semaines. Pour une finition Basic ou Optima, le delai de production est generalement de 8 a 12 semaines apres confirmation de la commande. Nous vous tenons informe de l\'avancement tout au long du processus.',
+  },
+  {
+    question: 'Quels sont les niveaux de finition?',
+    answer: 'Nous proposons trois niveaux de finition. House Kit: la structure portante avec sol, murs et plafond isoles -- ideal si vous souhaitez finir vous-meme. Basic: une maison entierement finie avec les installations de base, facade exterieure et couverture de toit. Optima: une maison cle en main avec finition premium incluant bardage, chauffage au sol, chauffe-eau et installation complete.',
+  },
+  {
+    question: 'Ai-je besoin d\'un permis de construire?',
+    answer: 'Oui, en Belgique, vous avez dans la plupart des cas besoin d\'un permis d\'environnement pour placer une tiny house. La reglementation differe selon la region (Flandre, Wallonie, Bruxelles) et la commune. Nous vous conseillons volontiers sur les exigences de permis pour votre situation et emplacement specifiques. Dans certains cas, une tiny house peut etre autorisee comme dependance.',
+  },
+  {
+    question: 'Puis-je personnaliser ma tiny house?',
+    answer: 'Absolument! Notre methode de construction modulaire permet de personnaliser entierement votre tiny house selon vos souhaits. De l\'amenagement et des materiaux de finition a la couleur de la facade et au type de couverture de toit. Certains modeles disposent egalement de variantes, comme des versions avec toit a pignon ou terrasse supplementaire. Lors de l\'entretien de conception, nous discutons de toutes les possibilites.',
+  },
+  {
+    question: 'Combien coute une tiny house?',
+    answer: 'Le prix d\'une tiny house depend du modele choisi, de la taille et du niveau de finition. Nos modeles varient des unites compactes de 13 m² aux maisons familiales spacieuses de 112 m². Un House Kit commence a un prix d\'entree plus bas, tandis qu\'une finition Optima demande un investissement plus eleve mais fournit une maison complete. Demandez un devis pour un prix exact.',
+  },
+  {
+    question: 'Ou peut-on placer une tiny house?',
+    answer: 'Une tiny house peut etre placee sur votre propre terrain, a condition d\'avoir les permis necessaires. Le terrain doit etre adapte en termes d\'accessibilite (pour le transport), de capacite portante et de possibilites de raccordement aux services publics. Nous conseillons egalement sur les options de fondation: des fondations a vis aux dalles en beton, selon le sol et le modele.',
+  },
+  {
+    question: 'Les tiny houses sont-elles economes en energie?',
+    answer: 'Oui, nos tiny houses sont tres economes en energie. Avec 200mm d\'isolation au sol et au plafond, 150mm dans les murs, et une membrane etanche au vent et a la vapeur, la perte de chaleur est minimale. Les dimensions compactes assurent en outre un volume efficacement chauffable. Avec la finition Optima, un systeme de ventilation D avec recuperation de chaleur est installe de serie. Les materiaux ecologiques et la possibilite de panneaux solaires rendent nos unites particulierement durables.',
+  },
+];
+---
+
+<PageLayout locale={locale} title={`${t(locale, 'faq.title')} | Tiny House Heavens`} description="Reponses aux questions frequentes sur les tiny houses modulaires, permis de construire, finition, prix et plus.">
+
+  <!-- Hero -->
+  <section class="pt-32 pb-12 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-thh-charcoal">{t(locale, 'faq.title')}</h1>
+      <p class="text-lg text-thh-charcoal/70 max-w-2xl mx-auto">
+        Tout ce que vous devez savoir sur nos tiny houses
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="py-16 bg-thh-cream">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="space-y-4" id="faq-list">
+        {faqs.map((faq, i) => (
+          <div class="faq-item bg-white rounded-2xl shadow-sm overflow-hidden border border-transparent hover:border-thh-green-100 transition-colors">
+            <button
+              class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left"
+              aria-expanded="false"
+              aria-controls={`faq-answer-${i}`}
+            >
+              <span class="text-lg font-semibold text-thh-charcoal pr-4">{faq.question}</span>
+              <svg class="faq-icon w-5 h-5 text-thh-green-500 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </button>
+            <div id={`faq-answer-${i}`} class="faq-answer hidden px-6 pb-5">
+              <p class="text-thh-charcoal/70 leading-relaxed">{faq.answer}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection
+    locale={locale}
+    title="D'autres questions?"
+    subtitle="N'hesitez pas a nous contacter, nous sommes la pour vous aider"
+    ctaText={t(locale, 'contact.title')}
+    ctaLink={getPagePath(locale, 'contact')}
+  />
+
+</PageLayout>
+
+<script>
+  function initFaqAccordion() {
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const answer = item?.querySelector('.faq-answer');
+        const icon = item?.querySelector('.faq-icon');
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        document.querySelectorAll('.faq-item').forEach(other => {
+          if (other !== item) {
+            other.querySelector('.faq-answer')?.classList.add('hidden');
+            other.querySelector('.faq-toggle')?.setAttribute('aria-expanded', 'false');
+            other.querySelector('.faq-icon')?.classList.remove('rotate-45');
+          }
+        });
+
+        if (isOpen) {
+          answer?.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          icon?.classList.remove('rotate-45');
+        } else {
+          answer?.classList.remove('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+          icon?.classList.add('rotate-45');
+        }
+      });
+    });
+  }
+
+  initFaqAccordion();
+  document.addEventListener('astro:after-swap', initFaqAccordion);
+</script>

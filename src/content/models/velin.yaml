@@ -1,0 +1,37 @@
+name: Velin
+slug: velin
+category: small
+buildingArea: 36.75
+livingArea: 27.2
+dimensions:
+  length: 10500
+  width: 3500
+rooms:
+  - key: bedroom
+    area: 6.0
+  - key: living_room
+    area: 13.47
+  - key: bathroom
+    area: 4.0
+  - key: corridor
+    area: 3.73
+features:
+  - two_section_layout
+  - separate_bedroom
+hasGableRoof: false
+hasSauna: false
+hasTerrace: false
+variants: []
+heroImage: /images/models/velin/hero.webp
+galleryImages:
+  - /images/models/velin/exterior-1.webp
+  - /images/models/velin/interior-1.webp
+floorplanImage: /images/models/velin/floorplan.webp
+description:
+  nl: "De Velin verrast met een unieke tweeledig opzet die slaap- en leefzone elegant scheidt. De ruime woonkamer van bijna 13,5 m² vormt het hart van dit tiny house en biedt volop ruimte om te ontspannen. Een slimme corridor verbindt de twee secties voor een natuurlijke flow."
+  fr: "La Velin surprend par sa conception unique en deux sections qui separe elegamment les zones de nuit et de jour. Le spacieux salon de pres de 13,5 m² constitue le coeur de cette tiny house et offre amplement d'espace pour se detendre. Un couloir intelligent relie les deux sections pour une circulation naturelle."
+tagline:
+  nl: "Twee zones, een thuis"
+  fr: "Deux zones, un chez-soi"
+featured: false
+sortOrder: 7

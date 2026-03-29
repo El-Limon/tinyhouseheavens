@@ -1,0 +1,49 @@
+name: Ophir
+slug: ophir
+category: special
+buildingArea: 91.8
+livingArea: 78.4
+dimensions:
+  length: 15300
+  width: 6000
+rooms:
+  - key: bedroom_1
+    area: 10.0
+  - key: bedroom_2
+    area: 9.0
+  - key: kitchen_living
+    area: 31.8
+  - key: bathroom
+    area: 6.0
+  - key: corridor
+    area: 8.0
+  - key: utility_room
+    area: 7.6
+  - key: restroom
+    area: 3.0
+features:
+  - multiple_variants
+  - two_bedrooms
+  - extra_large_kitchen_living
+  - utility_room
+  - separate_restroom
+hasGableRoof: false
+hasSauna: false
+hasTerrace: false
+variants:
+  - "Ophir Light"
+  - "Ophir met Terras"
+  - "Ophir Side"
+heroImage: /images/models/ophir/hero.webp
+galleryImages:
+  - /images/models/ophir/exterior-1.webp
+  - /images/models/ophir/interior-1.webp
+floorplanImage: /images/models/ophir/floorplan.webp
+description:
+  nl: "De Ophir is ons meest veelzijdige model, beschikbaar in drie varianten om perfect aan te sluiten bij jouw wensen. De spectaculaire woonkeuken van bijna 32 m² is het absolute middelpunt van dit ontwerp. Met 78 m² leefruimte en tal van configuratiemogelijkheden is de Ophir de ultieme keuze voor wie flexibiliteit zoekt."
+  fr: "L'Ophir est notre modele le plus polyvalent, disponible en trois variantes pour repondre parfaitement a vos souhaits. Le spectaculaire sejour-cuisine de pres de 32 m² est le point central absolu de ce design. Avec 78 m² habitables et de nombreuses possibilites de configuration, l'Ophir est le choix ultime pour ceux qui recherchent la flexibilite."
+tagline:
+  nl: "Drie varianten, onbeperkte vrijheid"
+  fr: "Trois variantes, liberte illimitee"
+featured: true
+sortOrder: 15

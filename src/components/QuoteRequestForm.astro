@@ -1,0 +1,264 @@
+---
+import type { Locale } from '../i18n/utils';
+import { t } from '../i18n/utils';
+import { getCollection } from 'astro:content';
+
+interface Props {
+  locale: Locale;
+  preselectedModel?: string;
+}
+
+const { locale, preselectedModel } = Astro.props;
+const models = (await getCollection('models')).sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const labels = {
+  title: t(locale, 'contact.quote_title'),
+  name: t(locale, 'contact.name'),
+  email: t(locale, 'contact.email'),
+  phone: t(locale, 'contact.phone'),
+  modelInterest: t(locale, 'contact.model_interest'),
+  selectModel: t(locale, 'contact.select_model'),
+  hasLand: t(locale, 'contact.has_land'),
+  yes: t(locale, 'contact.yes'),
+  no: t(locale, 'contact.no'),
+  message: t(locale, 'contact.message'),
+  submit: t(locale, 'contact.submit'),
+  success: t(locale, 'contact.success'),
+};
+
+const requiredText = locale === 'nl' ? 'Verplicht veld' : 'Champ obligatoire';
+const messagePlaceholder = locale === 'nl'
+  ? 'Vertel ons over uw project, wensen of vragen...'
+  : 'Parlez-nous de votre projet, vos souhaits ou questions...';
+---
+
+<div class="bg-white rounded-3xl shadow-sm border border-thh-charcoal/5 overflow-hidden">
+
+  <!-- Form header -->
+  <div class="relative px-8 pt-8 pb-6 border-b border-thh-charcoal/5">
+    <div class="flex items-center gap-3 mb-2">
+      <div class="w-10 h-10 rounded-xl bg-thh-green-100 flex items-center justify-center">
+        <svg class="w-5 h-5 text-thh-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+        </svg>
+      </div>
+      <h3 class="text-2xl font-bold text-thh-charcoal" style="font-family: 'Playfair Display', serif;">
+        {labels.title}
+      </h3>
+    </div>
+    <p class="text-sm text-thh-charcoal/50">
+      {locale === 'nl'
+        ? 'Vul het formulier in en ontvang binnen 48 uur een persoonlijke offerte.'
+        : 'Remplissez le formulaire et recevez un devis personnalisé sous 48 heures.'
+      }
+    </p>
+  </div>
+
+  <form
+    action="/api/quote-request"
+    method="POST"
+    class="p-8 space-y-6"
+    id="quote-form"
+    novalidate
+  >
+    <!-- Honeypot -->
+    <div class="absolute -left-[9999px]" aria-hidden="true">
+      <label for="website">Website</label>
+      <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <!-- Name + Email row -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div class="form-group">
+        <label for="quote-name" class="block text-sm font-semibold text-thh-charcoal/70 mb-2">
+          {labels.name} <span class="text-thh-green-500">*</span>
+        </label>
+        <input
+          type="text"
+          name="name"
+          id="quote-name"
+          required
+          class="form-input w-full px-4 py-3.5 bg-thh-cream/50 border border-thh-charcoal/10 rounded-xl text-thh-charcoal placeholder:text-thh-charcoal/30 focus:bg-white focus:border-thh-green-400 focus:ring-2 focus:ring-thh-green-400/20 outline-none transition-all duration-200"
+          placeholder={labels.name}
+        />
+        <p class="form-error hidden text-xs text-red-500 mt-1.5">{requiredText}</p>
+      </div>
+      <div class="form-group">
+        <label for="quote-email" class="block text-sm font-semibold text-thh-charcoal/70 mb-2">
+          {labels.email} <span class="text-thh-green-500">*</span>
+        </label>
+        <input
+          type="email"
+          name="email"
+          id="quote-email"
+          required
+          class="form-input w-full px-4 py-3.5 bg-thh-cream/50 border border-thh-charcoal/10 rounded-xl text-thh-charcoal placeholder:text-thh-charcoal/30 focus:bg-white focus:border-thh-green-400 focus:ring-2 focus:ring-thh-green-400/20 outline-none transition-all duration-200"
+          placeholder={labels.email}
+        />
+        <p class="form-error hidden text-xs text-red-500 mt-1.5">{locale === 'nl' ? 'Ongeldig e-mailadres' : 'Adresse e-mail invalide'}</p>
+      </div>
+    </div>
+
+    <!-- Phone -->
+    <div class="form-group">
+      <label for="quote-phone" class="block text-sm font-semibold text-thh-charcoal/70 mb-2">
+        {labels.phone}
+      </label>
+      <input
+        type="tel"
+        name="phone"
+        id="quote-phone"
+        class="form-input w-full px-4 py-3.5 bg-thh-cream/50 border border-thh-charcoal/10 rounded-xl text-thh-charcoal placeholder:text-thh-charcoal/30 focus:bg-white focus:border-thh-green-400 focus:ring-2 focus:ring-thh-green-400/20 outline-none transition-all duration-200"
+        placeholder="+32 (0)XX XXX XX XX"
+      />
+    </div>
+
+    <!-- Model interest -->
+    <div class="form-group">
+      <label for="quote-model" class="block text-sm font-semibold text-thh-charcoal/70 mb-2">
+        {labels.modelInterest}
+      </label>
+      <div class="relative">
+        <select
+          name="model"
+          id="quote-model"
+          class="form-input w-full px-4 py-3.5 bg-thh-cream/50 border border-thh-charcoal/10 rounded-xl text-thh-charcoal focus:bg-white focus:border-thh-green-400 focus:ring-2 focus:ring-thh-green-400/20 outline-none transition-all duration-200 appearance-none cursor-pointer"
+        >
+          <option value="">{labels.selectModel}</option>
+          {models.map((m) => (
+            <option value={m.data.name} selected={m.data.name === preselectedModel}>
+              {m.data.name} — {m.data.buildingArea} m²
+            </option>
+          ))}
+        </select>
+        <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-thh-charcoal/40 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Has land -->
+    <div class="form-group">
+      <label class="block text-sm font-semibold text-thh-charcoal/70 mb-3">
+        {labels.hasLand}
+      </label>
+      <div class="flex gap-3">
+        <label class="flex-1 relative cursor-pointer">
+          <input type="radio" name="has_land" value="yes" class="peer sr-only" />
+          <div class="flex items-center justify-center gap-2 px-4 py-3 border border-thh-charcoal/10 rounded-xl text-sm font-medium text-thh-charcoal/60 bg-thh-cream/50 peer-checked:border-thh-green-500 peer-checked:bg-thh-green-50 peer-checked:text-thh-green-700 transition-all duration-200 hover:border-thh-charcoal/20">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            {labels.yes}
+          </div>
+        </label>
+        <label class="flex-1 relative cursor-pointer">
+          <input type="radio" name="has_land" value="no" class="peer sr-only" />
+          <div class="flex items-center justify-center gap-2 px-4 py-3 border border-thh-charcoal/10 rounded-xl text-sm font-medium text-thh-charcoal/60 bg-thh-cream/50 peer-checked:border-thh-green-500 peer-checked:bg-thh-green-50 peer-checked:text-thh-green-700 transition-all duration-200 hover:border-thh-charcoal/20">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            {labels.no}
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- Message -->
+    <div class="form-group">
+      <label for="quote-message" class="block text-sm font-semibold text-thh-charcoal/70 mb-2">
+        {labels.message}
+      </label>
+      <textarea
+        name="message"
+        id="quote-message"
+        rows="4"
+        class="form-input w-full px-4 py-3.5 bg-thh-cream/50 border border-thh-charcoal/10 rounded-xl text-thh-charcoal placeholder:text-thh-charcoal/30 focus:bg-white focus:border-thh-green-400 focus:ring-2 focus:ring-thh-green-400/20 outline-none transition-all duration-200 resize-y min-h-[120px]"
+        placeholder={messagePlaceholder}
+      ></textarea>
+    </div>
+
+    <!-- Hidden locale -->
+    <input type="hidden" name="locale" value={locale} />
+
+    <!-- Submit -->
+    <button
+      type="submit"
+      class="w-full flex items-center justify-center gap-2.5 px-8 py-4 bg-thh-green-500 text-white font-bold rounded-xl hover:bg-thh-green-600 transition-all duration-300 hover:shadow-lg hover:shadow-thh-green-500/25 active:scale-[0.99] text-base"
+    >
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+      </svg>
+      {labels.submit}
+    </button>
+
+    <!-- Success message (hidden by default) -->
+    <div id="quote-success" class="hidden text-center py-4">
+      <div class="inline-flex items-center gap-2 px-5 py-3 bg-thh-green-50 text-thh-green-700 rounded-xl font-medium">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        {labels.success}
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+  function initQuoteForm() {
+    const form = document.getElementById('quote-form') as HTMLFormElement | null;
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      let hasError = false;
+
+      // Validate required fields
+      form.querySelectorAll('[required]').forEach((field) => {
+        const input = field as HTMLInputElement;
+        const group = input.closest('.form-group');
+        const error = group?.querySelector('.form-error');
+
+        if (!input.value.trim()) {
+          hasError = true;
+          input.classList.add('!border-red-400');
+          error?.classList.remove('hidden');
+        } else {
+          input.classList.remove('!border-red-400');
+          error?.classList.add('hidden');
+        }
+      });
+
+      // Email validation
+      const emailField = form.querySelector('[type="email"]') as HTMLInputElement;
+      if (emailField && emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+        hasError = true;
+        emailField.classList.add('!border-red-400');
+        const error = emailField.closest('.form-group')?.querySelector('.form-error');
+        error?.classList.remove('hidden');
+      }
+
+      // Honeypot check
+      const honeypot = form.querySelector('[name="website"]') as HTMLInputElement;
+      if (honeypot?.value) {
+        e.preventDefault();
+        return;
+      }
+
+      if (hasError) {
+        e.preventDefault();
+      }
+    });
+
+    // Clear errors on input
+    form.querySelectorAll('.form-input').forEach((input) => {
+      input.addEventListener('input', () => {
+        (input as HTMLElement).classList.remove('!border-red-400');
+        const error = input.closest('.form-group')?.querySelector('.form-error');
+        error?.classList.add('hidden');
+      });
+    });
+  }
+
+  initQuoteForm();
+  document.addEventListener('astro:after-swap', initQuoteForm);
+</script>

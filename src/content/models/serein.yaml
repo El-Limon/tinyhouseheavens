@@ -1,0 +1,37 @@
+name: Serein
+slug: serein
+category: medium
+buildingArea: 38.1
+livingArea: 30.0
+dimensions:
+  length: 12700
+  width: 3000
+rooms:
+  - key: bedroom
+    area: 8.0
+  - key: kitchen_living
+    area: 14.0
+  - key: bathroom
+    area: 4.5
+  - key: corridor
+    area: 3.5
+features:
+  - separate_bedroom
+  - balanced_layout
+hasGableRoof: false
+hasSauna: false
+hasTerrace: false
+variants: []
+heroImage: /images/models/serein/hero.webp
+galleryImages:
+  - /images/models/serein/exterior-1.webp
+  - /images/models/serein/interior-1.webp
+floorplanImage: /images/models/serein/floorplan.webp
+description:
+  nl: "De Serein staat voor rust en evenwicht met een harmonieuze verdeling van leef- en slaapruimte. De ruime badkamer van 4,5 m² en goed proportioneerde woonkeuken zorgen voor dagelijks comfort. Een tijdloos ontwerp dat zich moeiteloos aanpast aan elke omgeving."
+  fr: "Le Serein incarne le calme et l'equilibre avec une repartition harmonieuse des espaces de vie et de nuit. La salle de bain spacieuse de 4,5 m² et le sejour-cuisine bien proportionne assurent un confort quotidien. Un design intemporel qui s'adapte sans effort a tout environnement."
+tagline:
+  nl: "Rust en evenwicht in balans"
+  fr: "Calme et equilibre en harmonie"
+featured: false
+sortOrder: 11

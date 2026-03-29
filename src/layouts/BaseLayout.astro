@@ -1,0 +1,66 @@
+---
+import type { Locale } from '../i18n/utils';
+import '../styles/global.css';
+import StructuredData from '../components/StructuredData.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  image?: string;
+  noIndex?: boolean;
+}
+
+const { locale, title, description, image, noIndex = false } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const alternateLocale = locale === 'nl' ? 'fr' : 'nl';
+const alternatePath = Astro.url.pathname.replace(`/${locale}/`, `/${alternateLocale}/`)
+  .replace('/modellen/', locale === 'nl' ? '/modeles/' : '/modellen/')
+  .replace('/over-ons', locale === 'nl' ? '/a-propos' : '/over-ons')
+  .replace('/diensten', locale === 'nl' ? '/services' : '/diensten');
+const alternateURL = new URL(alternatePath, Astro.site);
+const ogImage = image || '/images/brand/og-default.webp';
+---
+
+<!doctype html>
+<html lang={locale} class="scroll-smooth" data-locale={locale}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="alternate" hreflang={locale} href={canonicalURL} />
+  <link rel="alternate" hreflang={alternateLocale} href={alternateURL} />
+  <link rel="alternate" hreflang="x-default" href={new URL(`/nl${Astro.url.pathname.replace(/^\/(nl|fr)/, '')}`, Astro.site)} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+  <meta property="og:locale" content={locale === 'nl' ? 'nl_BE' : 'fr_BE'} />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  {noIndex && <meta name="robots" content="noindex, nofollow" />}
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-thh-cream text-thh-charcoal antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-thh-green-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:font-medium focus:shadow-lg">
+    {locale === 'nl' ? 'Ga naar inhoud' : 'Aller au contenu'}
+  </a>
+  <StructuredData type="organization" locale={locale} />
+  <slot />
+  <CookieConsent locale={locale} />
+</body>
+</html>
+
+<style is:global>
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+  body {
+    font-family: 'DM Sans', sans-serif;
+  }
+</style>

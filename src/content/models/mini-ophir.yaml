@@ -1,0 +1,45 @@
+name: Mini Ophir
+slug: mini-ophir
+category: special
+buildingArea: 71.4
+livingArea: 62.45
+dimensions:
+  length: 11900
+  width: 6000
+rooms:
+  - key: bedroom_1
+    area: 9.0
+  - key: bedroom_2
+    area: 8.0
+  - key: kitchen_living
+    area: 22.0
+  - key: bathroom
+    area: 5.5
+  - key: corridor
+    area: 7.0
+  - key: utility_room
+    area: 5.95
+  - key: restroom
+    area: 3.0
+features:
+  - compact_ophir_variant
+  - two_bedrooms
+  - utility_room
+  - separate_restroom
+hasGableRoof: false
+hasSauna: false
+hasTerrace: false
+variants: []
+heroImage: /images/models/mini-ophir/hero.webp
+galleryImages:
+  - /images/models/mini-ophir/exterior-1.webp
+  - /images/models/mini-ophir/interior-1.webp
+floorplanImage: /images/models/mini-ophir/floorplan.webp
+description:
+  nl: "De Mini Ophir biedt alle kwaliteiten van de populaire Ophir in een compacter formaat van 62 m² leefruimte. Twee slaapkamers, een woonkeuken van 22 m² en volledige bergruimte maken dit tot een volwaardig gezinshuis. Dezelfde slimme indeling en premium afwerking, op een kleiner grondoppervlak."
+  fr: "Le Mini Ophir offre toutes les qualites du populaire Ophir dans un format plus compact de 62 m² habitables. Deux chambres, un sejour-cuisine de 22 m² et un cellier complet en font une veritable maison familiale. Le meme agencement intelligent et les finitions premium, sur une emprise au sol reduite."
+tagline:
+  nl: "De Ophir, compacter en compleet"
+  fr: "L'Ophir, plus compact et complet"
+featured: false
+sortOrder: 17

@@ -1,0 +1,85 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import ModelCard from '../../components/ModelCard.astro';
+import BrandPillars from '../../components/BrandPillars.astro';
+import FinishingLevels from '../../components/FinishingLevels.astro';
+import CTASection from '../../components/CTASection.astro';
+import { getCollection } from 'astro:content';
+import { t, getPagePath } from '../../i18n/utils';
+
+const locale = 'fr';
+const models = await getCollection('models');
+const featuredModels = models.filter(m => m.data.featured).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+---
+
+<PageLayout locale={locale} title={t(locale, 'seo.home_title')} description={t(locale, 'seo.home_desc')}>
+
+  <!-- Hero -->
+  <Hero
+    locale={locale}
+    title="Simple living, great thinking"
+    subtitle={t(locale, 'hero.subtitle')}
+    ctaText={t(locale, 'hero.cta')}
+    ctaLink={getPagePath(locale, 'models')}
+    secondaryCta={t(locale, 'hero.quote_cta')}
+    secondaryCtaLink={getPagePath(locale, 'contact')}
+  />
+
+  <!-- Brand Pillars -->
+  <BrandPillars locale={locale} />
+
+  <!-- Featured Models -->
+  <section class="py-20 bg-thh-cream">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-thh-charcoal">Nos modeles les plus populaires</h2>
+        <p class="text-lg text-thh-charcoal/70 max-w-2xl mx-auto">
+          Decouvrez nos tiny houses les plus choisies, du compact au spacieux
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {featuredModels.map((model) => (
+          <ModelCard locale={locale} model={model.data} />
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href={getPagePath(locale, 'models')} class="inline-flex items-center gap-2 px-6 py-3 border-2 border-thh-green-600 text-thh-green-600 font-semibold rounded-lg hover:bg-thh-green-600 hover:text-white transition-colors">
+          {t(locale, 'models.all_models')}
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-thh-charcoal">{t(locale, 'how_it_works.title')}</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {[1, 2, 3].map((step) => (
+          <div class="text-center relative">
+            <div class="text-6xl font-bold text-thh-green-100 mb-4">{`0${step}`}</div>
+            <h3 class="text-xl font-bold mb-3 text-thh-charcoal">{t(locale, `how_it_works.step${step}.title`)}</h3>
+            <p class="text-thh-charcoal/70 leading-relaxed">{t(locale, `how_it_works.step${step}.desc`)}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Finishing Levels -->
+  <FinishingLevels locale={locale} />
+
+  <!-- CTA -->
+  <CTASection
+    locale={locale}
+    title="Pret a commencer?"
+    subtitle="Decouvrez comment votre maison de reve devient realite"
+    ctaText={t(locale, 'hero.quote_cta')}
+    ctaLink={getPagePath(locale, 'contact')}
+  />
+
+</PageLayout>

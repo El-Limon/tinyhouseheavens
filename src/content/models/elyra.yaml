@@ -1,0 +1,43 @@
+name: Elyra
+slug: elyra
+category: large
+buildingArea: 62.5
+livingArea: 47.64
+dimensions:
+  length: 12500
+  width: 5000
+rooms:
+  - key: bedroom_1
+    area: 9.0
+  - key: bedroom_2
+    area: 8.0
+  - key: kitchen_living
+    area: 14.46
+  - key: bathroom
+    area: 5.0
+  - key: corridor
+    area: 5.18
+  - key: utility_room
+    area: 6.0
+features:
+  - two_bedrooms
+  - utility_room
+  - spacious_bathroom
+  - separate_bedrooms
+hasGableRoof: false
+hasSauna: false
+hasTerrace: false
+variants: []
+heroImage: /images/models/elyra/hero.webp
+galleryImages:
+  - /images/models/elyra/exterior-1.webp
+  - /images/models/elyra/interior-1.webp
+floorplanImage: /images/models/elyra/floorplan.webp
+description:
+  nl: "De Elyra is ons eerste tweeslaapkamermodel en biedt gezinnen of koppels met gasten de ruimte die ze verdienen. Met een bergruimte van 6 m² en badkamer van 5 m² mist dit huis niets van een traditionele woning. Bijna 48 m² leefruimte verdeeld over intelligent ingedeelde zones."
+  fr: "L'Elyra est notre premier modele a deux chambres, offrant aux familles ou aux couples recevant des invites l'espace qu'ils meritent. Avec un cellier de 6 m² et une salle de bain de 5 m², cette maison ne manque de rien par rapport a une habitation traditionnelle. Pres de 48 m² habitables repartis en zones intelligemment agencees."
+tagline:
+  nl: "Ruimte voor twee, comfort voor iedereen"
+  fr: "De l'espace pour deux, du confort pour tous"
+featured: true
+sortOrder: 13

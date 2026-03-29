@@ -1,0 +1,35 @@
+name: Lyren
+slug: lyren
+category: small
+buildingArea: 31.15
+livingArea: 24.0
+dimensions:
+  length: 8300
+  width: 3750
+rooms:
+  - key: bedroom
+    area: 7.5
+  - key: kitchen_living
+    area: 12.5
+  - key: bathroom
+    area: 4.0
+features:
+  - gable_roof_option
+  - separate_bedroom
+hasGableRoof: false
+hasSauna: false
+hasTerrace: false
+variants: []
+heroImage: /images/models/lyren/hero.webp
+galleryImages:
+  - /images/models/lyren/exterior-1.webp
+  - /images/models/lyren/interior-1.webp
+floorplanImage: /images/models/lyren/floorplan.webp
+description:
+  nl: "De Lyren biedt een volwaardige woonervaring met een aparte slaapkamer en ruime woonkeuken. Optioneel verkrijgbaar met een stijlvol zadeldak dat extra karakter geeft aan je tiny house. Met 24 m² leefruimte is dit de perfecte balans tussen compact en comfortabel."
+  fr: "La Lyren offre une experience de vie complete avec une chambre separee et un sejour-cuisine spacieux. Disponible en option avec un elegant toit a deux pans qui donne du caractere a votre tiny house. Avec 24 m² habitables, c'est l'equilibre parfait entre compact et confortable."
+tagline:
+  nl: "Compact wonen met karakter"
+  fr: "Habitat compact avec du caractere"
+featured: false
+sortOrder: 3

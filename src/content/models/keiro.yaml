@@ -1,0 +1,38 @@
+name: Keiro
+slug: keiro
+category: small
+buildingArea: 38.1
+livingArea: 30.0
+dimensions:
+  length: 12700
+  width: 3000
+rooms:
+  - key: bedroom
+    area: 8.0
+  - key: kitchen_living
+    area: 14.1
+  - key: bathroom
+    area: 4.9
+  - key: corridor
+    area: 3.0
+features:
+  - guest_house
+  - tourist_facility
+  - separate_bedroom
+hasGableRoof: false
+hasSauna: false
+hasTerrace: false
+variants: []
+heroImage: /images/models/keiro/hero.webp
+galleryImages:
+  - /images/models/keiro/exterior-1.webp
+  - /images/models/keiro/interior-1.webp
+floorplanImage: /images/models/keiro/floorplan.webp
+description:
+  nl: "De Keiro is ontworpen als ideaal gastenverblijf of toeristische accommodatie met een doordachte, langwerpige indeling. Met 30 m² leefruimte, een ruime slaapkamer en volwaardige keuken biedt dit model alle comfort voor kort en lang verblijf. Perfect voor B&B-uitbaters en vakantieverhuur."
+  fr: "Le Keiro est concu comme maison d'hotes ou hebergement touristique ideal, avec un agencement allonge bien pense. Avec 30 m² habitables, une chambre spacieuse et une cuisine complete, ce modele offre tout le confort pour les sejours courts et longs. Parfait pour les exploitants de chambres d'hotes et la location de vacances."
+tagline:
+  nl: "Gastvrij ontvangen in stijl"
+  fr: "Accueillir avec style"
+featured: false
+sortOrder: 4

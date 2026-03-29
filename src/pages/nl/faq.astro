@@ -1,0 +1,126 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+import { t, getPagePath } from '../../i18n/utils';
+
+const locale = 'nl';
+
+const faqs = [
+  {
+    question: 'Wat is een modulair tiny house?',
+    answer: 'Een modulair tiny house is een compacte woning die in onze werkplaats wordt geproduceerd met frame-modulaire bouw. De constructie bestaat uit een stalen onderstel met houtskeletbouw, volledig geisoleerd met 150-200mm isolatie. Omdat alles in de werkplaats wordt gebouwd, garanderen we een constante bouwkwaliteit ongeacht het weer. De modules worden vervolgens naar uw locatie getransporteerd en geplaatst.',
+  },
+  {
+    question: 'Hoe lang duurt de levering?',
+    answer: 'De levertijd is afhankelijk van het gekozen model en afwerkingsniveau. Een House Kit (zelfbouwpakket) kan binnen 4-6 weken geleverd worden. Voor een Basic of Optima afwerking bedraagt de productietijd typisch 8-12 weken na bevestiging van de bestelling. Wij houden u gedurende het hele proces op de hoogte van de voortgang.',
+  },
+  {
+    question: 'Wat zijn de afwerkingsniveaus?',
+    answer: 'Wij bieden drie afwerkingsniveaus aan. House Kit: de draagconstructie met geisoleerde vloer, wanden en plafond -- ideaal als u zelf wilt afwerken. Basic: een volledig afgewerkte woning met basisinstallaties, buitengevel en dakbedekking. Optima: een sleutel-op-de-deur woning met premium afwerking inclusief gevelbekleding, vloerverwarming, boiler en volledige installatie.',
+  },
+  {
+    question: 'Heb ik een bouwvergunning nodig?',
+    answer: 'Ja, in Belgie heeft u in de meeste gevallen een omgevingsvergunning nodig voor het plaatsen van een tiny house. De regelgeving verschilt per gewest (Vlaanderen, Wallonie, Brussel) en per gemeente. Wij adviseren u graag over de vergunningsvereisten voor uw specifieke situatie en locatie. In sommige gevallen kan een tiny house als bijgebouw worden vergund.',
+  },
+  {
+    question: 'Kan ik mijn tiny house aanpassen?',
+    answer: 'Absoluut! Onze modulaire bouwmethode maakt het mogelijk om uw tiny house volledig aan te passen aan uw wensen. Van de indeling en afwerkingsmaterialen tot de kleur van de gevel en het type dakbedekking. Sommige modellen hebben ook varianten beschikbaar, zoals versies met een zadeldak of extra terras. Tijdens het ontwerpgesprek bespreken we alle mogelijkheden.',
+  },
+  {
+    question: 'Wat kost een tiny house?',
+    answer: 'De prijs van een tiny house is afhankelijk van het gekozen model, de grootte en het afwerkingsniveau. Onze modellen varieren van compacte 13 m² units tot ruime 112 m² gezinswoningen. Een House Kit begint bij een lagere instapprijs, terwijl een Optima afwerking een hogere investering vraagt maar een complete woning oplevert. Vraag een offerte aan voor een nauwkeurige prijsopgave.',
+  },
+  {
+    question: 'Waar kunnen tiny houses geplaatst worden?',
+    answer: 'Een tiny house kan op uw eigen terrein geplaatst worden, mits u de juiste vergunningen hebt. Het terrein moet geschikt zijn qua bereikbaarheid (voor transport), draagkracht en aansluitmogelijkheden voor nutsvoorzieningen. Wij adviseren ook over de funderingsopties: van schroeffunderingen tot betonplaten, afhankelijk van de bodem en het model.',
+  },
+  {
+    question: 'Zijn de tiny houses energiezuinig?',
+    answer: 'Ja, onze tiny houses zijn zeer energiezuinig. Met 200mm isolatie in vloer en plafond, 150mm in de wanden, en een wind- en dampdicht membraan is het warmteverlies minimaal. De compacte afmetingen zorgen bovendien voor een efficient verwarmbaar volume. Bij de Optima afwerking wordt standaard een D-ventilatiesysteem met warmterecuperatie geinstalleerd. De ecologische materialen en de mogelijkheid voor zonnepanelen maken onze units bijzonder duurzaam.',
+  },
+];
+---
+
+<PageLayout locale={locale} title={`${t(locale, 'faq.title')} | Tiny House Heavens`} description="Antwoorden op veelgestelde vragen over modulaire tiny houses, bouwvergunningen, afwerking, prijzen en meer.">
+
+  <!-- Hero -->
+  <section class="pt-32 pb-12 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-thh-charcoal">{t(locale, 'faq.title')}</h1>
+      <p class="text-lg text-thh-charcoal/70 max-w-2xl mx-auto">
+        Alles wat u moet weten over onze tiny houses
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="py-16 bg-thh-cream">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="space-y-4" id="faq-list">
+        {faqs.map((faq, i) => (
+          <div class="faq-item bg-white rounded-2xl shadow-sm overflow-hidden border border-transparent hover:border-thh-green-100 transition-colors">
+            <button
+              class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left"
+              aria-expanded="false"
+              aria-controls={`faq-answer-${i}`}
+            >
+              <span class="text-lg font-semibold text-thh-charcoal pr-4">{faq.question}</span>
+              <svg class="faq-icon w-5 h-5 text-thh-green-500 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </button>
+            <div id={`faq-answer-${i}`} class="faq-answer hidden px-6 pb-5">
+              <p class="text-thh-charcoal/70 leading-relaxed">{faq.answer}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection
+    locale={locale}
+    title="Nog vragen?"
+    subtitle="Neem gerust contact met ons op, wij helpen u graag verder"
+    ctaText={t(locale, 'contact.title')}
+    ctaLink={getPagePath(locale, 'contact')}
+  />
+
+</PageLayout>
+
+<script>
+  function initFaqAccordion() {
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const answer = item?.querySelector('.faq-answer');
+        const icon = item?.querySelector('.faq-icon');
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        // Close all others
+        document.querySelectorAll('.faq-item').forEach(other => {
+          if (other !== item) {
+            other.querySelector('.faq-answer')?.classList.add('hidden');
+            other.querySelector('.faq-toggle')?.setAttribute('aria-expanded', 'false');
+            other.querySelector('.faq-icon')?.classList.remove('rotate-45');
+          }
+        });
+
+        // Toggle current
+        if (isOpen) {
+          answer?.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          icon?.classList.remove('rotate-45');
+        } else {
+          answer?.classList.remove('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+          icon?.classList.add('rotate-45');
+        }
+      });
+    });
+  }
+
+  initFaqAccordion();
+  document.addEventListener('astro:after-swap', initFaqAccordion);
+</script>
