@@ -45,12 +45,14 @@ const dimensionsFormatted = `${(model.dimensions.length / 1000).toFixed(1)} x ${
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
 
-        <!-- Image Placeholder -->
-        <div class="aspect-[4/3] bg-gradient-to-br from-thh-green-100 to-thh-green-50 rounded-2xl flex items-center justify-center overflow-hidden shadow-sm">
-          <div class="text-center p-8">
-            <span class="text-7xl font-bold text-thh-green-200/60 block mb-3">{model.name}</span>
-            <span class="text-sm text-thh-green-500/60 uppercase tracking-widest">{t(locale, `categories.${model.category}`)}</span>
-          </div>
+        <!-- Hero Image -->
+        <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-sm bg-thh-green-50">
+          <img
+            src={model.heroImage}
+            alt={`${model.name} - Tiny House Heavens`}
+            class="w-full h-full object-cover"
+            loading="eager"
+          />
         </div>
 
         <!-- Info -->
@@ -93,6 +95,27 @@ const dimensionsFormatted = `${(model.dimensions.length / 1000).toFixed(1)} x ${
     </div>
   </section>
 
+  <!-- Gallery -->
+  {model.galleryImages.length > 0 && (
+    <section class="py-12 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-2xl font-bold mb-6 text-thh-charcoal">{t(locale, 'common.gallery')}</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {model.galleryImages.map((img: string, i: number) => (
+            <div class="aspect-[4/3] rounded-xl overflow-hidden bg-thh-green-50">
+              <img
+                src={img}
+                alt={`${model.name} - foto ${i + 1}`}
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- Description -->
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-6">
@@ -125,14 +148,16 @@ const dimensionsFormatted = `${(model.dimensions.length / 1000).toFixed(1)} x ${
         </table>
       </div>
 
-      <!-- Floor Plan Placeholder -->
+      <!-- Floor Plan -->
       <div class="mb-8">
         <h3 class="text-xl font-bold mb-4 text-thh-charcoal">{t(locale, 'common.floor_plan')}</h3>
-        <div class="aspect-[16/9] bg-gradient-to-br from-thh-green-50 to-white rounded-2xl flex items-center justify-center border-2 border-dashed border-thh-green-200">
-          <div class="text-center text-thh-green-400/60">
-            <svg class="w-16 h-16 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
-            <span class="text-sm font-medium uppercase tracking-wider">{t(locale, 'common.floor_plan')} - {model.name}</span>
-          </div>
+        <div class="rounded-2xl overflow-hidden bg-white shadow-sm">
+          <img
+            src={model.floorplanImage}
+            alt={`${t(locale, 'common.floor_plan')} - ${model.name}`}
+            class="w-full h-auto"
+            loading="lazy"
+          />
         </div>
       </div>
 
