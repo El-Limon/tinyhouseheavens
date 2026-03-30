@@ -148,6 +148,18 @@ const dimensionsFormatted = `${(model.dimensions.length / 1000).toFixed(1)} x ${
         </table>
       </div>
 
+      <!-- Floor Plan -->
+      <div class="mb-8">
+        <h3 class="text-xl font-bold mb-4 text-thh-charcoal">{t(locale, 'common.floor_plan')}</h3>
+        <div class="rounded-2xl overflow-hidden bg-white shadow-sm p-4">
+          <img
+            src={model.floorplanImage}
+            alt={`${t(locale, 'common.floor_plan')} - ${model.name}`}
+            class="w-full h-auto"
+            loading="lazy"
+          />
+        </div>
+      </div>
 
       <!-- Features -->
       {model.features.length > 0 && (
