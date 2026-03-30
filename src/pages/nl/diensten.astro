@@ -1,6 +1,5 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import CTASection from '../../components/CTASection.astro';
 import { t, getPagePath } from '../../i18n/utils';
 
 const locale = 'nl';
@@ -88,13 +87,5 @@ const services = [
     </div>
   </section>
 
-  <!-- CTA -->
-  <CTASection
-    locale={locale}
-    title="Klaar om te starten?"
-    subtitle="Neem contact op voor een vrijblijvend gesprek over uw project"
-    ctaText={t(locale, 'hero.quote_cta')}
-    ctaLink={getPagePath(locale, 'contact')}
-  />
 
 </PageLayout>

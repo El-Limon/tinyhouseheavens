@@ -1,9 +1,8 @@
 ---
 import PageLayout from '../../../layouts/PageLayout.astro';
 import ModelCard from '../../../components/ModelCard.astro';
-import CTASection from '../../../components/CTASection.astro';
 import { getCollection } from 'astro:content';
-import { t, getPagePath } from '../../../i18n/utils';
+import { t } from '../../../i18n/utils';
 
 const locale = 'fr';
 const models = (await getCollection('models')).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
@@ -54,15 +53,6 @@ const categories = ['all', 'entry', 'small', 'medium', 'large', 'special'] as co
 
     </div>
   </section>
-
-  <!-- CTA -->
-  <CTASection
-    locale={locale}
-    title="Pas sur du modele?"
-    subtitle="Contactez-nous et nous vous aiderons a choisir la tiny house parfaite"
-    ctaText={t(locale, 'hero.quote_cta')}
-    ctaLink={getPagePath(locale, 'contact')}
-  />
 
 </PageLayout>
 

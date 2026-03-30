@@ -1,7 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import CTASection from '../../components/CTASection.astro';
-import { t, getPagePath } from '../../i18n/utils';
+import { t } from '../../i18n/utils';
 
 const locale = 'fr';
 
@@ -77,15 +76,6 @@ const faqs = [
       </div>
     </div>
   </section>
-
-  <!-- CTA -->
-  <CTASection
-    locale={locale}
-    title="D'autres questions?"
-    subtitle="N'hesitez pas a nous contacter, nous sommes la pour vous aider"
-    ctaText={t(locale, 'contact.title')}
-    ctaLink={getPagePath(locale, 'contact')}
-  />
 
 </PageLayout>
 
