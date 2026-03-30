@@ -4,7 +4,6 @@ import Hero from '../../components/Hero.astro';
 import ModelCard from '../../components/ModelCard.astro';
 import BrandPillars from '../../components/BrandPillars.astro';
 import FinishingLevels from '../../components/FinishingLevels.astro';
-import CTASection from '../../components/CTASection.astro';
 import { getCollection } from 'astro:content';
 import { t, getPagePath } from '../../i18n/utils';
 
@@ -73,13 +72,5 @@ const featuredModels = models.filter(m => m.data.featured).sort((a, b) => a.data
   <!-- Finishing Levels -->
   <FinishingLevels locale={locale} />
 
-  <!-- CTA -->
-  <CTASection
-    locale={locale}
-    title="Pret a commencer?"
-    subtitle="Decouvrez comment votre maison de reve devient realite"
-    ctaText={t(locale, 'hero.quote_cta')}
-    ctaLink={getPagePath(locale, 'contact')}
-  />
 
 </PageLayout>
