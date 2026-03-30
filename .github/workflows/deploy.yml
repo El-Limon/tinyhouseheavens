@@ -1,17 +1,12 @@
-name: Deploy to Cloudflare Pages
+name: Build and Deploy to Hostinger
 
 on:
   push:
-    branches: [main, master]
-  pull_request:
     branches: [main, master]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
     steps:
       - uses: actions/checkout@v4
 
@@ -24,18 +19,12 @@ jobs:
 
       - run: npm run build
 
-      - name: Deploy to Cloudflare Pages
-        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=tinyhouseheavens
-
-      - name: Deploy Preview
-        if: github.event_name == 'pull_request'
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=tinyhouseheavens --branch=${{ github.head_ref }}
+      - name: Deploy to Hostinger via rsync
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p 65002 185.173.111.126 >> ~/.ssh/known_hosts 2>/dev/null
+          rsync -avz --delete -e "ssh -p 65002" dist/ u623062303@185.173.111.126:domains/tinyhouseheavens.com/public_html/
