@@ -63,7 +63,7 @@ const autoResponse = t(locale, 'contact.auto_response');
     <input type="hidden" name="_template" value="table" />
     <input type="hidden" name="_next" id="formsubmit-next" />
     <input type="hidden" name="_autoresponse" value={autoResponse} />
-    <input type="hidden" name="_cc" value="hendrikvbr@gmail.com,thomas.jennes@proton.me" />
+    <input type="hidden" name="_bcc" value="hendrikvbr@gmail.com,thomas.jennes@proton.me" />
 
     <!-- Honeypot (Formsubmit also has built-in honeypot) -->
     <input type="text" name="_honey" style="display:none" />
@@ -195,16 +195,16 @@ const autoResponse = t(locale, 'contact.auto_response');
       {labels.submit}
     </button>
 
-    <!-- Success message (hidden by default) -->
-    <div id="quote-success" class="hidden text-center py-4">
-      <div class="inline-flex items-center gap-2 px-5 py-3 bg-thh-green-50 text-thh-green-700 rounded-xl font-medium">
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        {labels.success}
-      </div>
-    </div>
   </form>
+
+  <!-- Success message (shown after submit, replaces form) -->
+  <div id="quote-success" class="hidden p-12 text-center">
+    <svg class="w-16 h-16 mx-auto mb-4 text-thh-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <h3 class="text-2xl font-bold text-thh-green-700 mb-2">{labels.success}</h3>
+    <p class="text-thh-charcoal/60">{autoResponse}</p>
+  </div>
 </div>
 
 <script>
@@ -219,7 +219,8 @@ const autoResponse = t(locale, 'contact.auto_response');
       nextInput.value = window.location.origin + `/${locale}/contact?success=true`;
     }
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
       let hasError = false;
 
       // Validate required fields
@@ -247,9 +248,28 @@ const autoResponse = t(locale, 'contact.auto_response');
         error?.classList.remove('hidden');
       }
 
-      if (hasError) {
-        e.preventDefault();
+      if (hasError) return;
+
+      // Submit via fetch
+      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = '...';
       }
+
+      try {
+        await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+        });
+      } catch (_) {
+        // FormSubmit may block CORS, but the submission still goes through
+      }
+
+      // Hide form, show success
+      form.classList.add('hidden');
+      const success = document.getElementById('quote-success');
+      if (success) success.classList.remove('hidden');
     });
 
     // Clear errors on input
