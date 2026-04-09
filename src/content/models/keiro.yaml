@@ -31,8 +31,10 @@ floorplanImage: /images/models/keiro/floorplan.webp
 description:
   nl: "De Keiro is ontworpen als ideaal gastenverblijf of toeristische accommodatie met een doordachte, langwerpige indeling. Met 30 m² leefruimte, een ruime slaapkamer en volwaardige keuken biedt dit model alle comfort voor kort en lang verblijf. Perfect voor B&B-uitbaters en vakantieverhuur."
   fr: "Le Keiro est concu comme maison d'hotes ou hebergement touristique ideal, avec un agencement allonge bien pense. Avec 30 m² habitables, une chambre spacieuse et une cuisine complete, ce modele offre tout le confort pour les sejours courts et longs. Parfait pour les exploitants de chambres d'hotes et la location de vacances."
+  en: "The Keiro is designed as the ideal guest house or tourist accommodation, with a well-thought-out elongated layout. With 30 m² of living space, a spacious bedroom, and a fully equipped kitchen, this model offers all the comfort for short and long stays. Perfect for B&B operators and holiday rentals."
 tagline:
   nl: "Gastvrij ontvangen in stijl"
   fr: "Accueillir avec style"
+  en: "Welcoming guests in style"
 featured: false
 sortOrder: 4

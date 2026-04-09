@@ -1,6 +1,6 @@
 ---
 import type { Locale } from '../i18n/utils';
-import { t } from '../i18n/utils';
+import { t, tArray } from '../i18n/utils';
 
 interface Props {
   locale: Locale;
@@ -8,66 +8,12 @@ interface Props {
 
 const { locale } = Astro.props;
 
-const houseKitFeatures = locale === 'nl'
-  ? [
-      'Draagconstructie in houtskelet',
-      'Geïsoleerde vloer, wanden en plafond',
-      'OSB ondervloer',
-      'Wind- en dampscherm',
-    ]
-  : [
-      'Structure portante en ossature bois',
-      'Sol, murs et plafond isolés',
-      'Sous-plancher OSB',
-      'Pare-vent et pare-vapeur',
-    ];
-
-const basicFeatures = locale === 'nl'
-  ? [
-      'Alles uit House Kit',
-      'Buitengevel winddicht afgewerkt',
-      'Cementgebonden badkamervloer',
-      'Interne bekleding en gipskarton',
-      'Metalen dakbedekking',
-      'Dakgoten en afvoer',
-    ]
-  : [
-      'Tout du House Kit',
-      'Façade extérieure étanche au vent',
-      'Sol de salle de bain en ciment',
-      'Revêtement intérieur et plaques de plâtre',
-      'Toiture métallique',
-      'Gouttières et évacuation',
-    ];
-
-const optimaFeatures = locale === 'nl'
-  ? [
-      'Alles uit Basic',
-      'Gevelbekleding in grenen/metaal',
-      'Premium houtbalken afwerking',
-      'Keramische badkamervloer',
-      'Elektrische vloerverwarming',
-      'Warmwaterboiler 50L',
-      'Ventilatie D-systeem',
-      'Binnen- en buitenverlichting',
-    ]
-  : [
-      'Tout du Basic',
-      'Bardage en pin/métal',
-      'Finition poutres en bois premium',
-      'Sol de salle de bain en céramique',
-      'Chauffage au sol électrique',
-      'Chauffe-eau 50L',
-      'Système de ventilation D',
-      'Éclairage intérieur et extérieur',
-    ];
-
 const levels = [
   {
     key: 'house_kit',
-    features: houseKitFeatures,
+    features: tArray(locale, 'finishing.house_kit_features'),
     highlighted: false,
-    badge: null,
+    badge: null as string | null,
     icon: `<svg viewBox="0 0 40 40" fill="none" class="w-full h-full">
       <path d="M20 4L4 16h4v16h24V16h4L20 4z" stroke="currentColor" stroke-width="2" fill="none"/>
       <path d="M14 32V22h12v10" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2"/>
@@ -75,9 +21,9 @@ const levels = [
   },
   {
     key: 'basic',
-    features: basicFeatures,
+    features: tArray(locale, 'finishing.basic_features'),
     highlighted: false,
-    badge: null,
+    badge: null as string | null,
     icon: `<svg viewBox="0 0 40 40" fill="none" class="w-full h-full">
       <path d="M20 4L4 16h4v16h24V16h4L20 4z" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.1"/>
       <path d="M14 32V22h12v10" stroke="currentColor" stroke-width="1.5"/>
@@ -86,9 +32,9 @@ const levels = [
   },
   {
     key: 'optima',
-    features: optimaFeatures,
+    features: tArray(locale, 'finishing.optima_features'),
     highlighted: true,
-    badge: locale === 'nl' ? 'Aanbevolen' : 'Recommandé',
+    badge: t(locale, 'finishing.recommended'),
     icon: `<svg viewBox="0 0 40 40" fill="none" class="w-full h-full">
       <path d="M20 4L4 16h4v16h24V16h4L20 4z" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.15"/>
       <path d="M14 32V22h12v10" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.08"/>
@@ -98,11 +44,6 @@ const levels = [
     </svg>`,
   },
 ];
-
-const sectionTitle = locale === 'nl' ? 'Afwerkingsniveaus' : 'Niveaux de finition';
-const sectionSubtitle = locale === 'nl'
-  ? 'Van zelfbouwpakket tot sleutel-op-de-deur — kies het niveau dat bij u past.'
-  : 'Du kit d\'autoconstruction au clé en main — choisissez le niveau qui vous convient.';
 ---
 
 <section class="py-24 lg:py-32 bg-thh-cream">
@@ -113,15 +54,15 @@ const sectionSubtitle = locale === 'nl'
       <div class="flex items-center justify-center gap-3 mb-4">
         <span class="block w-8 h-[1px] bg-thh-green-500/40"></span>
         <span class="text-xs font-bold uppercase tracking-[0.3em] text-thh-green-600">
-          {locale === 'nl' ? 'Afwerking' : 'Finitions'}
+          {t(locale, 'finishing.section_label')}
         </span>
         <span class="block w-8 h-[1px] bg-thh-green-500/40"></span>
       </div>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-thh-charcoal mb-4" style="font-family: 'Playfair Display', serif;">
-        {sectionTitle}
+        {t(locale, 'finishing.section_title')}
       </h2>
       <p class="text-lg text-thh-charcoal/60 max-w-2xl mx-auto">
-        {sectionSubtitle}
+        {t(locale, 'finishing.section_subtitle')}
       </p>
     </div>
 

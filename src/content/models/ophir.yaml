@@ -42,8 +42,10 @@ floorplanImage: /images/models/ophir/floorplan.webp
 description:
   nl: "De Ophir is ons meest veelzijdige model, beschikbaar in drie varianten om perfect aan te sluiten bij jouw wensen. De spectaculaire woonkeuken van bijna 32 m² is het absolute middelpunt van dit ontwerp. Met 78 m² leefruimte en tal van configuratiemogelijkheden is de Ophir de ultieme keuze voor wie flexibiliteit zoekt."
   fr: "L'Ophir est notre modele le plus polyvalent, disponible en trois variantes pour repondre parfaitement a vos souhaits. Le spectaculaire sejour-cuisine de pres de 32 m² est le point central absolu de ce design. Avec 78 m² habitables et de nombreuses possibilites de configuration, l'Ophir est le choix ultime pour ceux qui recherchent la flexibilite."
+  en: "The Ophir is our most versatile model, available in three variants to perfectly match your wishes. The spectacular kitchen-living area of nearly 32 m² is the absolute centrepiece of this design. With 78 m² of living space and numerous configuration options, the Ophir is the ultimate choice for those seeking flexibility."
 tagline:
   nl: "Drie varianten, onbeperkte vrijheid"
   fr: "Trois variantes, liberte illimitee"
+  en: "Three variants, unlimited freedom"
 featured: true
 sortOrder: 15

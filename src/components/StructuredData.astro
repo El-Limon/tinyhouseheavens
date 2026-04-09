@@ -1,4 +1,7 @@
 ---
+import type { Locale } from '../i18n/utils';
+import { t } from '../i18n/utils';
+
 interface BreadcrumbItem {
   name: string;
   url: string;
@@ -6,7 +9,7 @@ interface BreadcrumbItem {
 
 interface Props {
   type: 'organization' | 'product' | 'breadcrumb';
-  locale: 'nl' | 'fr';
+  locale: Locale;
   breadcrumbs?: BreadcrumbItem[];
   product?: {
     name: string;
@@ -27,9 +30,7 @@ function getOrganizationSchema() {
     name: 'Tiny House Heavens',
     url: siteUrl,
     logo: `${siteUrl}/images/brand/logo.svg`,
-    description: locale === 'nl'
-      ? 'Modulaire tiny houses ontworpen voor duurzaam en betaalbaar wonen in de Benelux'
-      : 'Tiny houses modulaires conçues pour un habitat durable et abordable au Benelux',
+    description: t(locale, 'common.structured_data_desc'),
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Fort 15',
@@ -42,7 +43,7 @@ function getOrganizationSchema() {
       telephone: '+32465600263',
       email: 'info@tinyhouseheavens.com',
       contactType: 'sales',
-      availableLanguage: ['Dutch', 'French'],
+      availableLanguage: ['Dutch', 'French', 'English'],
     },
     sameAs: [
       'https://facebook.com/profile.php?id=61573215795089',
@@ -63,7 +64,7 @@ function getProductSchema() {
     category: 'Modular Homes',
     additionalProperty: {
       '@type': 'PropertyValue',
-      name: locale === 'nl' ? 'Bouwoppervlakte' : 'Surface de construction',
+      name: t(locale, 'models.building_area'),
       value: `${product.buildingArea} m²`,
     },
     offers: {

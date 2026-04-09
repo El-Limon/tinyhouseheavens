@@ -1,5 +1,6 @@
 ---
 import type { Locale } from '../i18n/utils';
+import { t, getAlternateLocales, getLocalizedPathForLocale } from '../i18n/utils';
 import '../styles/global.css';
 import StructuredData from '../components/StructuredData.astro';
 import CookieConsent from '../components/CookieConsent.astro';
@@ -14,13 +15,10 @@ interface Props {
 
 const { locale, title, description, image, noIndex = false } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const alternateLocale = locale === 'nl' ? 'fr' : 'nl';
-const alternatePath = Astro.url.pathname.replace(`/${locale}/`, `/${alternateLocale}/`)
-  .replace('/modellen/', locale === 'nl' ? '/modeles/' : '/modellen/')
-  .replace('/over-ons', locale === 'nl' ? '/a-propos' : '/over-ons')
-  .replace('/diensten', locale === 'nl' ? '/services' : '/diensten');
-const alternateURL = new URL(alternatePath, Astro.site);
+const alternateLocales = getAlternateLocales(locale);
 const ogImage = image || '/images/brand/og-default.webp';
+
+const ogLocaleMap: Record<Locale, string> = { nl: 'nl_BE', fr: 'fr_BE', en: 'en_GB' };
 ---
 
 <!doctype html>
@@ -32,12 +30,15 @@ const ogImage = image || '/images/brand/og-default.webp';
   <meta name="description" content={description} />
   <link rel="canonical" href={canonicalURL} />
   <link rel="alternate" hreflang={locale} href={canonicalURL} />
-  <link rel="alternate" hreflang={alternateLocale} href={alternateURL} />
-  <link rel="alternate" hreflang="x-default" href={new URL(`/nl${Astro.url.pathname.replace(/^\/(nl|fr)/, '')}`, Astro.site)} />
+  {alternateLocales.map(alt => {
+    const altPath = getLocalizedPathForLocale(locale, alt, Astro.url.pathname);
+    return <link rel="alternate" hreflang={alt} href={new URL(altPath, Astro.site)} />;
+  })}
+  <link rel="alternate" hreflang="x-default" href={new URL(getLocalizedPathForLocale(locale, 'nl', Astro.url.pathname), Astro.site)} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={new URL(ogImage, Astro.site)} />
-  <meta property="og:locale" content={locale === 'nl' ? 'nl_BE' : 'fr_BE'} />
+  <meta property="og:locale" content={ogLocaleMap[locale]} />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   {noIndex && <meta name="robots" content="noindex, nofollow" />}
@@ -48,7 +49,7 @@ const ogImage = image || '/images/brand/og-default.webp';
 </head>
 <body class="bg-thh-cream text-thh-charcoal antialiased">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-thh-green-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:font-medium focus:shadow-lg">
-    {locale === 'nl' ? 'Ga naar inhoud' : 'Aller au contenu'}
+    {t(locale, 'common.skip_to_content')}
   </a>
   <StructuredData type="organization" locale={locale} />
   <slot />

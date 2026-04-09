@@ -30,8 +30,10 @@ floorplanImage: /images/models/spa-mirai/floorplan.webp
 description:
   nl: "De Spa Mirai biedt een serene woonomgeving met een ruime slaapkamer en lichte woonkeuken van 14 m². Het langwerpige ontwerp zorgt voor een vloeiende overgang tussen de verschillende leefzones. Dit model combineert Japanse eenvoud met Belgisch vakmanschap."
   fr: "Le Spa Mirai offre un environnement de vie serein avec une chambre spacieuse et un sejour-cuisine lumineux de 14 m². La conception allongee assure une transition fluide entre les differentes zones de vie. Ce modele allie la simplicite japonaise au savoir-faire belge."
+  en: "The Spa Mirai offers a serene living environment with a spacious bedroom and a bright 14 m² kitchen-living area. The elongated design ensures a smooth transition between the different living zones. This model combines Japanese simplicity with Belgian craftsmanship."
 tagline:
   nl: "Sereniteit in elk detail"
   fr: "La serenite dans chaque detail"
+  en: "Serenity in every detail"
 featured: false
 sortOrder: 8

@@ -32,8 +32,10 @@ floorplanImage: /images/models/auxin/floorplan.webp
 description:
   nl: "De Auxin valt op door zijn brede opzet met hoekramen die een panoramisch uitzicht bieden en de ruimte met natuurlijk licht vullen. Het zadeldak en de royale woonkeuken van 16 m² geven dit model een echte huiselijke uitstraling. Compact in footprint, maar groots in beleving."
   fr: "L'Auxin se distingue par sa conception large avec des fenetres d'angle offrant une vue panoramique et baignant l'espace de lumiere naturelle. Le toit a deux pans et le genereux sejour-cuisine de 16 m² conferent a ce modele une veritable atmosphere de maison. Compact en empreinte, mais grandiose en experience."
+  en: "The Auxin stands out with its wide design featuring corner windows that offer panoramic views and flood the space with natural light. The gable roof and generous 16 m² kitchen-living area give this model a truly homely atmosphere. Compact in footprint, yet grand in experience."
 tagline:
   nl: "Panoramisch wonen met karakter"
   fr: "Habiter en panoramique avec caractere"
+  en: "Panoramic living with character"
 featured: false
 sortOrder: 12

@@ -26,14 +26,9 @@ const labels = {
   success: t(locale, 'contact.success'),
 };
 
-const requiredText = locale === 'nl' ? 'Verplicht veld' : 'Champ obligatoire';
-const messagePlaceholder = locale === 'nl'
-  ? 'Vertel ons over uw project, wensen of vragen...'
-  : 'Parlez-nous de votre projet, vos souhaits ou questions...';
-
-const autoResponse = locale === 'nl'
-  ? 'Bedankt voor uw offerte aanvraag bij Tiny House Heavens! Wij hebben uw bericht goed ontvangen en nemen zo snel mogelijk contact met u op. Met vriendelijke groeten, Tiny House Heavens'
-  : 'Merci pour votre demande de devis chez Tiny House Heavens! Nous avons bien reçu votre message et nous vous contacterons dans les plus brefs délais. Cordialement, Tiny House Heavens';
+const requiredText = t(locale, 'contact.required_field');
+const messagePlaceholder = t(locale, 'contact.message_placeholder');
+const autoResponse = t(locale, 'contact.auto_response');
 ---
 
 <div class="bg-white rounded-3xl shadow-sm border border-thh-charcoal/5 overflow-hidden">
@@ -51,10 +46,7 @@ const autoResponse = locale === 'nl'
       </h3>
     </div>
     <p class="text-sm text-thh-charcoal/50">
-      {locale === 'nl'
-        ? 'Vul het formulier in en ontvang zo snel mogelijk een persoonlijke offerte.'
-        : 'Remplissez le formulaire et recevez un devis personnalisé dans les plus brefs délais.'
-      }
+      {t(locale, 'contact.form_subtitle')}
     </p>
   </div>
 
@@ -103,7 +95,7 @@ const autoResponse = locale === 'nl'
           class="form-input w-full px-4 py-3.5 bg-thh-cream/50 border border-thh-charcoal/10 rounded-xl text-thh-charcoal placeholder:text-thh-charcoal/30 focus:bg-white focus:border-thh-green-400 focus:ring-2 focus:ring-thh-green-400/20 outline-none transition-all duration-200"
           placeholder={labels.email}
         />
-        <p class="form-error hidden text-xs text-red-500 mt-1.5">{locale === 'nl' ? 'Ongeldig e-mailadres' : 'Adresse e-mail invalide'}</p>
+        <p class="form-error hidden text-xs text-red-500 mt-1.5">{t(locale, 'contact.invalid_email')}</p>
       </div>
     </div>
 
@@ -222,8 +214,8 @@ const autoResponse = locale === 'nl'
     // Set the redirect URL based on current page language
     const nextInput = document.getElementById('formsubmit-next') as HTMLInputElement;
     if (nextInput) {
-      const isFr = window.location.pathname.startsWith('/fr');
-      nextInput.value = window.location.origin + (isFr ? '/fr/contact?success=true' : '/nl/contact?success=true');
+      const locale = document.documentElement.lang || 'nl';
+      nextInput.value = window.location.origin + `/${locale}/contact?success=true`;
     }
 
     form.addEventListener('submit', (e) => {

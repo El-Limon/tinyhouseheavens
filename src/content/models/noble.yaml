@@ -40,8 +40,10 @@ floorplanImage: /images/models/noble/floorplan.webp
 description:
   nl: "De Noble is de belichaming van premium comfort met twee ruime slaapkamers, een woonkeuken van 24 m² en een terras van bijna 20 m². Elke ruimte is zorgvuldig ontworpen voor maximaal woongenot zonder compromissen. Dit is tiny house wonen op zijn allerbest, met alle luxe die je verwacht."
   fr: "Le Noble est l'incarnation du confort premium avec deux chambres spacieuses, un sejour-cuisine de 24 m² et une terrasse de pres de 20 m². Chaque espace est soigneusement concu pour un plaisir d'habiter maximal sans compromis. C'est la vie en tiny house a son meilleur, avec tout le luxe que vous attendez."
+  en: "The Noble is the embodiment of premium comfort with two spacious bedrooms, a 24 m² kitchen-living area, and a terrace of nearly 20 m². Every space is carefully designed for maximum living enjoyment without compromise. This is tiny house living at its very best, with all the luxury you would expect."
 tagline:
   nl: "Nobele luxe, compact formaat"
   fr: "Luxe noble, format compact"
+  en: "Noble luxury, compact format"
 featured: false
 sortOrder: 18

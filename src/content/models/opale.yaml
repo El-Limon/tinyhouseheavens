@@ -41,8 +41,10 @@ floorplanImage: /images/models/opale/floorplan.webp
 description:
   nl: "De Opale is ons meest luxueuze model met een indrukwekkende woonkeuken van 28 m² en een terras van bijna 40 m². Twee royale slaapkamers, een badkamer van 7 m² en apart toilet maken dit tot een volwaardig premium tiny house. Met meer dan 90 m² leefruimte herverdefinieert de Opale wat mogelijk is in compact bouwen."
   fr: "L'Opale est notre modele le plus luxueux avec un impressionnant sejour-cuisine de 28 m² et une terrasse de pres de 40 m². Deux chambres generеuses, une salle de bain de 7 m² et des toilettes separees en font une veritable tiny house premium. Avec plus de 90 m² habitables, l'Opale redefinit les possibilites de la construction compacte."
+  en: "The Opale is our most luxurious model, featuring an impressive 28 m² kitchen-living area and a terrace of nearly 40 m². Two generous bedrooms, a 7 m² bathroom, and a separate toilet make it a true premium tiny house. With over 90 m² of living space, the Opale redefines what is possible in compact construction."
 tagline:
   nl: "Premium wonen zonder grenzen"
   fr: "L'habitat premium sans limites"
+  en: "Premium living without limits"
 featured: true
 sortOrder: 14

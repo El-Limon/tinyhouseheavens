@@ -12,7 +12,8 @@
     "title": "Simple living, great thinking",
     "subtitle": "Modulaire tiny houses ontworpen voor duurzaam en betaalbaar wonen in de Benelux",
     "cta": "Ontdek onze modellen",
-    "quote_cta": "Vraag een offerte aan"
+    "quote_cta": "Vraag een offerte aan",
+    "scroll": "Scroll naar beneden"
   },
   "models": {
     "building_area": "Bouwoppervlakte",
@@ -47,9 +48,17 @@
     "optima": "Optima Afwerking",
     "house_kit_desc": "Draagconstructie met geisoleerde vloer, wanden en plafond",
     "basic_desc": "Volledig afgewerkte woning met basisinstallaties",
-    "optima_desc": "Sleutel-op-de-deur woning met premium afwerking"
+    "optima_desc": "Sleutel-op-de-deur woning met premium afwerking",
+    "section_label": "Afwerking",
+    "section_title": "Afwerkingsniveaus",
+    "section_subtitle": "Van zelfbouwpakket tot sleutel-op-de-deur — kies het niveau dat bij u past.",
+    "recommended": "Aanbevolen",
+    "house_kit_features": ["Draagconstructie in houtskelet", "Ge\u00efsoleerde vloer, wanden en plafond", "OSB ondervloer", "Wind- en dampscherm"],
+    "basic_features": ["Alles uit House Kit", "Buitengevel winddicht afgewerkt", "Cementgebonden badkamervloer", "Interne bekleding en gipskarton", "Metalen dakbedekking", "Dakgoten en afvoer"],
+    "optima_features": ["Alles uit Basic", "Gevelbekleding in grenen/metaal", "Premium houtbalken afwerking", "Keramische badkamervloer", "Elektrische vloerverwarming", "Warmwaterboiler 50L", "Ventilatie D-systeem", "Binnen- en buitenverlichting"]
   },
   "pillars": {
+    "title": "Waarom Tiny House Heavens?",
     "innovative": {
       "title": "Innovatief",
       "desc": "Moderne ontwerpen met slimme opslag en smart home technologie"
@@ -95,11 +104,22 @@
     "submit": "Verstuur",
     "quote_title": "Vraag een offerte aan",
     "success": "Bedankt! We nemen spoedig contact op.",
-    "select_model": "Selecteer een model"
+    "select_model": "Selecteer een model",
+    "details": "Contactgegevens",
+    "address_label": "Adres",
+    "follow": "Volg ons",
+    "required_field": "Verplicht veld",
+    "invalid_email": "Ongeldig e-mailadres",
+    "form_subtitle": "Vul het formulier in en ontvang zo snel mogelijk een persoonlijke offerte.",
+    "message_placeholder": "Vertel ons over uw project, wensen of vragen...",
+    "auto_response": "Bedankt voor uw offerte aanvraag bij Tiny House Heavens! Wij hebben uw bericht goed ontvangen en nemen zo snel mogelijk contact met u op. Met vriendelijke groeten, Tiny House Heavens"
   },
   "about": {
     "title": "Over ons",
-    "mission": "Onze missie is het bouwen van energie-efficiente, comfortabele en volledig modulaire Tiny House Units met onvergelijkbare waarde."
+    "mission": "Onze missie is het bouwen van energie-efficiente, comfortabele en volledig modulaire Tiny House Units met onvergelijkbare waarde.",
+    "mission_title": "Onze Missie",
+    "location_title": "Onze Locatie",
+    "quality_title": "Kwaliteit als Fundament"
   },
   "services": {
     "title": "Onze diensten"
@@ -130,7 +150,27 @@
     "request_quote": "Offerte aanvragen",
     "square_meters": "m²",
     "construction": "Constructie",
-    "variants": "Varianten"
+    "variants": "Varianten",
+    "skip_to_content": "Ga naar inhoud",
+    "language": "Taal",
+    "navigation": "Navigatie",
+    "cookie_notice": "Cookie melding",
+    "cookie_link": "Meer info",
+    "brand_desc": "Modulaire tiny houses ontworpen voor duurzaam en comfortabel wonen. Belgisch vakmanschap met Scandinavisch design.",
+    "structured_data_desc": "Modulaire tiny houses ontworpen voor duurzaam en betaalbaar wonen in de Benelux"
+  },
+  "cta": {
+    "title": "Klaar om te beginnen?",
+    "subtitle": "Neem contact op voor een gratis adviesgesprek en ontdek de mogelijkheden"
+  },
+  "cookie": {
+    "message": "Wij gebruiken cookies om uw ervaring te verbeteren.",
+    "accept": "Accepteren",
+    "decline": "Weigeren"
+  },
+  "popular": {
+    "title": "Onze populairste modellen",
+    "subtitle": "Ontdek onze meest gekozen tiny houses voor duurzaam en betaalbaar wonen"
   },
   "seo": {
     "home_title": "Tiny House Heavens | Modulaire Tiny Houses in Belgie",

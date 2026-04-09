@@ -32,9 +32,9 @@ const featuredModels = models.filter(m => m.data.featured).sort((a, b) => a.data
   <section class="py-20 bg-thh-cream">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-14">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-thh-charcoal">Nos modeles les plus populaires</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-thh-charcoal">{t(locale, 'popular.title')}</h2>
         <p class="text-lg text-thh-charcoal/70 max-w-2xl mx-auto">
-          Decouvrez nos tiny houses les plus choisies, du compact au spacieux
+          {t(locale, 'popular.subtitle')}
         </p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

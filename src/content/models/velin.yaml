@@ -30,8 +30,10 @@ floorplanImage: /images/models/velin/floorplan.webp
 description:
   nl: "De Velin verrast met een unieke tweeledig opzet die slaap- en leefzone elegant scheidt. De ruime woonkamer van bijna 13,5 m² vormt het hart van dit tiny house en biedt volop ruimte om te ontspannen. Een slimme corridor verbindt de twee secties voor een natuurlijke flow."
   fr: "La Velin surprend par sa conception unique en deux sections qui separe elegamment les zones de nuit et de jour. Le spacieux salon de pres de 13,5 m² constitue le coeur de cette tiny house et offre amplement d'espace pour se detendre. Un couloir intelligent relie les deux sections pour une circulation naturelle."
+  en: "The Velin surprises with a unique two-section design that elegantly separates sleeping and living zones. The spacious living room of nearly 13.5 m² forms the heart of this tiny house and offers plenty of room to relax. A smart corridor connects the two sections for a natural flow."
 tagline:
   nl: "Twee zones, een thuis"
   fr: "Deux zones, un chez-soi"
+  en: "Two zones, one home"
 featured: false
 sortOrder: 7

@@ -28,8 +28,10 @@ floorplanImage: /images/models/lyren/floorplan.webp
 description:
   nl: "De Lyren biedt een volwaardige woonervaring met een aparte slaapkamer en ruime woonkeuken. Optioneel verkrijgbaar met een stijlvol zadeldak dat extra karakter geeft aan je tiny house. Met 24 m² leefruimte is dit de perfecte balans tussen compact en comfortabel."
   fr: "La Lyren offre une experience de vie complete avec une chambre separee et un sejour-cuisine spacieux. Disponible en option avec un elegant toit a deux pans qui donne du caractere a votre tiny house. Avec 24 m² habitables, c'est l'equilibre parfait entre compact et confortable."
+  en: "The Lyren offers a complete living experience with a separate bedroom and spacious kitchen-living area. Optionally available with a stylish gable roof that adds extra character to your tiny house. With 24 m² of living space, it strikes the perfect balance between compact and comfortable."
 tagline:
   nl: "Compact wonen met karakter"
   fr: "Habitat compact avec du caractere"
+  en: "Compact living with character"
 featured: false
 sortOrder: 3

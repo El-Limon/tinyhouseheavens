@@ -1,0 +1,60 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+import { t, getPagePath } from '../../../i18n/utils';
+
+const locale = 'en';
+const posts = (await getCollection('blog'))
+  .filter(post => post.data.locale === locale)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<PageLayout locale={locale} title={`${t(locale, 'blog.title')} | Tiny House Heavens`} description="Read the latest articles about tiny houses, sustainable living, modular construction and more.">
+
+  <!-- Hero -->
+  <section class="pt-32 pb-12 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-thh-charcoal">{t(locale, 'blog.title')}</h1>
+      <p class="text-lg text-thh-charcoal/70 max-w-2xl mx-auto">
+        Inspiration, tips and news about tiny houses and sustainable living
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog Posts -->
+  <section class="py-16 bg-thh-cream">
+    <div class="max-w-4xl mx-auto px-6">
+      {posts.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {posts.map((post) => (
+            <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+              <div class="aspect-[16/9] bg-gradient-to-br from-thh-green-100 to-thh-green-50 flex items-center justify-center">
+                <span class="text-thh-green-300/50 font-bold text-lg">Blog</span>
+              </div>
+              <div class="p-6">
+                <time class="text-xs text-thh-charcoal/40 uppercase tracking-wider">{post.data.pubDate.toLocaleDateString('en-GB')}</time>
+                <h2 class="text-xl font-bold mt-2 mb-3 text-thh-charcoal">{post.data.title}</h2>
+                <p class="text-sm text-thh-charcoal/70 mb-4 line-clamp-3">{post.data.description}</p>
+                <a href={`/${locale}/blog/${post.slug}/`} class="text-sm font-semibold text-thh-green-600 hover:text-thh-green-700 transition-colors inline-flex items-center gap-1">
+                  {t(locale, 'blog.read_more')}
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-20">
+          <div class="w-20 h-20 mx-auto mb-6 bg-thh-green-100 text-thh-green-400 rounded-2xl flex items-center justify-center">
+            <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" /></svg>
+          </div>
+          <h2 class="text-2xl font-bold text-thh-charcoal mb-3">More articles coming soon</h2>
+          <p class="text-thh-charcoal/60 max-w-md mx-auto">
+            We are working on inspiring content about tiny houses and sustainable living. Check back soon!
+          </p>
+        </div>
+      )}
+    </div>
+  </section>
+
+</PageLayout>

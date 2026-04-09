@@ -36,8 +36,10 @@ floorplanImage: /images/models/elyra/floorplan.webp
 description:
   nl: "De Elyra is ons eerste tweeslaapkamermodel en biedt gezinnen of koppels met gasten de ruimte die ze verdienen. Met een bergruimte van 6 m² en badkamer van 5 m² mist dit huis niets van een traditionele woning. Bijna 48 m² leefruimte verdeeld over intelligent ingedeelde zones."
   fr: "L'Elyra est notre premier modele a deux chambres, offrant aux familles ou aux couples recevant des invites l'espace qu'ils meritent. Avec un cellier de 6 m² et une salle de bain de 5 m², cette maison ne manque de rien par rapport a une habitation traditionnelle. Pres de 48 m² habitables repartis en zones intelligemment agencees."
+  en: "The Elyra is our first two-bedroom model, offering families or couples with guests the space they deserve. With a 6 m² utility room and 5 m² bathroom, this house lacks nothing compared to a traditional home. Nearly 48 m² of living space distributed across intelligently designed zones."
 tagline:
   nl: "Ruimte voor twee, comfort voor iedereen"
   fr: "De l'espace pour deux, du confort pour tous"
+  en: "Space for two, comfort for everyone"
 featured: true
 sortOrder: 13

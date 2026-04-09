@@ -12,7 +12,8 @@
     "title": "Simple living, great thinking",
     "subtitle": "Tiny houses modulaires concues pour un habitat durable et abordable au Benelux",
     "cta": "Decouvrez nos modeles",
-    "quote_cta": "Demander un devis"
+    "quote_cta": "Demander un devis",
+    "scroll": "Defiler vers le bas"
   },
   "models": {
     "building_area": "Surface de construction",
@@ -47,9 +48,17 @@
     "optima": "Finition Optima",
     "house_kit_desc": "Structure portante avec sol, murs et plafond isoles",
     "basic_desc": "Maison entierement finie avec installations de base",
-    "optima_desc": "Maison cle en main avec finition premium"
+    "optima_desc": "Maison cle en main avec finition premium",
+    "section_label": "Finitions",
+    "section_title": "Niveaux de finition",
+    "section_subtitle": "Du kit d'autoconstruction au cl\u00e9 en main \u2014 choisissez le niveau qui vous convient.",
+    "recommended": "Recommand\u00e9",
+    "house_kit_features": ["Structure portante en ossature bois", "Sol, murs et plafond isol\u00e9s", "Sous-plancher OSB", "Pare-vent et pare-vapeur"],
+    "basic_features": ["Tout du House Kit", "Fa\u00e7ade ext\u00e9rieure \u00e9tanche au vent", "Sol de salle de bain en ciment", "Rev\u00eatement int\u00e9rieur et plaques de pl\u00e2tre", "Toiture m\u00e9tallique", "Goutti\u00e8res et \u00e9vacuation"],
+    "optima_features": ["Tout du Basic", "Bardage en pin/m\u00e9tal", "Finition poutres en bois premium", "Sol de salle de bain en c\u00e9ramique", "Chauffage au sol \u00e9lectrique", "Chauffe-eau 50L", "Syst\u00e8me de ventilation D", "\u00c9clairage int\u00e9rieur et ext\u00e9rieur"]
   },
   "pillars": {
+    "title": "Pourquoi Tiny House Heavens?",
     "innovative": {
       "title": "Innovant",
       "desc": "Designs modernes avec rangement intelligent et technologie domotique"
@@ -95,11 +104,22 @@
     "submit": "Envoyer",
     "quote_title": "Demander un devis",
     "success": "Merci! Nous vous contacterons bientot.",
-    "select_model": "Selectionnez un modele"
+    "select_model": "Selectionnez un modele",
+    "details": "Coordonn\u00e9es",
+    "address_label": "Adresse",
+    "follow": "Suivez-nous",
+    "required_field": "Champ obligatoire",
+    "invalid_email": "Adresse e-mail invalide",
+    "form_subtitle": "Remplissez le formulaire et recevez un devis personnalis\u00e9 dans les plus brefs d\u00e9lais.",
+    "message_placeholder": "Parlez-nous de votre projet, vos souhaits ou questions...",
+    "auto_response": "Merci pour votre demande de devis chez Tiny House Heavens! Nous avons bien re\u00e7u votre message et nous vous contacterons dans les plus brefs d\u00e9lais. Cordialement, Tiny House Heavens"
   },
   "about": {
     "title": "A propos",
-    "mission": "Notre mission est de construire des Tiny House Units modulaires, economes en energie, confortables et d'une valeur incomparable."
+    "mission": "Notre mission est de construire des Tiny House Units modulaires, economes en energie, confortables et d'une valeur incomparable.",
+    "mission_title": "Notre Mission",
+    "location_title": "Notre Emplacement",
+    "quality_title": "La Qualit\u00e9 comme Fondation"
   },
   "services": {
     "title": "Nos services"
@@ -130,7 +150,27 @@
     "request_quote": "Demander un devis",
     "square_meters": "m²",
     "construction": "Construction",
-    "variants": "Variantes"
+    "variants": "Variantes",
+    "skip_to_content": "Aller au contenu",
+    "language": "Langue",
+    "navigation": "Navigation",
+    "cookie_notice": "Avis de cookies",
+    "cookie_link": "En savoir plus",
+    "brand_desc": "Tiny houses modulaires con\u00e7ues pour un habitat durable et confortable. Savoir-faire belge, design scandinave.",
+    "structured_data_desc": "Tiny houses modulaires con\u00e7ues pour un habitat durable et abordable au Benelux"
+  },
+  "cta": {
+    "title": "Pr\u00eat \u00e0 commencer?",
+    "subtitle": "Contactez-nous pour une consultation gratuite et d\u00e9couvrez les possibilit\u00e9s"
+  },
+  "cookie": {
+    "message": "Nous utilisons des cookies pour am\u00e9liorer votre exp\u00e9rience.",
+    "accept": "Accepter",
+    "decline": "Refuser"
+  },
+  "popular": {
+    "title": "Nos mod\u00e8les les plus populaires",
+    "subtitle": "D\u00e9couvrez nos tiny houses les plus choisies pour un habitat durable et abordable"
   },
   "seo": {
     "home_title": "Tiny House Heavens | Tiny Houses Modulaires en Belgique",

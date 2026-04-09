@@ -1,52 +1,38 @@
 ---
+import type { Locale } from '../i18n/utils';
+import { t, getPagePath } from '../i18n/utils';
+
 interface Props {
-  locale: 'nl' | 'fr';
+  locale: Locale;
 }
 const { locale } = Astro.props;
-
-const text = {
-  nl: {
-    message: 'Wij gebruiken cookies om uw ervaring te verbeteren. Door onze website te gebruiken, gaat u akkoord met ons cookiebeleid.',
-    accept: 'Accepteren',
-    decline: 'Weigeren',
-    link: 'Meer info',
-  },
-  fr: {
-    message: 'Nous utilisons des cookies pour améliorer votre expérience. En utilisant notre site, vous acceptez notre politique de cookies.',
-    accept: 'Accepter',
-    decline: 'Refuser',
-    link: 'En savoir plus',
-  },
-};
-
-const t = text[locale];
-const privacyPath = locale === 'nl' ? '/nl/privacy' : '/fr/confidentialite';
+const privacyPath = getPagePath(locale, 'privacy');
 ---
 
 <div
   id="cookie-consent"
   class="fixed bottom-0 left-0 right-0 z-50 transform translate-y-full transition-transform duration-500"
   role="dialog"
-  aria-label={locale === 'nl' ? 'Cookie melding' : 'Avis de cookies'}
+  aria-label={t(locale, 'common.cookie_notice')}
 >
   <div class="bg-thh-charcoal text-white p-4 md:p-6 shadow-2xl">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-4">
       <p class="text-sm md:text-base flex-1">
-        {t.message}
-        <a href={privacyPath} class="underline hover:text-thh-green-400 ml-1">{t.link}</a>
+        {t(locale, 'cookie.message')}
+        <a href={privacyPath} class="underline hover:text-thh-green-400 ml-1">{t(locale, 'common.cookie_link')}</a>
       </p>
       <div class="flex gap-3 shrink-0">
         <button
           id="cookie-decline"
           class="px-4 py-2 text-sm border border-white/30 rounded-lg hover:bg-white/10 transition-colors"
         >
-          {t.decline}
+          {t(locale, 'cookie.decline')}
         </button>
         <button
           id="cookie-accept"
           class="px-4 py-2 text-sm bg-thh-green-500 text-white rounded-lg hover:bg-thh-green-600 transition-colors"
         >
-          {t.accept}
+          {t(locale, 'cookie.accept')}
         </button>
       </div>
     </div>

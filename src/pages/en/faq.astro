@@ -1,0 +1,116 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { t } from '../../i18n/utils';
+
+const locale = 'en';
+
+const faqs = [
+  {
+    question: 'What is a modular tiny house?',
+    answer: 'A modular tiny house is a compact dwelling produced in our workshop using frame-modular construction. The construction consists of a steel underframe with timber frame walls, fully insulated with 150-200mm insulation. Because everything is built in the workshop, we guarantee consistent build quality regardless of weather. The modules are then transported to your location and placed.',
+  },
+  {
+    question: 'How long does delivery take?',
+    answer: 'Delivery time depends on the chosen model and finishing level. A House Kit (self-build package) can be delivered within 4-6 weeks. For a Basic or Optima finish, production time is typically 8-12 weeks after order confirmation. We keep you informed of progress throughout the entire process.',
+  },
+  {
+    question: 'What are the finishing levels?',
+    answer: 'We offer three finishing levels. House Kit: the load-bearing structure with insulated floor, walls and ceiling -- ideal if you want to finish it yourself. Basic: a fully finished home with basic installations, exterior facade and roofing. Optima: a turnkey home with premium finishing including facade cladding, underfloor heating, boiler and full installation.',
+  },
+  {
+    question: 'Do I need a building permit?',
+    answer: 'Yes, in Belgium you generally need an environmental permit to place a tiny house. Regulations vary by region (Flanders, Wallonia, Brussels) and by municipality. We are happy to advise you on the permit requirements for your specific situation and location. In some cases, a tiny house can be permitted as an annexe.',
+  },
+  {
+    question: 'Can I customise my tiny house?',
+    answer: 'Absolutely! Our modular building method makes it possible to fully customise your tiny house to your wishes. From the layout and finishing materials to the colour of the facade and the type of roofing. Some models also have variants available, such as versions with a gable roof or extra terrace. During the design consultation, we discuss all possibilities.',
+  },
+  {
+    question: 'How much does a tiny house cost?',
+    answer: 'The price of a tiny house depends on the chosen model, size and finishing level. Our models range from compact 13 m² units to spacious 112 m² family homes. A House Kit starts at a lower entry price, while an Optima finish requires a higher investment but delivers a complete home. Request a quote for an accurate price estimate.',
+  },
+  {
+    question: 'Where can tiny houses be placed?',
+    answer: 'A tiny house can be placed on your own land, provided you have the right permits. The site must be suitable in terms of accessibility (for transport), load-bearing capacity and connection options for utilities. We also advise on foundation options: from screw foundations to concrete slabs, depending on the soil and model.',
+  },
+  {
+    question: 'Are the tiny houses energy efficient?',
+    answer: 'Yes, our tiny houses are very energy efficient. With 200mm insulation in the floor and ceiling, 150mm in the walls, and a windproof and vapour-tight membrane, heat loss is minimal. The compact dimensions also ensure an efficiently heatable volume. With the Optima finish, a D-ventilation system with heat recovery is installed as standard. The ecological materials and the option for solar panels make our units particularly sustainable.',
+  },
+];
+---
+
+<PageLayout locale={locale} title={`${t(locale, 'faq.title')} | Tiny House Heavens`} description="Answers to frequently asked questions about modular tiny houses, building permits, finishing, prices and more.">
+
+  <!-- Hero -->
+  <section class="pt-32 pb-12 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-thh-charcoal">{t(locale, 'faq.title')}</h1>
+      <p class="text-lg text-thh-charcoal/70 max-w-2xl mx-auto">
+        Everything you need to know about our tiny houses
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="py-16 bg-thh-cream">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="space-y-4" id="faq-list">
+        {faqs.map((faq, i) => (
+          <div class="faq-item bg-white rounded-2xl shadow-sm overflow-hidden border border-transparent hover:border-thh-green-100 transition-colors">
+            <button
+              class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left"
+              aria-expanded="false"
+              aria-controls={`faq-answer-${i}`}
+            >
+              <span class="text-lg font-semibold text-thh-charcoal pr-4">{faq.question}</span>
+              <svg class="faq-icon w-5 h-5 text-thh-green-500 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </button>
+            <div id={`faq-answer-${i}`} class="faq-answer hidden px-6 pb-5">
+              <p class="text-thh-charcoal/70 leading-relaxed">{faq.answer}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
+
+<script>
+  function initFaqAccordion() {
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const answer = item?.querySelector('.faq-answer');
+        const icon = item?.querySelector('.faq-icon');
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        // Close all others
+        document.querySelectorAll('.faq-item').forEach(other => {
+          if (other !== item) {
+            other.querySelector('.faq-answer')?.classList.add('hidden');
+            other.querySelector('.faq-toggle')?.setAttribute('aria-expanded', 'false');
+            other.querySelector('.faq-icon')?.classList.remove('rotate-45');
+          }
+        });
+
+        // Toggle current
+        if (isOpen) {
+          answer?.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          icon?.classList.remove('rotate-45');
+        } else {
+          answer?.classList.remove('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+          icon?.classList.add('rotate-45');
+        }
+      });
+    });
+  }
+
+  initFaqAccordion();
+  document.addEventListener('astro:after-swap', initFaqAccordion);
+</script>

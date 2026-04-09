@@ -48,7 +48,7 @@ const pillars = [
   },
 ];
 
-const sectionTitle = locale === 'nl' ? 'Waarom Tiny House Heavens?' : 'Pourquoi Tiny House Heavens?';
+const valuesLabel: Record<Locale, string> = { nl: 'Onze waarden', fr: 'Nos valeurs', en: 'Our values' };
 ---
 
 <section class="py-24 lg:py-32 bg-gradient-to-b from-thh-green-50/40 to-thh-cream relative overflow-hidden">
@@ -63,12 +63,12 @@ const sectionTitle = locale === 'nl' ? 'Waarom Tiny House Heavens?' : 'Pourquoi 
       <div class="flex items-center justify-center gap-3 mb-4">
         <span class="block w-8 h-[1px] bg-thh-green-500/40"></span>
         <span class="text-xs font-bold uppercase tracking-[0.3em] text-thh-green-600">
-          {locale === 'nl' ? 'Onze waarden' : 'Nos valeurs'}
+          {valuesLabel[locale]}
         </span>
         <span class="block w-8 h-[1px] bg-thh-green-500/40"></span>
       </div>
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-thh-charcoal" style="font-family: 'Playfair Display', serif;">
-        {sectionTitle}
+        {t(locale, 'pillars.title')}
       </h2>
     </div>
 

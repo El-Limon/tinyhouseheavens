@@ -1,13 +1,13 @@
 ---
 import type { Locale } from '../i18n/utils';
-import { t, getPagePath, getAlternateLocale } from '../i18n/utils';
+import { t, getPagePath, getAlternateLocales, getLocalizedPathForLocale } from '../i18n/utils';
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
-const altLocale = getAlternateLocale(locale);
+const allLocales: Locale[] = ['nl', 'fr', 'en'];
 
 const navItems = [
   { key: 'home', page: '', path: `/${locale}` },
@@ -23,12 +23,10 @@ const ctaText = t(locale, 'hero.quote_cta');
 const contactPath = getPagePath(locale, 'contact');
 
 const currentPath = Astro.url.pathname;
-const altPath = currentPath.replace(`/${locale}`, `/${altLocale}`)
-  .replace('/modellen', altLocale === 'fr' ? '/modeles' : '/modellen')
-  .replace('/modeles', altLocale === 'nl' ? '/modellen' : '/modeles')
-  .replace('/over-ons', altLocale === 'fr' ? '/a-propos' : '/over-ons')
-  .replace('/a-propos', altLocale === 'nl' ? '/over-ons' : '/a-propos')
-  .replace('/diensten', altLocale === 'fr' ? '/services' : '/diensten');
+const localePaths: Record<string, string> = {};
+for (const l of allLocales) {
+  localePaths[l] = l === locale ? currentPath : getLocalizedPathForLocale(locale, l, currentPath);
+}
 ---
 
 <header
@@ -83,28 +81,19 @@ const altPath = currentPath.replace(`/${locale}`, `/${altLocale}`)
 
         <!-- Language Switcher -->
         <div class="hidden sm:flex items-center bg-thh-charcoal/5 rounded-full p-0.5 text-xs font-semibold">
-          <a
-            href={locale === 'nl' ? currentPath : altPath}
-            class:list={[
-              'px-3 py-1.5 rounded-full transition-all duration-300',
-              locale === 'nl'
-                ? 'bg-thh-green-500 text-white shadow-sm'
-                : 'text-thh-charcoal/60 hover:text-thh-charcoal',
-            ]}
-          >
-            NL
-          </a>
-          <a
-            href={locale === 'fr' ? currentPath : altPath}
-            class:list={[
-              'px-3 py-1.5 rounded-full transition-all duration-300',
-              locale === 'fr'
-                ? 'bg-thh-green-500 text-white shadow-sm'
-                : 'text-thh-charcoal/60 hover:text-thh-charcoal',
-            ]}
-          >
-            FR
-          </a>
+          {allLocales.map(l => (
+            <a
+              href={localePaths[l]}
+              class:list={[
+                'px-3 py-1.5 rounded-full transition-all duration-300',
+                locale === l
+                  ? 'bg-thh-green-500 text-white shadow-sm'
+                  : 'text-thh-charcoal/60 hover:text-thh-charcoal',
+              ]}
+            >
+              {l.toUpperCase()}
+            </a>
+          ))}
         </div>
 
         <!-- CTA Button -->
@@ -186,23 +175,18 @@ const altPath = currentPath.replace(`/${locale}`, `/${altLocale}`)
           <!-- Mobile lang switcher -->
           <div class="flex items-center gap-2">
             <span class="text-xs text-thh-charcoal/50 uppercase tracking-wider font-medium">
-              {locale === 'nl' ? 'Taal' : 'Langue'}
+              {t(locale, 'common.language')}
             </span>
             <div class="flex items-center bg-thh-charcoal/5 rounded-full p-0.5 text-sm font-semibold">
-              <a
-                href={locale === 'nl' ? currentPath : altPath}
-                class:list={[
-                  'px-4 py-1.5 rounded-full transition-all duration-300',
-                  locale === 'nl' ? 'bg-thh-green-500 text-white' : 'text-thh-charcoal/60',
-                ]}
-              >NL</a>
-              <a
-                href={locale === 'fr' ? currentPath : altPath}
-                class:list={[
-                  'px-4 py-1.5 rounded-full transition-all duration-300',
-                  locale === 'fr' ? 'bg-thh-green-500 text-white' : 'text-thh-charcoal/60',
-                ]}
-              >FR</a>
+              {allLocales.map(l => (
+                <a
+                  href={localePaths[l]}
+                  class:list={[
+                    'px-4 py-1.5 rounded-full transition-all duration-300',
+                    locale === l ? 'bg-thh-green-500 text-white' : 'text-thh-charcoal/60',
+                  ]}
+                >{l.toUpperCase()}</a>
+              ))}
             </div>
           </div>
 

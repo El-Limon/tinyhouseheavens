@@ -7,7 +7,7 @@ import FinishingLevels from '../../components/FinishingLevels.astro';
 import { getCollection } from 'astro:content';
 import { t, getPagePath } from '../../i18n/utils';
 
-const locale = 'nl';
+const locale = 'en';
 const models = await getCollection('models');
 const featuredModels = models.filter(m => m.data.featured).sort((a, b) => a.data.sortOrder - b.data.sortOrder);
 ---

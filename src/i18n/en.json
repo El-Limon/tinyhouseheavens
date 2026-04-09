@@ -1,0 +1,181 @@
+{
+  "nav": {
+    "home": "Home",
+    "models": "Models",
+    "about": "About us",
+    "services": "Services",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Simple living, great thinking",
+    "subtitle": "Modular tiny houses designed for sustainable and affordable living in the Benelux",
+    "cta": "Discover our models",
+    "quote_cta": "Request a quote",
+    "scroll": "Scroll down"
+  },
+  "models": {
+    "building_area": "Building area",
+    "living_area": "Living area",
+    "dimensions": "Dimensions",
+    "view_model": "View model",
+    "all_models": "All models",
+    "filter_all": "All",
+    "rooms": {
+      "bedroom": "Bedroom",
+      "bathroom": "Bathroom",
+      "kitchen_living": "Kitchen-living room",
+      "corridor": "Corridor",
+      "sauna": "Sauna",
+      "terrace": "Terrace",
+      "restroom": "Restroom",
+      "living_room": "Living room",
+      "steam_room": "Steam room",
+      "utility_room": "Utility room"
+    }
+  },
+  "categories": {
+    "entry": "Entry",
+    "small": "Small",
+    "medium": "Medium",
+    "large": "Large",
+    "special": "Special"
+  },
+  "finishing": {
+    "house_kit": "House Kit",
+    "basic": "Basic Finish",
+    "optima": "Optima Finish",
+    "house_kit_desc": "Load-bearing structure with insulated floor, walls and ceiling",
+    "basic_desc": "Fully finished home with basic installations",
+    "optima_desc": "Turnkey home with premium finishing",
+    "section_label": "Finishing",
+    "section_title": "Finishing levels",
+    "section_subtitle": "From self-build kit to turnkey — choose the level that suits you.",
+    "recommended": "Recommended",
+    "house_kit_features": ["Load-bearing timber frame structure", "Insulated floor, walls and ceiling", "OSB subfloor", "Wind and vapour barrier"],
+    "basic_features": ["Everything from House Kit", "Windproof exterior facade", "Cement bathroom floor", "Internal cladding and plasterboard", "Metal roofing", "Gutters and drainage"],
+    "optima_features": ["Everything from Basic", "Pine/metal facade cladding", "Premium wood beam finishing", "Ceramic bathroom floor", "Electric underfloor heating", "50L hot water boiler", "Ventilation D system", "Indoor and outdoor lighting"]
+  },
+  "pillars": {
+    "title": "Why Tiny House Heavens?",
+    "innovative": {
+      "title": "Innovative",
+      "desc": "Modern designs with smart storage and smart home technology"
+    },
+    "scalable": {
+      "title": "Scalable",
+      "desc": "Modular systems that expand without major renovations"
+    },
+    "affordable": {
+      "title": "Affordable",
+      "desc": "Lower entry and running costs"
+    },
+    "eco": {
+      "title": "Ecological",
+      "desc": "Sustainable materials and energy-efficient systems"
+    }
+  },
+  "how_it_works": {
+    "title": "How it works",
+    "step1": {
+      "title": "Choose your model",
+      "desc": "Discover our 18 models and find the perfect tiny house"
+    },
+    "step2": {
+      "title": "Select finishing",
+      "desc": "Choose between House Kit, Basic or Optima finishing"
+    },
+    "step3": {
+      "title": "We deliver and install",
+      "desc": "We take care of transport, foundation and installation"
+    }
+  },
+  "contact": {
+    "title": "Get in touch",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "model_interest": "Which model interests you?",
+    "has_land": "Do you already have land?",
+    "yes": "Yes",
+    "no": "No",
+    "submit": "Submit",
+    "quote_title": "Request a quote",
+    "success": "Thank you! We will contact you shortly.",
+    "select_model": "Select a model",
+    "details": "Contact details",
+    "address_label": "Address",
+    "follow": "Follow us",
+    "required_field": "Required field",
+    "invalid_email": "Invalid email address",
+    "form_subtitle": "Fill in the form and receive a personalised quote as soon as possible.",
+    "message_placeholder": "Tell us about your project, wishes or questions...",
+    "auto_response": "Thank you for your quote request at Tiny House Heavens! We have received your message and will contact you as soon as possible. Kind regards, Tiny House Heavens"
+  },
+  "about": {
+    "title": "About us",
+    "mission": "Our mission is to build energy-efficient, comfortable and fully modular Tiny House Units with unmatched value.",
+    "mission_title": "Our Mission",
+    "location_title": "Our Location",
+    "quality_title": "Quality as Foundation"
+  },
+  "services": {
+    "title": "Our services"
+  },
+  "faq": {
+    "title": "Frequently asked questions"
+  },
+  "blog": {
+    "title": "Blog",
+    "read_more": "Read more",
+    "all_posts": "All posts"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "privacy": "Privacy policy",
+    "terms": "Terms and conditions",
+    "address": "Fort 15, 2860 St-Katelijne-Waver, Belgium",
+    "follow": "Follow us"
+  },
+  "common": {
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "related_models": "Related models",
+    "specifications": "Specifications",
+    "gallery": "Gallery",
+    "floor_plan": "Floor plan",
+    "request_quote": "Request a quote",
+    "square_meters": "m\u00b2",
+    "construction": "Construction",
+    "variants": "Variants",
+    "skip_to_content": "Skip to content",
+    "language": "Language",
+    "navigation": "Navigation",
+    "cookie_notice": "Cookie notice",
+    "cookie_link": "More info",
+    "brand_desc": "Modular tiny houses designed for sustainable and comfortable living. Belgian craftsmanship with Scandinavian design.",
+    "structured_data_desc": "Modular tiny houses designed for sustainable and affordable living in the Benelux"
+  },
+  "seo": {
+    "home_title": "Tiny House Heavens | Modular Tiny Houses in Belgium",
+    "home_desc": "Discover our collection of 18 modular tiny houses. Sustainable, affordable and ecological living in the Benelux. Request a quote today.",
+    "models_title": "Our Models | Tiny House Heavens",
+    "models_desc": "Browse our 18 tiny house models from 13m\u00b2 to 112m\u00b2. Entry, small, medium, large and special models with flexible finishing."
+  },
+  "cta": {
+    "title": "Ready to get started?",
+    "subtitle": "Contact us for a free consultation and discover the possibilities"
+  },
+  "cookie": {
+    "message": "We use cookies to improve your experience.",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "popular": {
+    "title": "Our most popular models",
+    "subtitle": "Discover our most chosen tiny houses for sustainable and affordable living"
+  }
+}

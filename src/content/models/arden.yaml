@@ -33,8 +33,10 @@ floorplanImage: /images/models/arden/floorplan.webp
 description:
   nl: "De Arden onderscheidt zich met een karakteristiek zadeldak en een doordachte indeling met aparte slaapkamer, badkamer en apart toilet. Ondanks het compacte formaat biedt dit model vijf afzonderlijke ruimtes voor maximale privacy. Het schuine dak geeft een warme, huiselijke uitstraling."
   fr: "L'Arden se distingue par son toit a deux pans caracteristique et un agencement bien pense avec chambre separee, salle de bain et toilettes independantes. Malgre son format compact, ce modele offre cinq espaces distincts pour un maximum d'intimite. Le toit en pente confere une atmosphere chaleureuse et accueillante."
+  en: "The Arden stands out with its characteristic gable roof and a well-thought-out layout featuring a separate bedroom, bathroom, and independent toilet. Despite its compact size, this model offers five distinct rooms for maximum privacy. The pitched roof gives it a warm, homely feel."
 tagline:
   nl: "Huiselijk wonen onder een zadeldak"
   fr: "Un foyer chaleureux sous un toit a deux pans"
+  en: "Homely living under a gable roof"
 featured: false
 sortOrder: 6

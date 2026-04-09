@@ -1,13 +1,13 @@
 ---
 import type { Locale } from '../i18n/utils';
-import { t, getPagePath, getAlternateLocale } from '../i18n/utils';
+import { t, getPagePath, getLocalizedPathForLocale } from '../i18n/utils';
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
-const altLocale = getAlternateLocale(locale);
+const allLocales: Locale[] = ['nl', 'fr', 'en'];
 const year = new Date().getFullYear();
 
 const navItems = [
@@ -21,19 +21,15 @@ const navItems = [
 ];
 
 const contactPath = getPagePath(locale, 'contact');
-const ctaTitle = locale === 'nl' ? 'Klaar om te beginnen?' : 'Pr\u00eat \u00e0 commencer?';
-const ctaSubtitle = locale === 'nl'
-  ? 'Ontdek hoe uw tiny house er uit kan zien.'
-  : 'D\u00e9couvrez \u00e0 quoi pourrait ressembler votre tiny house.';
+const ctaTitle = t(locale, 'cta.title');
+const ctaSubtitle = t(locale, 'cta.subtitle');
 const ctaButton = t(locale, 'hero.quote_cta');
 
 const currentPath = Astro.url.pathname;
-const altPath = currentPath.replace(`/${locale}`, `/${altLocale}`)
-  .replace('/modellen', altLocale === 'fr' ? '/modeles' : '/modellen')
-  .replace('/modeles', altLocale === 'nl' ? '/modellen' : '/modeles')
-  .replace('/over-ons', altLocale === 'fr' ? '/a-propos' : '/over-ons')
-  .replace('/a-propos', altLocale === 'nl' ? '/over-ons' : '/a-propos')
-  .replace('/diensten', altLocale === 'fr' ? '/services' : '/diensten');
+const localePaths: Record<string, string> = {};
+for (const l of allLocales) {
+  localePaths[l] = l === locale ? currentPath : getLocalizedPathForLocale(locale, l, currentPath);
+}
 ---
 
 <footer class="bg-thh-charcoal text-thh-cream/90">
@@ -89,17 +85,14 @@ const altPath = currentPath.replace(`/${locale}`, `/${altLocale}`)
           Simple living, great thinking
         </p>
         <p class="text-sm text-thh-cream/60 leading-relaxed max-w-xs">
-          {locale === 'nl'
-            ? 'Modulaire tiny houses ontworpen voor duurzaam en comfortabel wonen. Belgisch vakmanschap met Scandinavisch design.'
-            : 'Tiny houses modulaires con\u00e7ues pour un habitat durable et confortable. Savoir-faire belge, design scandinave.'
-          }
+          {t(locale, 'common.brand_desc')}
         </p>
       </div>
 
       <!-- Col 2: Quick Links -->
       <div>
         <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-thh-cream/40 mb-6" style="font-family: 'DM Sans', sans-serif;">
-          {locale === 'nl' ? 'Navigatie' : 'Navigation'}
+          {t(locale, 'common.navigation')}
         </h3>
         <ul class="space-y-3">
           {navItems.map(item => (
@@ -181,23 +174,18 @@ const altPath = currentPath.replace(`/${locale}`, `/${altLocale}`)
 
         <!-- Language -->
         <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-thh-cream/40 mb-3" style="font-family: 'DM Sans', sans-serif;">
-          {locale === 'nl' ? 'Taal' : 'Langue'}
+          {t(locale, 'common.language')}
         </h3>
         <div class="flex items-center bg-thh-cream/10 rounded-full p-0.5 w-fit text-sm font-semibold">
-          <a
-            href={locale === 'nl' ? currentPath : altPath}
-            class:list={[
-              'px-4 py-1.5 rounded-full transition-all duration-300',
-              locale === 'nl' ? 'bg-thh-green-500 text-white' : 'text-thh-cream/60 hover:text-thh-cream',
-            ]}
-          >NL</a>
-          <a
-            href={locale === 'fr' ? currentPath : altPath}
-            class:list={[
-              'px-4 py-1.5 rounded-full transition-all duration-300',
-              locale === 'fr' ? 'bg-thh-green-500 text-white' : 'text-thh-cream/60 hover:text-thh-cream',
-            ]}
-          >FR</a>
+          {allLocales.map(l => (
+            <a
+              href={localePaths[l]}
+              class:list={[
+                'px-4 py-1.5 rounded-full transition-all duration-300',
+                locale === l ? 'bg-thh-green-500 text-white' : 'text-thh-cream/60 hover:text-thh-cream',
+              ]}
+            >{l.toUpperCase()}</a>
+          ))}
         </div>
       </div>
     </div>
