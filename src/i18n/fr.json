@@ -32,7 +32,11 @@
       "restroom": "Toilette",
       "living_room": "Salon",
       "steam_room": "Cabine de vapeur",
-      "utility_room": "Debarras"
+      "utility_room": "Debarras",
+      "bedroom_1": "Chambre 1",
+      "bedroom_2": "Chambre 2",
+      "living_bedroom": "Chambre-salon",
+      "shower": "Douche"
     }
   },
   "categories": {

@@ -32,7 +32,11 @@
       "restroom": "Restroom",
       "living_room": "Living room",
       "steam_room": "Steam room",
-      "utility_room": "Utility room"
+      "utility_room": "Utility room",
+      "bedroom_1": "Bedroom 1",
+      "bedroom_2": "Bedroom 2",
+      "living_bedroom": "Living-bedroom",
+      "shower": "Shower"
     }
   },
   "categories": {

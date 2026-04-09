@@ -32,7 +32,11 @@
       "restroom": "Toilet",
       "living_room": "Woonkamer",
       "steam_room": "Stoomcabine",
-      "utility_room": "Berging"
+      "utility_room": "Berging",
+      "bedroom_1": "Slaapkamer 1",
+      "bedroom_2": "Slaapkamer 2",
+      "living_bedroom": "Woon-slaapkamer",
+      "shower": "Douche"
     }
   },
   "categories": {
