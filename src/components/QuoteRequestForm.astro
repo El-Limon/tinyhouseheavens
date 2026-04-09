@@ -257,13 +257,22 @@ const autoResponse = t(locale, 'contact.auto_response');
         submitBtn.textContent = '...';
       }
 
+      // Convert form data to JSON for FormSubmit AJAX
+      const formData = new FormData(form);
+      const data: Record<string, string> = {};
+      formData.forEach((value, key) => { data[key] = value as string; });
+
       try {
         await fetch(form.action, {
           method: 'POST',
-          body: new FormData(form),
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify(data),
         });
       } catch (_) {
-        // FormSubmit may block CORS, but the submission still goes through
+        // Submission may still succeed even if CORS blocks the response
       }
 
       // Hide form, show success
