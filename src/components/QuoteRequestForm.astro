@@ -50,9 +50,11 @@ const autoResponse = t(locale, 'contact.auto_response');
     </p>
   </div>
 
+  <iframe name="formsubmit-iframe" id="formsubmit-iframe" style="display:none"></iframe>
   <form
     action="https://formsubmit.co/info@tinyhouseheavens.com"
     method="POST"
+    target="formsubmit-iframe"
     class="p-8 space-y-6"
     id="quote-form"
     novalidate
@@ -219,8 +221,7 @@ const autoResponse = t(locale, 'contact.auto_response');
       nextInput.value = window.location.origin + `/${locale}/contact?success=true`;
     }
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+    form.addEventListener('submit', (e) => {
       let hasError = false;
 
       // Validate required fields
@@ -248,37 +249,24 @@ const autoResponse = t(locale, 'contact.auto_response');
         error?.classList.remove('hidden');
       }
 
-      if (hasError) return;
+      if (hasError) {
+        e.preventDefault();
+        return;
+      }
 
-      // Submit via fetch
+      // Disable button to prevent double submit
       const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.textContent = '...';
       }
 
-      // Convert form data to JSON for FormSubmit AJAX
-      const formData = new FormData(form);
-      const data: Record<string, string> = {};
-      formData.forEach((value, key) => { data[key] = value as string; });
-
-      try {
-        await fetch(form.action, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-          },
-          body: JSON.stringify(data),
-        });
-      } catch (_) {
-        // Submission may still succeed even if CORS blocks the response
-      }
-
-      // Hide form, show success
-      form.classList.add('hidden');
-      const success = document.getElementById('quote-success');
-      if (success) success.classList.remove('hidden');
+      // Form submits normally to hidden iframe, then we show success
+      setTimeout(() => {
+        form.classList.add('hidden');
+        const success = document.getElementById('quote-success');
+        if (success) success.classList.remove('hidden');
+      }, 500);
     });
 
     // Clear errors on input
