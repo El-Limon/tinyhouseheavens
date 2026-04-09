@@ -26,5 +26,5 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -p 65002 185.173.111.126 >> ~/.ssh/known_hosts 2>/dev/null
-          rsync -avz --delete -e "ssh -p 65002" dist/ u623062303@185.173.111.126:domains/tinyhouseheavens.com/public_html/
+          ssh-keyscan -p 65002 145.79.20.109 >> ~/.ssh/known_hosts 2>/dev/null
+          rsync -avz --delete -e "ssh -p 65002" dist/ u623062303@145.79.20.109:domains/tinyhouseheavens.com/public_html/
