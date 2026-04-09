@@ -16,8 +16,8 @@
     "scroll": "Defiler vers le bas"
   },
   "models": {
-    "building_area": "Surface de construction",
-    "living_area": "Surface habitable",
+    "building_area": "Surf. constr.",
+    "living_area": "Surf. habit.",
     "dimensions": "Dimensions",
     "view_model": "Voir le modele",
     "all_models": "Tous les modeles",

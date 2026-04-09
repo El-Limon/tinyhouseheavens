@@ -16,8 +16,8 @@
     "scroll": "Scroll naar beneden"
   },
   "models": {
-    "building_area": "Bouwoppervlakte",
-    "living_area": "Woonoppervlakte",
+    "building_area": "Bouwopp.",
+    "living_area": "Woonopp.",
     "dimensions": "Afmetingen",
     "view_model": "Bekijk model",
     "all_models": "Alle modellen",
