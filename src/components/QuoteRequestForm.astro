@@ -30,6 +30,10 @@ const requiredText = locale === 'nl' ? 'Verplicht veld' : 'Champ obligatoire';
 const messagePlaceholder = locale === 'nl'
   ? 'Vertel ons over uw project, wensen of vragen...'
   : 'Parlez-nous de votre projet, vos souhaits ou questions...';
+
+const autoResponse = locale === 'nl'
+  ? 'Bedankt voor uw offerte aanvraag bij Tiny House Heavens! Wij hebben uw bericht goed ontvangen en nemen zo snel mogelijk contact met u op. Met vriendelijke groeten, Tiny House Heavens'
+  : 'Merci pour votre demande de devis chez Tiny House Heavens! Nous avons bien reçu votre message et nous vous contacterons dans les plus brefs délais. Cordialement, Tiny House Heavens';
 ---
 
 <div class="bg-white rounded-3xl shadow-sm border border-thh-charcoal/5 overflow-hidden">
@@ -48,24 +52,28 @@ const messagePlaceholder = locale === 'nl'
     </div>
     <p class="text-sm text-thh-charcoal/50">
       {locale === 'nl'
-        ? 'Vul het formulier in en ontvang binnen 48 uur een persoonlijke offerte.'
-        : 'Remplissez le formulaire et recevez un devis personnalisé sous 48 heures.'
+        ? 'Vul het formulier in en ontvang zo snel mogelijk een persoonlijke offerte.'
+        : 'Remplissez le formulaire et recevez un devis personnalisé dans les plus brefs délais.'
       }
     </p>
   </div>
 
   <form
-    action="/api/quote-request"
+    action="https://formsubmit.co/info@tinyhouseheavens.com"
     method="POST"
     class="p-8 space-y-6"
     id="quote-form"
     novalidate
   >
-    <!-- Honeypot -->
-    <div class="absolute -left-[9999px]" aria-hidden="true">
-      <label for="website">Website</label>
-      <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" />
-    </div>
+    <!-- Formsubmit config -->
+    <input type="hidden" name="_subject" value="Nieuwe offerte aanvraag - Tiny House Heavens" />
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" name="_template" value="table" />
+    <input type="hidden" name="_next" id="formsubmit-next" />
+    <input type="hidden" name="_autoresponse" value={autoResponse} />
+
+    <!-- Honeypot (Formsubmit also has built-in honeypot) -->
+    <input type="text" name="_honey" style="display:none" />
 
     <!-- Name + Email row -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -102,15 +110,17 @@ const messagePlaceholder = locale === 'nl'
     <!-- Phone -->
     <div class="form-group">
       <label for="quote-phone" class="block text-sm font-semibold text-thh-charcoal/70 mb-2">
-        {labels.phone}
+        {labels.phone} <span class="text-thh-green-500">*</span>
       </label>
       <input
         type="tel"
         name="phone"
         id="quote-phone"
+        required
         class="form-input w-full px-4 py-3.5 bg-thh-cream/50 border border-thh-charcoal/10 rounded-xl text-thh-charcoal placeholder:text-thh-charcoal/30 focus:bg-white focus:border-thh-green-400 focus:ring-2 focus:ring-thh-green-400/20 outline-none transition-all duration-200"
         placeholder="+32 (0)XX XXX XX XX"
       />
+      <p class="form-error hidden text-xs text-red-500 mt-1.5">{requiredText}</p>
     </div>
 
     <!-- Model interest -->
@@ -209,6 +219,13 @@ const messagePlaceholder = locale === 'nl'
     const form = document.getElementById('quote-form') as HTMLFormElement | null;
     if (!form) return;
 
+    // Set the redirect URL based on current page language
+    const nextInput = document.getElementById('formsubmit-next') as HTMLInputElement;
+    if (nextInput) {
+      const isFr = window.location.pathname.startsWith('/fr');
+      nextInput.value = window.location.origin + (isFr ? '/fr/contact?success=true' : '/nl/contact?success=true');
+    }
+
     form.addEventListener('submit', (e) => {
       let hasError = false;
 
@@ -235,13 +252,6 @@ const messagePlaceholder = locale === 'nl'
         emailField.classList.add('!border-red-400');
         const error = emailField.closest('.form-group')?.querySelector('.form-error');
         error?.classList.remove('hidden');
-      }
-
-      // Honeypot check
-      const honeypot = form.querySelector('[name="website"]') as HTMLInputElement;
-      if (honeypot?.value) {
-        e.preventDefault();
-        return;
       }
 
       if (hasError) {
