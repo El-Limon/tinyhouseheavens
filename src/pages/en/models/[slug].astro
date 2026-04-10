@@ -153,10 +153,16 @@ const tagline = model.tagline.en || model.tagline.nl;
           </thead>
           <tbody>
             {model.rooms.map((room: { key: string; area: number }, i: number) => (
-              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-thh-green-50/20'}>
-                <td class="px-6 py-4 text-thh-charcoal">{t(locale, `models.rooms.${room.key}`)}</td>
-                <td class="px-6 py-4 text-right text-thh-charcoal font-medium">{room.area} m²</td>
-              </tr>
+              room.area === 0 ? (
+                <tr class="bg-thh-green-50/40">
+                  <td colspan="2" class="px-6 py-3 text-center text-sm font-semibold text-thh-charcoal/70 tracking-wider">{t(locale, `models.rooms.${room.key}`)}</td>
+                </tr>
+              ) : (
+                <tr class={i % 2 === 0 ? 'bg-white' : 'bg-thh-green-50/20'}>
+                  <td class="px-6 py-4 text-thh-charcoal">{t(locale, `models.rooms.${room.key}`)}</td>
+                  <td class="px-6 py-4 text-right text-thh-charcoal font-medium">{room.area} m²</td>
+                </tr>
+              )
             ))}
           </tbody>
         </table>
@@ -199,10 +205,24 @@ const tagline = model.tagline.en || model.tagline.nl;
       {model.variants && model.variants.length > 0 && (
         <div class="mb-8">
           <h3 class="text-xl font-bold mb-4 text-thh-charcoal">{t(locale, 'common.variants')}</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {model.variants.map((variant: string) => (
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {model.variants.map((variant: any) => typeof variant === 'string' ? (
               <div class="bg-white rounded-xl p-5 shadow-sm border border-thh-green-100">
                 <span class="text-thh-charcoal font-medium">{variant}</span>
+              </div>
+            ) : (
+              <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-thh-green-100">
+                {variant.image && (
+                  <div class="aspect-[4/3] overflow-hidden">
+                    <img src={variant.image} alt={variant.name} class="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                )}
+                <div class="p-5">
+                  <h4 class="text-lg font-bold text-thh-charcoal mb-2">{variant.name}</h4>
+                  {variant.description && (
+                    <p class="text-sm text-thh-charcoal/70 leading-relaxed">{variant.description[locale] || variant.description.en}</p>
+                  )}
+                </div>
               </div>
             ))}
           </div>

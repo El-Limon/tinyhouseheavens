@@ -8,13 +8,13 @@ dimensions:
   width: 3000
 rooms:
   - key: bedroom
-    area: 8.5
+    area: 9.8
   - key: kitchen_living
-    area: 14.0
+    area: 14.1
   - key: bathroom
     area: 3.9
   - key: corridor
-    area: 4.4
+    area: 3.0
 features:
   - separate_bedroom
   - spacious_kitchen_living
@@ -23,9 +23,7 @@ hasSauna: false
 hasTerrace: false
 variants: []
 heroImage: /images/models/spa-mirai/hero.webp
-galleryImages:
-  - /images/models/spa-mirai/exterior-1.webp
-  - /images/models/spa-mirai/interior-1.webp
+galleryImages: []
 floorplanImage: /images/models/spa-mirai/floorplan.webp
 description:
   nl: "De Spa Mirai biedt een serene woonomgeving met een ruime slaapkamer en lichte woonkeuken van 14 m². Het langwerpige ontwerp zorgt voor een vloeiende overgang tussen de verschillende leefzones. Dit model combineert Japanse eenvoud met Belgisch vakmanschap."

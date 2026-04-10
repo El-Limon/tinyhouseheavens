@@ -1,0 +1,55 @@
+name: Calix
+slug: calix
+category: large
+buildingArea: 91.8
+livingArea: 75.72
+dimensions:
+  length: 13500
+  width: 6800
+rooms:
+  - key: bedroom_1
+    area: 11.36
+  - key: bedroom_2
+    area: 11.36
+  - key: bathroom
+    area: 4.02
+  - key: corridor
+    area: 5.64
+  - key: utility_room
+    area: 7.08
+  - key: kitchen_living
+    area: 32.07
+  - key: shower
+    area: 4.19
+features:
+  - gable_roof
+  - two_bedrooms
+  - spacious_kitchen_living
+  - utility_room
+  - large_windows
+  - skylight
+hasGableRoof: true
+hasSauna: false
+hasTerrace: true
+variants: []
+heroImage: /images/models/calix/hero.webp
+galleryImages:
+  - /images/models/calix/exterior-1.webp
+  - /images/models/calix/exterior-2.webp
+  - /images/models/calix/exterior-3.webp
+  - /images/models/calix/exterior-4.webp
+  - /images/models/calix/interior-1.webp
+  - /images/models/calix/interior-2.webp
+  - /images/models/calix/interior-3.webp
+  - /images/models/calix/interior-4.webp
+floorplanImage: /images/models/calix/floorplan.webp
+description:
+  nl: "De Calix is een ruime eenlaagse woning met twee slaapkamers en een royale open keuken-woonkamer van meer dan 32 m². Grote ramen en dakramen zorgen voor overvloedig natuurlijk licht, terwijl de moderne zwarte gevelbekleding een strak en eigentijds karakter geeft. Met een doordachte indeling, aparte berging en een ruim terras biedt de Calix alles wat je nodig hebt voor comfortabel dagelijks wonen in de natuur."
+  fr: "Le Calix est une maison de plain-pied spacieuse avec deux chambres et un genereux sejour-cuisine ouvert de plus de 32 m². De grandes fenetres et des puits de lumiere apportent une abondance de lumiere naturelle, tandis que le bardage noir moderne confere un caractere elegant et contemporain. Avec un agencement reflechi, un cellier separe et une grande terrasse, le Calix offre tout le necessaire pour un quotidien confortable en pleine nature."
+  en: "The Calix is a spacious single-storey home with two bedrooms and a generous open kitchen-living area of over 32 m². Large windows and skylights bring in abundant natural light, while the modern black exterior cladding gives it a sleek, contemporary character. With a thoughtful layout, separate utility room and a generous terrace, the Calix offers everything you need for comfortable daily living in nature."
+tagline:
+  nl: "Ruimte om te leven"
+  fr: "L'espace de vivre"
+  en: "Space to live"
+featured: false
+sortOrder: 20

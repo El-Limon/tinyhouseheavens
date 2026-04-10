@@ -8,9 +8,9 @@ dimensions:
   width: 3000
 rooms:
   - key: bathroom
-    area: 3.5
+    area: 2.96
   - key: kitchen_living
-    area: 10.7
+    area: 11.24
 features:
   - two_floorplan_options
   - open_plan
@@ -19,9 +19,7 @@ hasSauna: false
 hasTerrace: false
 variants: []
 heroImage: /images/models/liora/hero.webp
-galleryImages:
-  - /images/models/liora/exterior-1.webp
-  - /images/models/liora/interior-1.webp
+galleryImages: []
 floorplanImage: /images/models/liora/floorplan.webp
 description:
   nl: "De Liora combineert slim ruimtegebruik met twee verschillende indelingsopties, zodat je jouw ideale leefruimte kunt creeren. Met 14,2 m² woonoppervlakte biedt dit instapmodel verrassend veel comfort en flexibiliteit. Kies de indeling die het beste bij jouw levensstijl past."

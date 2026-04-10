@@ -19,9 +19,7 @@ hasSauna: false
 hasTerrace: false
 variants: []
 heroImage: /images/models/vella/hero.webp
-galleryImages:
-  - /images/models/vella/exterior-1.webp
-  - /images/models/vella/interior-1.webp
+galleryImages: []
 floorplanImage: /images/models/vella/floorplan.webp
 description:
   nl: "De Vella is ons meest compacte tiny house, perfect voor wie de essentie van klein wonen wil ervaren. Met een slimme indeling biedt deze studio alles wat je nodig hebt op slechts 8,3 m² leefruimte. Ideaal als starterswoning, gastenverblijf of tuinkantoor."

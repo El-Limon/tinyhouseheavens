@@ -9,19 +9,19 @@ dimensions:
   width: 6000
 rooms:
   - key: bedroom_1
-    area: 10.5
+    area: 11.55
   - key: bedroom_2
-    area: 9.5
+    area: 9.78
   - key: kitchen_living
-    area: 24.0
+    area: 27.17
   - key: bathroom
-    area: 6.0
+    area: 4.50
   - key: corridor
-    area: 7.0
+    area: 3.50
   - key: utility_room
-    area: 7.0
+    area: 10.54
   - key: restroom
-    area: 3.0
+    area: 3.96
 features:
   - premium_comfort
   - two_bedrooms
@@ -37,11 +37,18 @@ galleryImages:
   - /images/models/noble/exterior-1.webp
   - /images/models/noble/interior-1.webp
   - /images/models/noble/interior-2.webp
+  - /images/models/noble/interior-3.webp
+  - /images/models/noble/interior-4.webp
+  - /images/models/noble/interior-5.webp
+  - /images/models/noble/interior-6.webp
+  - /images/models/noble/interior-7.webp
+  - /images/models/noble/interior-8.webp
+  - /images/models/noble/interior-9.webp
 floorplanImage: /images/models/noble/floorplan.webp
 description:
-  nl: "De Noble is de belichaming van premium comfort met twee ruime slaapkamers, een woonkeuken van 24 m² en een terras van bijna 20 m². Elke ruimte is zorgvuldig ontworpen voor maximaal woongenot zonder compromissen. Dit is tiny house wonen op zijn allerbest, met alle luxe die je verwacht."
-  fr: "Le Noble est l'incarnation du confort premium avec deux chambres spacieuses, un sejour-cuisine de 24 m² et une terrasse de pres de 20 m². Chaque espace est soigneusement concu pour un plaisir d'habiter maximal sans compromis. C'est la vie en tiny house a son meilleur, avec tout le luxe que vous attendez."
-  en: "The Noble is the embodiment of premium comfort with two spacious bedrooms, a 24 m² kitchen-living area, and a terrace of nearly 20 m². Every space is carefully designed for maximum living enjoyment without compromise. This is tiny house living at its very best, with all the luxury you would expect."
+  nl: "De Noble is de belichaming van premium comfort met twee ruime slaapkamers, een woonkeuken van 27 m² en een terras van bijna 20 m². Elke ruimte is zorgvuldig ontworpen voor maximaal woongenot zonder compromissen. Dit is tiny house wonen op zijn allerbest, met alle luxe die je verwacht."
+  fr: "Le Noble est l'incarnation du confort premium avec deux chambres spacieuses, un sejour-cuisine de 27 m² et une terrasse de pres de 20 m². Chaque espace est soigneusement concu pour un plaisir d'habiter maximal sans compromis. C'est la vie en tiny house a son meilleur, avec tout le luxe que vous attendez."
+  en: "The Noble is the embodiment of premium comfort with two spacious bedrooms, a 27 m² kitchen-living area, and a terrace of nearly 20 m². Every space is carefully designed for maximum living enjoyment without compromise. This is tiny house living at its very best, with all the luxury you would expect."
 tagline:
   nl: "Nobele luxe, compact formaat"
   fr: "Luxe noble, format compact"

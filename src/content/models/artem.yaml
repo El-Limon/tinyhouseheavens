@@ -7,16 +7,16 @@ dimensions:
   length: 11600
   width: 3000
 rooms:
-  - key: steam_room
-    area: 5.0
-  - key: shower
-    area: 3.0
   - key: kitchen_living
-    area: 12.0
+    area: 8.88
+  - key: steam_room
+    area: 6.10
+  - key: shower
+    area: 1.50
   - key: bathroom
-    area: 3.4
+    area: 1.99
   - key: corridor
-    area: 3.0
+    area: 7.93
 features:
   - steam_room
   - wellness
@@ -29,17 +29,27 @@ variants:
 heroImage: /images/models/artem/hero.webp
 galleryImages:
   - /images/models/artem/exterior-1.webp
+  - /images/models/artem/exterior-2.webp
+  - /images/models/artem/exterior-3.webp
+  - /images/models/artem/exterior-4.webp
+  - /images/models/artem/exterior-5.webp
+  - /images/models/artem/exterior-6.webp
   - /images/models/artem/interior-1.webp
   - /images/models/artem/interior-2.webp
   - /images/models/artem/interior-3.webp
   - /images/models/artem/interior-4.webp
   - /images/models/artem/interior-5.webp
-  - /images/models/artem/exterior-2.webp
+  - /images/models/artem/interior-6.webp
+  - /images/models/artem/interior-7.webp
+  - /images/models/artem/interior-8.webp
+  - /images/models/artem/interior-9.webp
+  - /images/models/artem/interior-10.webp
+  - /images/models/artem/interior-11.webp
 floorplanImage: /images/models/artem/floorplan.webp
 description:
-  nl: "De Artem is een uniek wellnessmodel met een ingebouwde stoomcabine en aparte doucheruimte voor de ultieme ontspanning. De woonkeuken van 12 m² biedt een gezellige plek om tot rust te komen na je wellnessritueel. Ook beschikbaar met een vergroot terras voor nog meer buitenbeleving."
-  fr: "L'Artem est un modele wellness unique avec un hammam integre et une douche separee pour une relaxation ultime. Le sejour-cuisine de 12 m² offre un endroit convivial pour se detendre apres votre rituel bien-etre. Egalement disponible avec une terrasse agrandie pour encore plus de vie en plein air."
-  en: "The Artem is a unique wellness model with a built-in steam room and separate shower area for the ultimate relaxation. The 12 m² kitchen-living area provides a cosy spot to unwind after your wellness ritual. Also available with an enlarged terrace for even more outdoor living."
+  nl: "De Artem is een uniek wellnessmodel met een ingebouwde stoomcabine en aparte doucheruimte voor de ultieme ontspanning. De woonkeuken van 9 m² biedt een gezellige plek om tot rust te komen na je wellnessritueel. Ook beschikbaar met een vergroot terras voor nog meer buitenbeleving."
+  fr: "L'Artem est un modele wellness unique avec un hammam integre et une douche separee pour une relaxation ultime. Le sejour-cuisine de 9 m² offre un endroit convivial pour se detendre apres votre rituel bien-etre. Egalement disponible avec une terrasse agrandie pour encore plus de vie en plein air."
+  en: "The Artem is a unique wellness model with a built-in steam room and separate shower area for the ultimate relaxation. The 9 m² kitchen-living area provides a cosy spot to unwind after your wellness ritual. Also available with an enlarged terrace for even more outdoor living."
 tagline:
   nl: "Wellness als levenskunst"
   fr: "Le bien-etre comme art de vivre"

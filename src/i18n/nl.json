@@ -36,7 +36,25 @@
       "bedroom_1": "Slaapkamer 1",
       "bedroom_2": "Slaapkamer 2",
       "living_bedroom": "Woon-slaapkamer",
-      "shower": "Douche"
+      "shower": "Douche",
+      "unit_a_header": "— Unit A —",
+      "unit_b_header": "— Unit B —",
+      "unit_a_living_room": "Woonkamer (A)",
+      "unit_a_kitchen_living": "Keuken-eetkamer (A)",
+      "unit_a_bedroom_1": "Slaapkamer 1 (A)",
+      "unit_a_bedroom_2": "Slaapkamer 2 (A)",
+      "unit_a_bathroom": "Badkamer (A)",
+      "unit_a_kitchen": "Keuken (A)",
+      "unit_a_utility_room": "Berging (A)",
+      "unit_a_terrace": "Terras (A)",
+      "unit_b_living_room": "Woonkamer (B)",
+      "unit_b_kitchen_living": "Keuken-eetkamer (B)",
+      "unit_b_bedroom_1": "Slaapkamer 1 (B)",
+      "unit_b_bedroom_2": "Slaapkamer 2 (B)",
+      "unit_b_bathroom": "Badkamer (B)",
+      "unit_b_kitchen": "Keuken (B)",
+      "unit_b_utility_room": "Berging (B)",
+      "unit_b_terrace": "Terras (B)"
     }
   },
   "categories": {
@@ -85,7 +103,7 @@
     "title": "Hoe het werkt",
     "step1": {
       "title": "Kies uw model",
-      "desc": "Ontdek onze 18 modellen en vind het perfecte tiny house"
+      "desc": "Ontdek onze 20 modellen en vind het perfecte tiny house"
     },
     "step2": {
       "title": "Selecteer afwerking",
@@ -180,12 +198,12 @@
     "subtitle": "Ontdek onze meest gekozen tiny houses voor duurzaam en betaalbaar wonen"
   },
   "seo": {
-    "home_title": "Tiny House Kopen in Belgie | 18 Modulaire Tiny Houses | Tiny House Heavens",
-    "home_desc": "Modulaire tiny house kopen in Belgie? Ontdek 18 modellen van 13m² tot 112m². Duurzaam, betaalbaar en ecologisch wonen in de Benelux. Vraag gratis een offerte aan.",
-    "models_title": "Tiny House Modellen | 18 Modulaire Woningen van 13-112m² | Tiny House Heavens",
-    "models_desc": "Bekijk al onze 18 tiny house modellen. Van compacte studio's (13m²) tot gezinswoningen (112m²). Kies uit 3 afwerkingsniveaus. Tiny house te koop in Belgie.",
+    "home_title": "Tiny House Kopen in Belgie | 20 Modulaire Tiny Houses | Tiny House Heavens",
+    "home_desc": "Modulaire tiny house kopen in Belgie? Ontdek 20 modellen van 13m² tot 112m². Duurzaam, betaalbaar en ecologisch wonen in de Benelux. Vraag gratis een offerte aan.",
+    "models_title": "Tiny House Modellen | 20 Modulaire Woningen van 13-112m² | Tiny House Heavens",
+    "models_desc": "Bekijk al onze 20 tiny house modellen. Van compacte studio's (13m²) tot gezinswoningen (112m²). Kies uit 3 afwerkingsniveaus. Tiny house te koop in Belgie.",
     "about_title": "Over Tiny House Heavens | Belgische Tiny House Bouwer uit Sint-Katelijne-Waver",
-    "about_desc": "Leer meer over Tiny House Heavens. Belgisch vakmanschap, modulaire bouw en duurzame materialen. 18 tiny house modellen beschikbaar in de Benelux.",
+    "about_desc": "Leer meer over Tiny House Heavens. Belgisch vakmanschap, modulaire bouw en duurzame materialen. 20 tiny house modellen beschikbaar in de Benelux.",
     "services_title": "Diensten | Van Ontwerp tot Oplevering van Uw Tiny House | Tiny House Heavens",
     "services_desc": "Volledige service voor uw tiny house: ontwerp, modelselectie, afwerking op maat, transport, fundering en nazorg. Alles uit een hand in Belgie.",
     "faq_title": "Veelgestelde Vragen over Tiny Houses in Belgie | Tiny House Heavens",
@@ -197,7 +215,7 @@
   },
   "home_content": {
     "section_title": "Tiny House Kopen in Belgie",
-    "paragraph_1": "Op zoek naar een tiny house in Belgie? Tiny House Heavens is uw specialist in modulaire tiny houses voor de Benelux. Onze collectie van 18 unieke modellen biedt een oplossing voor elke levensstijl, van compacte 13 m² studio's tot ruime 112 m² gezinswoningen met meerdere slaapkamers.",
+    "paragraph_1": "Op zoek naar een tiny house in Belgie? Tiny House Heavens is uw specialist in modulaire tiny houses voor de Benelux. Onze collectie van 20 unieke modellen biedt een oplossing voor elke levensstijl, van compacte 13 m² studio's tot ruime 112 m² gezinswoningen met meerdere slaapkamers.",
     "paragraph_2": "Elke tiny house wordt gebouwd met hoogwaardige materialen: een stalen onderstel, houtskeletbouw en 150-200 mm isolatie. Kies uit drie afwerkingsniveaus — House Kit voor zelfbouwers, Basic voor een volledig afgewerkte woning, of Optima voor een sleutel-op-de-deur ervaring.",
     "paragraph_3": "Duurzaam, betaalbaar en energiezuinig: onze modulaire woningen combineren Belgisch vakmanschap met modern design. Of u nu een starterswoning zoekt, een bijgebouw in uw tuin wilt plaatsen of kiest voor een volledig autonoom huis — wij begeleiden u van ontwerp tot oplevering."
   }

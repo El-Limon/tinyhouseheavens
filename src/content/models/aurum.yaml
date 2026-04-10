@@ -1,0 +1,74 @@
+name: Aurum
+slug: aurum
+category: special
+buildingArea: 167.43
+livingArea: 143.94
+terrace: 7.7
+dimensions:
+  length: 19500
+  width: 12000
+rooms:
+  - key: unit_a_header
+    area: 0
+  - key: unit_a_living_room
+    area: 21.2
+  - key: unit_a_kitchen_living
+    area: 16.8
+  - key: unit_a_bedroom_1
+    area: 10.75
+  - key: unit_a_bedroom_2
+    area: 9.6
+  - key: unit_a_bathroom
+    area: 3.5
+  - key: unit_a_kitchen
+    area: 3.8
+  - key: unit_a_utility_room
+    area: 2.47
+  - key: unit_a_terrace
+    area: 3.85
+  - key: unit_b_header
+    area: 0
+  - key: unit_b_living_room
+    area: 21.2
+  - key: unit_b_kitchen_living
+    area: 16.8
+  - key: unit_b_bedroom_1
+    area: 10.75
+  - key: unit_b_bedroom_2
+    area: 9.6
+  - key: unit_b_bathroom
+    area: 3.5
+  - key: unit_b_kitchen
+    area: 3.8
+  - key: unit_b_utility_room
+    area: 2.47
+  - key: unit_b_terrace
+    area: 3.85
+features:
+  - duplex
+  - two_independent_units
+  - private_entrance
+  - two_bedrooms
+  - large_terrace
+  - utility_room
+hasGableRoof: false
+hasSauna: false
+hasTerrace: true
+variants: []
+heroImage: /images/models/aurum/hero.webp
+galleryImages:
+  - /images/models/aurum/exterior-1.webp
+  - /images/models/aurum/exterior-2.webp
+  - /images/models/aurum/exterior-3.webp
+  - /images/models/aurum/exterior-4.webp
+floorplanImage: /images/models/aurum/floorplan.webp
+description:
+  nl: "De Aurum is ontworpen voor wie dicht bij elkaar wil wonen, maar toch gescheiden. Twee onafhankelijke wooneenheden onder een dak bieden maximale privacy voor elk gezin. Geen gedeelde gangen of doorgangen – enkel je persoonlijke ruimte met een eigen ingang en terras. Modern design, grote ramen met uitzicht op de natuur en doordachte energie-efficientie maken deze woning niet alleen stijlvol, maar ook zeer comfortabel voor dagelijks wonen."
+  fr: "L'Aurum est concu pour ceux qui veulent vivre proches, mais separes. Deux unites independantes sous un meme toit offrent une intimite maximale a chaque famille. Pas de couloirs ou de passages partages – juste votre espace personnel avec une entree privee et une terrasse. Un design moderne, de grandes fenetres offrant une vue sur la nature et une efficacite energetique reflechie font de cette maison un lieu non seulement elegant, mais aussi tres confortable au quotidien."
+  en: "The Aurum is designed for those who want to live close, yet separated. Two independent units under one roof provide maximum privacy for each family. No shared corridors or passages – just your personal space with a private entrance and terrace. Modern design, large windows offering views of nature and thoughtful energy efficiency make this home not only stylish but also very comfortable for daily living."
+tagline:
+  nl: "Samen wonen, apart leven"
+  fr: "Vivre ensemble, chacun chez soi"
+  en: "Living together, apart"
+featured: true
+sortOrder: 19

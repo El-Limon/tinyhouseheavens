@@ -17,11 +17,11 @@ rooms:
   - key: bathroom
     area: 7.0
   - key: corridor
-    area: 8.61
+    area: 11.95
   - key: utility_room
-    area: 8.0
+    area: 16.21
   - key: restroom
-    area: 3.0
+    area: 4.45
 features:
   - premium
   - two_bedrooms
@@ -36,7 +36,8 @@ variants: []
 heroImage: /images/models/opale/hero.webp
 galleryImages:
   - /images/models/opale/exterior-1.webp
-  - /images/models/opale/interior-1.webp
+  - /images/models/opale/exterior-2.webp
+  - /images/models/opale/exterior-3.webp
 floorplanImage: /images/models/opale/floorplan.webp
 description:
   nl: "De Opale is ons meest luxueuze model met een indrukwekkende woonkeuken van 28 m² en een terras van bijna 40 m². Twee royale slaapkamers, een badkamer van 7 m² en apart toilet maken dit tot een volwaardig premium tiny house. Met meer dan 90 m² leefruimte herverdefinieert de Opale wat mogelijk is in compact bouwen."

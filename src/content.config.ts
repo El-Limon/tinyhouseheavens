@@ -22,7 +22,18 @@ const modelsCollection = defineCollection({
     hasGableRoof: z.boolean().default(false),
     hasSauna: z.boolean().default(false),
     hasTerrace: z.boolean().default(false),
-    variants: z.array(z.string()).optional(),
+    variants: z.array(z.union([
+      z.string(),
+      z.object({
+        name: z.string(),
+        image: z.string().optional(),
+        description: z.object({
+          nl: z.string(),
+          fr: z.string(),
+          en: z.string(),
+        }).optional(),
+      }),
+    ])).optional(),
     heroImage: z.string(),
     galleryImages: z.array(z.string()),
     floorplanImage: z.string(),

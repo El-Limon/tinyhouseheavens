@@ -8,15 +8,17 @@ dimensions:
   width: 3500
 rooms:
   - key: bedroom
-    area: 7.0
+    area: 8.5
   - key: kitchen_living
     area: 13.6
   - key: sauna
     area: 6.0
   - key: bathroom
-    area: 4.0
+    area: 2.0
+  - key: shower
+    area: 2.3
   - key: corridor
-    area: 5.1
+    area: 3.3
 features:
   - built_in_sauna
   - wellness
@@ -28,7 +30,8 @@ variants: []
 heroImage: /images/models/solin/hero.webp
 galleryImages:
   - /images/models/solin/exterior-1.webp
-  - /images/models/solin/interior-1.webp
+  - /images/models/solin/exterior-2.webp
+  - /images/models/solin/exterior-3.webp
   - /images/models/solin/interior-2.webp
   - /images/models/solin/interior-3.webp
   - /images/models/solin/interior-4.webp
@@ -38,6 +41,12 @@ galleryImages:
   - /images/models/solin/interior-8.webp
   - /images/models/solin/interior-9.webp
   - /images/models/solin/interior-10.webp
+  - /images/models/solin/interior-11.webp
+  - /images/models/solin/interior-12.webp
+  - /images/models/solin/interior-13.webp
+  - /images/models/solin/interior-14.webp
+  - /images/models/solin/interior-15.webp
+  - /images/models/solin/interior-16.webp
 floorplanImage: /images/models/solin/floorplan.webp
 description:
   nl: "De Solin brengt de spa-ervaring naar je eigen tiny house met een ingebouwde sauna van 6 m². Na een ontspannende saunasessie geniet je van de ruime woonkeuken en comfortabele slaapkamer. Dit unieke model bewijst dat wellness en compact wonen perfect samengaan."

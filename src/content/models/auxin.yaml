@@ -12,9 +12,9 @@ rooms:
   - key: kitchen_living
     area: 16.0
   - key: bathroom
-    area: 4.5
+    area: 3.51
   - key: corridor
-    area: 3.45
+    area: 4.44
 features:
   - gable_roof
   - corner_windows
@@ -26,8 +26,9 @@ hasTerrace: false
 variants: []
 heroImage: /images/models/auxin/hero.webp
 galleryImages:
-  - /images/models/auxin/exterior-1.webp
-  - /images/models/auxin/interior-1.webp
+  - /images/models/auxin/exterior-2.webp
+  - /images/models/auxin/exterior-3.webp
+  - /images/models/auxin/exterior-4.webp
 floorplanImage: /images/models/auxin/floorplan.webp
 description:
   nl: "De Auxin valt op door zijn brede opzet met hoekramen die een panoramisch uitzicht bieden en de ruimte met natuurlijk licht vullen. Het zadeldak en de royale woonkeuken van 16 m² geven dit model een echte huiselijke uitstraling. Compact in footprint, maar groots in beleving."

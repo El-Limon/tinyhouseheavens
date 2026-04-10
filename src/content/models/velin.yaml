@@ -12,9 +12,9 @@ rooms:
   - key: living_room
     area: 13.47
   - key: bathroom
-    area: 4.0
+    area: 4.33
   - key: corridor
-    area: 3.73
+    area: 3.40
 features:
   - two_section_layout
   - separate_bedroom

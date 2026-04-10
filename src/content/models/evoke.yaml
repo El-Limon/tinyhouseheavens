@@ -8,15 +8,15 @@ dimensions:
   width: 4500
 rooms:
   - key: bedroom
-    area: 9.0
+    area: 10.1
   - key: kitchen_living
     area: 19.1
   - key: bathroom
-    area: 5.0
+    area: 3.5
   - key: utility_room
-    area: 5.0
+    area: 3.1
   - key: corridor
-    area: 4.5
+    area: 6.8
 features:
   - gable_roof
   - utility_room
@@ -29,7 +29,15 @@ variants: []
 heroImage: /images/models/evoke/hero.webp
 galleryImages:
   - /images/models/evoke/exterior-1.webp
+  - /images/models/evoke/exterior-2.webp
+  - /images/models/evoke/exterior-3.webp
+  - /images/models/evoke/exterior-4.webp
   - /images/models/evoke/interior-1.webp
+  - /images/models/evoke/interior-2.webp
+  - /images/models/evoke/interior-3.webp
+  - /images/models/evoke/interior-4.webp
+  - /images/models/evoke/interior-5.webp
+  - /images/models/evoke/interior-6.webp
 floorplanImage: /images/models/evoke/floorplan.webp
 description:
   nl: "De Evoke is ons populairste middenklasse model met een indrukwekkende woonkeuken van 19 m² en een stijlvol zadeldak. De bergruimte en ruime badkamer maken dit tot een volwaardig alternatief voor een traditionele woning. Met 42,6 m² leefruimte biedt de Evoke alles wat je nodig hebt, zonder concessies."

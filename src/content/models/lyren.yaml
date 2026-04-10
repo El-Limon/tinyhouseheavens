@@ -8,11 +8,13 @@ dimensions:
   width: 3750
 rooms:
   - key: bedroom
-    area: 7.5
+    area: 8.5
   - key: kitchen_living
-    area: 12.5
+    area: 10.0
   - key: bathroom
-    area: 4.0
+    area: 3.1
+  - key: corridor
+    area: 2.4
 features:
   - gable_roof_option
   - separate_bedroom
@@ -23,6 +25,8 @@ variants: []
 heroImage: /images/models/lyren/hero.webp
 galleryImages:
   - /images/models/lyren/exterior-1.webp
+  - /images/models/lyren/exterior-2.webp
+  - /images/models/lyren/exterior-3.webp
   - /images/models/lyren/interior-1.webp
   - /images/models/lyren/interior-2.webp
 floorplanImage: /images/models/lyren/floorplan.webp

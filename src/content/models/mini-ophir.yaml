@@ -8,19 +8,17 @@ dimensions:
   width: 6000
 rooms:
   - key: bedroom_1
-    area: 9.0
+    area: 10.1
   - key: bedroom_2
-    area: 8.0
+    area: 10.1
   - key: kitchen_living
-    area: 22.0
+    area: 23.35
   - key: bathroom
-    area: 5.5
-  - key: corridor
-    area: 7.0
+    area: 3.5
   - key: utility_room
-    area: 5.95
+    area: 12.7
   - key: restroom
-    area: 3.0
+    area: 2.7
 features:
   - compact_ophir_variant
   - two_bedrooms
@@ -33,16 +31,15 @@ variants: []
 heroImage: /images/models/mini-ophir/hero.webp
 galleryImages:
   - /images/models/mini-ophir/exterior-1.webp
-  - /images/models/mini-ophir/interior-1.webp
   - /images/models/mini-ophir/interior-2.webp
   - /images/models/mini-ophir/interior-3.webp
   - /images/models/mini-ophir/exterior-2.webp
   - /images/models/mini-ophir/exterior-3.webp
 floorplanImage: /images/models/mini-ophir/floorplan.webp
 description:
-  nl: "De Mini Ophir biedt alle kwaliteiten van de populaire Ophir in een compacter formaat van 62 m² leefruimte. Twee slaapkamers, een woonkeuken van 22 m² en volledige bergruimte maken dit tot een volwaardig gezinshuis. Dezelfde slimme indeling en premium afwerking, op een kleiner grondoppervlak."
-  fr: "Le Mini Ophir offre toutes les qualites du populaire Ophir dans un format plus compact de 62 m² habitables. Deux chambres, un sejour-cuisine de 22 m² et un cellier complet en font une veritable maison familiale. Le meme agencement intelligent et les finitions premium, sur une emprise au sol reduite."
-  en: "The Mini Ophir offers all the qualities of the popular Ophir in a more compact format with 62 m² of living space. Two bedrooms, a 22 m² kitchen-living area, and a full utility room make it a true family home. The same smart layout and premium finishes, on a smaller footprint."
+  nl: "De Mini Ophir biedt alle kwaliteiten van de populaire Ophir in een compacter formaat van 62 m² leefruimte. Twee slaapkamers, een woonkeuken van 23 m² en volledige bergruimte maken dit tot een volwaardig gezinshuis. Dezelfde slimme indeling en premium afwerking, op een kleiner grondoppervlak."
+  fr: "Le Mini Ophir offre toutes les qualites du populaire Ophir dans un format plus compact de 62 m² habitables. Deux chambres, un sejour-cuisine de 23 m² et un cellier complet en font une veritable maison familiale. Le meme agencement intelligent et les finitions premium, sur une emprise au sol reduite."
+  en: "The Mini Ophir offers all the qualities of the popular Ophir in a more compact format with 62 m² of living space. Two bedrooms, a 23 m² kitchen-living area, and a full utility room make it a true family home. The same smart layout and premium finishes, on a smaller footprint."
 tagline:
   nl: "De Ophir, compacter en compleet"
   fr: "L'Ophir, plus compact et complet"
