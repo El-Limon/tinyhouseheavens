@@ -10,6 +10,7 @@ export default defineConfig({
   integrations: [sitemap(), mdx()],
   redirects: {
     '/': '/nl/',
+    '/nl/elementor-23523/': '/nl/',
   },
   vite: {
     plugins: [tailwindcss()],
