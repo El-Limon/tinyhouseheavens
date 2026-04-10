@@ -53,6 +53,9 @@ const privacyPath = getPagePath(locale, 'privacy');
   function closeBanner(value: string) {
     localStorage.setItem('cookie-consent', value);
     banner?.classList.add('translate-y-full');
+    if (value === 'accepted' && typeof (window as any).loadGA4 === 'function') {
+      (window as any).loadGA4();
+    }
   }
 
   acceptBtn?.addEventListener('click', () => closeBanner('accepted'));

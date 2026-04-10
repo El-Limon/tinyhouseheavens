@@ -73,6 +73,9 @@ const tagline = model.tagline.en || model.tagline.nl;
             alt={`${model.name} modular tiny house ${model.buildingArea}m² exterior view`}
             class="w-full h-full object-cover"
             loading="eager"
+            fetchpriority="high"
+            width="800"
+            height="600"
           />
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -177,6 +180,9 @@ const tagline = model.tagline.en || model.tagline.nl;
             alt={`${t(locale, 'common.floor_plan')} - ${model.name}`}
             class="w-full h-auto"
             loading="lazy"
+            decoding="async"
+            width="1200"
+            height="800"
           />
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 flex items-center justify-center">
             <svg class="w-10 h-10 text-thh-charcoal opacity-0 group-hover:opacity-60 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -214,7 +220,7 @@ const tagline = model.tagline.en || model.tagline.nl;
               <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-thh-green-100">
                 {variant.image && (
                   <div class="aspect-[4/3] overflow-hidden">
-                    <img src={variant.image} alt={variant.name} class="w-full h-full object-cover" loading="lazy" />
+                    <img src={variant.image} alt={variant.name} class="w-full h-full object-cover" loading="lazy" decoding="async" width="600" height="450" />
                   </div>
                 )}
                 <div class="p-5">

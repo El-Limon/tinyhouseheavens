@@ -41,6 +41,9 @@ const badgeColor = categoryColors[model.category] ?? 'bg-thh-green-100 text-thh-
         alt={`${model.name} tiny house ${model.buildingArea}m² - ${categoryText}`}
         class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         loading="lazy"
+        decoding="async"
+        width="600"
+        height="450"
       />
     ) : (
       <div class="w-full h-full bg-gradient-to-br from-thh-green-100 via-thh-green-50 to-thh-cream flex items-center justify-center">

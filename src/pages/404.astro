@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const locale = 'nl';
+---
+
+<BaseLayout locale={locale} title="404 — Page not found | Tiny House Heavens" description="This page does not exist." noIndex={true}>
+  <Header locale={locale} />
+  <main id="main-content" class="min-h-screen flex items-center justify-center bg-thh-cream">
+    <div class="max-w-xl mx-auto px-6 py-32 text-center">
+      <div class="text-8xl font-bold text-thh-green-200 mb-4" style="font-family: 'Playfair Display', serif;">404</div>
+      <h1 class="text-3xl font-bold text-thh-charcoal mb-4" style="font-family: 'Playfair Display', serif;">
+        Pagina niet gevonden
+      </h1>
+      <p class="text-thh-charcoal/60 mb-8">
+        De pagina die u zoekt bestaat niet of is verplaatst.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/nl/" class="px-6 py-3 bg-thh-green-500 text-white font-semibold rounded-xl hover:bg-thh-green-600 transition-colors shadow-md">
+          NL — Home
+        </a>
+        <a href="/fr/" class="px-6 py-3 border-2 border-thh-green-500 text-thh-green-600 font-semibold rounded-xl hover:bg-thh-green-50 transition-colors">
+          FR — Accueil
+        </a>
+        <a href="/en/" class="px-6 py-3 border-2 border-thh-green-500 text-thh-green-600 font-semibold rounded-xl hover:bg-thh-green-50 transition-colors">
+          EN — Home
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer locale={locale} />
+</BaseLayout>

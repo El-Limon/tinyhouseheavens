@@ -43,11 +43,36 @@ const ogLocaleMap: Record<Locale, string> = { nl: 'nl_BE', fr: 'fr_BE', en: 'en_
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:site_name" content="Tiny House Heavens" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
+  <!-- Google Search Console verification — replace YOUR_VERIFICATION_CODE with actual code -->
+  <meta name="google-site-verification" content="rX-L_Maqj5wRIcJQBThxZ6mhKoA5kZd0CdmYEpg3Tec" />
   {noIndex && <meta name="robots" content="noindex, nofollow" />}
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- GA4 — loaded dynamically by CookieConsent when user accepts -->
+  <script is:inline>
+    window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+    window.loadGA4 = function() {
+      if (document.getElementById('ga4-script')) return;
+      var s = document.createElement('script');
+      s.id = 'ga4-script';
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_MEASUREMENT_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', window.GA_MEASUREMENT_ID);
+    };
+    if (localStorage.getItem('cookie-consent') === 'accepted') {
+      window.loadGA4();
+    }
+  </script>
 </head>
 <body class="bg-thh-cream text-thh-charcoal antialiased">
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-thh-green-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:font-medium focus:shadow-lg">
