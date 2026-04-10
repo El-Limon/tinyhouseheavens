@@ -29,10 +29,12 @@ const modelsCollection = defineCollection({
     description: z.object({
       nl: z.string(),
       fr: z.string(),
+      en: z.string(),
     }),
     tagline: z.object({
       nl: z.string(),
       fr: z.string(),
+      en: z.string(),
     }),
     featured: z.boolean().default(false),
     sortOrder: z.number(),
@@ -48,7 +50,7 @@ const blogCollection = defineCollection({
     author: z.string().default('Tiny House Heavens'),
     image: z.string().optional(),
     tags: z.array(z.string()),
-    locale: z.enum(['nl', 'fr']),
+    locale: z.enum(['nl', 'fr', 'en']),
   }),
 });
 

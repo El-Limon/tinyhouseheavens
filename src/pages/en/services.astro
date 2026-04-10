@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import StructuredData from '../../components/StructuredData.astro';
 import { t, getPagePath } from '../../i18n/utils';
 
 const locale = 'en';
@@ -38,7 +39,13 @@ const services = [
 ];
 ---
 
-<PageLayout locale={locale} title={`${t(locale, 'services.title')} | Tiny House Heavens`} description="Discover our services: from design and advice to delivery, installation and aftercare of your modular tiny house.">
+<PageLayout locale={locale} title={t(locale, 'seo.services_title')} description={t(locale, 'seo.services_desc')}>
+
+  <StructuredData type="service" locale={locale} services={services.map(s => ({ name: s.title, description: s.description }))} />
+  <StructuredData type="breadcrumb" locale={locale} breadcrumbs={[
+    { name: 'Home', url: `/${locale}/` },
+    { name: t(locale, 'services.title'), url: getPagePath(locale, 'services') },
+  ]} />
 
   <!-- Hero -->
   <section class="pt-32 pb-16 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">
@@ -87,5 +94,16 @@ const services = [
     </div>
   </section>
 
+  <!-- Why Choose Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-thh-charcoal text-center">Why Choose Tiny House Heavens?</h2>
+      <div class="text-thh-charcoal/80 leading-relaxed space-y-4">
+        <p>At Tiny House Heavens, we combine Belgian craftsmanship with innovative modular construction techniques. Our tiny houses are built with a steel undercarriage and timber frame, ensuring a solid, durable and well-insulated home that lasts for years to come.</p>
+        <p>With <a href={getPagePath(locale, 'models')} class="text-thh-green-600 hover:text-thh-green-700 underline">18 unique models</a> from 13 m² to 112 m², we offer a solution for every situation: a starter home, an annex, a holiday retreat or a full family home. Every model is fully customisable and available in three finishing levels.</p>
+        <p>We distinguish ourselves through our personal approach. From the first consultation to delivery and aftercare: you have a dedicated contact who guides your project. <a href={getPagePath(locale, 'contact')} class="text-thh-green-600 hover:text-thh-green-700 underline">Get in touch today</a> for a no-obligation conversation about the possibilities.</p>
+      </div>
+    </div>
+  </section>
 
 </PageLayout>

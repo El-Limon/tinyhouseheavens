@@ -30,6 +30,11 @@ heroImage: /images/models/artem/hero.webp
 galleryImages:
   - /images/models/artem/exterior-1.webp
   - /images/models/artem/interior-1.webp
+  - /images/models/artem/interior-2.webp
+  - /images/models/artem/interior-3.webp
+  - /images/models/artem/interior-4.webp
+  - /images/models/artem/interior-5.webp
+  - /images/models/artem/exterior-2.webp
 floorplanImage: /images/models/artem/floorplan.webp
 description:
   nl: "De Artem is een uniek wellnessmodel met een ingebouwde stoomcabine en aparte doucheruimte voor de ultieme ontspanning. De woonkeuken van 12 m² biedt een gezellige plek om tot rust te komen na je wellnessritueel. Ook beschikbaar met een vergroot terras voor nog meer buitenbeleving."

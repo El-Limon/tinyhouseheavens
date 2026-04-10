@@ -7,7 +7,7 @@ const locale = 'fr';
 const success = Astro.url.searchParams.get('success') === 'true';
 ---
 
-<PageLayout locale={locale} title={`${t(locale, 'contact.title')} | Tiny House Heavens`} description="Contactez Tiny House Heavens pour un devis, des informations ou une visite de notre showroom a Sint-Katelijne-Waver.">
+<PageLayout locale={locale} title={t(locale, 'seo.contact_title')} description={t(locale, 'seo.contact_desc')}>
 
   <!-- Hero -->
   <section class="pt-32 pb-12 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">

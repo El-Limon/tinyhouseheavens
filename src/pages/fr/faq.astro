@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import { t } from '../../i18n/utils';
+import StructuredData from '../../components/StructuredData.astro';
+import { t, getPagePath } from '../../i18n/utils';
 
 const locale = 'fr';
 
@@ -40,7 +41,13 @@ const faqs = [
 ];
 ---
 
-<PageLayout locale={locale} title={`${t(locale, 'faq.title')} | Tiny House Heavens`} description="Reponses aux questions frequentes sur les tiny houses modulaires, permis de construire, finition, prix et plus.">
+<PageLayout locale={locale} title={t(locale, 'seo.faq_title')} description={t(locale, 'seo.faq_desc')}>
+
+  <StructuredData type="faqPage" locale={locale} faqs={faqs} />
+  <StructuredData type="breadcrumb" locale={locale} breadcrumbs={[
+    { name: 'Accueil', url: `/${locale}/` },
+    { name: t(locale, 'faq.title'), url: `/${locale}/faq/` },
+  ]} />
 
   <!-- Hero -->
   <section class="pt-32 pb-12 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">

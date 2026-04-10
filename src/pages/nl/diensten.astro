@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import StructuredData from '../../components/StructuredData.astro';
 import { t, getPagePath } from '../../i18n/utils';
 
 const locale = 'nl';
@@ -38,7 +39,13 @@ const services = [
 ];
 ---
 
-<PageLayout locale={locale} title={`${t(locale, 'services.title')} | Tiny House Heavens`} description="Ontdek onze diensten: van ontwerp en advies tot levering, installatie en nazorg van uw modulaire tiny house.">
+<PageLayout locale={locale} title={t(locale, 'seo.services_title')} description={t(locale, 'seo.services_desc')}>
+
+  <StructuredData type="service" locale={locale} services={services.map(s => ({ name: s.title, description: s.description }))} />
+  <StructuredData type="breadcrumb" locale={locale} breadcrumbs={[
+    { name: 'Home', url: `/${locale}/` },
+    { name: t(locale, 'services.title'), url: getPagePath(locale, 'services') },
+  ]} />
 
   <!-- Hero -->
   <section class="pt-32 pb-16 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">
@@ -87,5 +94,16 @@ const services = [
     </div>
   </section>
 
+  <!-- Why Choose Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-thh-charcoal text-center">Waarom Kiezen voor Tiny House Heavens?</h2>
+      <div class="text-thh-charcoal/80 leading-relaxed space-y-4">
+        <p>Bij Tiny House Heavens combineren we Belgisch vakmanschap met innovatieve modulaire bouwtechnieken. Onze tiny houses worden gebouwd met een stalen onderstel en houtskeletbouw, wat zorgt voor een stevige, duurzame en goed geisoleerde woning die jarenlang meegaat.</p>
+        <p>Met <a href={getPagePath(locale, 'models')} class="text-thh-green-600 hover:text-thh-green-700 underline">18 unieke modellen</a> van 13 m² tot 112 m² bieden wij een oplossing voor elke situatie: een starterswoning, een bijgebouw, een vakantieverblijf of een volwaardige gezinswoning. Elk model is volledig aanpasbaar aan uw wensen en beschikbaar in drie afwerkingsniveaus.</p>
+        <p>Wij onderscheiden ons door onze persoonlijke aanpak. Van het eerste adviesgesprek tot de oplevering en nazorg: u heeft een vast aanspreekpunt dat uw project begeleidt. <a href={getPagePath(locale, 'contact')} class="text-thh-green-600 hover:text-thh-green-700 underline">Neem vandaag nog contact op</a> voor een vrijblijvend gesprek over de mogelijkheden.</p>
+      </div>
+    </div>
+  </section>
 
 </PageLayout>

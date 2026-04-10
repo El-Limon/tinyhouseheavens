@@ -8,6 +8,9 @@ export default defineConfig({
   site: 'https://tinyhouseheavens.com',
   output: 'static',
   integrations: [sitemap(), mdx()],
+  redirects: {
+    '/': '/nl/',
+  },
   vite: {
     plugins: [tailwindcss()],
   },

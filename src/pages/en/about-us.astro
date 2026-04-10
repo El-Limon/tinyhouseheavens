@@ -1,12 +1,18 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import BrandPillars from '../../components/BrandPillars.astro';
-import { t } from '../../i18n/utils';
+import StructuredData from '../../components/StructuredData.astro';
+import { t, getPagePath } from '../../i18n/utils';
 
 const locale = 'en';
 ---
 
-<PageLayout locale={locale} title={`${t(locale, 'about.title')} | Tiny House Heavens`} description="Learn more about Tiny House Heavens, our team and our mission to make sustainable and affordable living possible in the Benelux.">
+<PageLayout locale={locale} title={t(locale, 'seo.about_title')} description={t(locale, 'seo.about_desc')}>
+
+  <StructuredData type="breadcrumb" locale={locale} breadcrumbs={[
+    { name: 'Home', url: `/${locale}/` },
+    { name: t(locale, 'about.title'), url: getPagePath(locale, 'about') },
+  ]} />
 
   <!-- Hero -->
   <section class="pt-32 pb-16 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">
@@ -101,6 +107,17 @@ const locale = 'en';
           <h3 class="text-lg font-bold mb-2 text-thh-charcoal">Customer Focus</h3>
           <p class="text-sm text-thh-charcoal/70 leading-relaxed">Personal guidance from first contact to delivery and aftercare</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sustainability -->
+  <section class="py-16 bg-thh-cream">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-thh-charcoal text-center">Building Sustainably for the Future</h2>
+      <div class="text-thh-charcoal/80 leading-relaxed space-y-4">
+        <p>Sustainability is at the heart of everything we do at Tiny House Heavens. Our modular tiny houses are designed to minimise energy consumption through superior insulation (150-200 mm), airtight construction and the option for solar panels and heat pumps.</p>
+        <p>By choosing compact living, you reduce not only your ecological footprint but also your monthly costs. A smaller living area means less energy for heating and fewer materials used during construction. Explore our <a href={getPagePath(locale, 'models')} class="text-thh-green-600 hover:text-thh-green-700 underline">18 models</a> and discover which tiny house suits your sustainable lifestyle.</p>
       </div>
     </div>
   </section>

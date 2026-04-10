@@ -59,7 +59,8 @@
     "recommended": "Recommand\u00e9",
     "house_kit_features": ["Structure portante en ossature bois", "Sol, murs et plafond isol\u00e9s", "Sous-plancher OSB", "Pare-vent et pare-vapeur"],
     "basic_features": ["Tout du House Kit", "Fa\u00e7ade ext\u00e9rieure \u00e9tanche au vent", "Sol de salle de bain en ciment", "Rev\u00eatement int\u00e9rieur et plaques de pl\u00e2tre", "Toiture m\u00e9tallique", "Goutti\u00e8res et \u00e9vacuation"],
-    "optima_features": ["Tout du Basic", "Bardage en pin/m\u00e9tal", "Finition poutres en bois premium", "Sol de salle de bain en c\u00e9ramique", "Chauffage au sol \u00e9lectrique", "Chauffe-eau 50L", "Syst\u00e8me de ventilation D", "\u00c9clairage int\u00e9rieur et ext\u00e9rieur"]
+    "optima_features": ["Tout du Basic", "Bardage en pin/m\u00e9tal", "Finition poutres en bois premium", "Sol de salle de bain en c\u00e9ramique", "Chauffage au sol \u00e9lectrique", "Chauffe-eau 50L", "Syst\u00e8me de ventilation D", "\u00c9clairage int\u00e9rieur et ext\u00e9rieur"],
+    "extra_costs_note": "La livraison, l'installation et les fondations ne sont pas incluses dans le prix et sont factur\u00e9es s\u00e9par\u00e9ment."
   },
   "pillars": {
     "title": "Pourquoi Tiny House Heavens?",
@@ -165,7 +166,9 @@
   },
   "cta": {
     "title": "Pr\u00eat \u00e0 commencer?",
-    "subtitle": "Contactez-nous pour une consultation gratuite et d\u00e9couvrez les possibilit\u00e9s"
+    "subtitle": "Contactez-nous pour une consultation gratuite et d\u00e9couvrez les possibilit\u00e9s",
+    "view_models": "Voir nos mod\u00e8les",
+    "request_quote": "Demander un devis"
   },
   "cookie": {
     "message": "Nous utilisons des cookies pour am\u00e9liorer votre exp\u00e9rience.",
@@ -177,9 +180,25 @@
     "subtitle": "D\u00e9couvrez nos tiny houses les plus choisies pour un habitat durable et abordable"
   },
   "seo": {
-    "home_title": "Tiny House Heavens | Tiny Houses Modulaires en Belgique",
-    "home_desc": "Decouvrez notre collection de 18 tiny houses modulaires. Habitat durable, abordable et ecologique au Benelux. Demandez un devis aujourd'hui.",
-    "models_title": "Nos Modeles | Tiny House Heavens",
-    "models_desc": "Decouvrez nos 18 modeles de tiny houses de 13m² a 112m². Modeles entree de gamme, petits, moyens, grands et speciaux avec finition flexible."
+    "home_title": "Tiny House Belgique | 18 Tiny Houses Modulaires | Tiny House Heavens",
+    "home_desc": "Acheter une tiny house en Belgique? Decouvrez 18 modeles modulaires de 13m² a 112m². Habitat durable, abordable et ecologique au Benelux. Demandez un devis gratuit.",
+    "models_title": "Modeles de Tiny Houses | 18 Maisons Modulaires de 13-112m² | Tiny House Heavens",
+    "models_desc": "Decouvrez nos 18 modeles de tiny houses modulaires. Des studios compacts (13m²) aux maisons familiales (112m²). 3 niveaux de finition. Tiny house a vendre en Belgique.",
+    "about_title": "A Propos de Tiny House Heavens | Constructeur de Tiny Houses en Belgique",
+    "about_desc": "Decouvrez Tiny House Heavens. Savoir-faire belge, construction modulaire et materiaux durables. 18 modeles de tiny houses disponibles au Benelux.",
+    "services_title": "Services | De la Conception a la Livraison de Votre Tiny House | Tiny House Heavens",
+    "services_desc": "Service complet pour votre tiny house: conception, selection du modele, finition sur mesure, transport, fondation et suivi. Tout-en-un en Belgique.",
+    "faq_title": "Questions Frequentes sur les Tiny Houses en Belgique | Tiny House Heavens",
+    "faq_desc": "Reponses a vos questions sur l'achat d'une tiny house, les permis de construire en Belgique, les prix, les niveaux de finition et plus encore.",
+    "contact_title": "Contact & Devis Gratuit | Tiny House Heavens",
+    "contact_desc": "Demandez un devis gratuit pour votre tiny house modulaire. Visitez-nous a Sint-Katelijne-Waver ou contactez-nous en ligne.",
+    "blog_title": "Blog | Conseils sur les Tiny Houses & l'Habitat Durable | Tiny House Heavens",
+    "blog_desc": "Lisez nos articles sur la vie en tiny house en Belgique, les permis, l'habitat durable, la construction modulaire et plus encore."
+  },
+  "home_content": {
+    "section_title": "Acheter une Tiny House en Belgique",
+    "paragraph_1": "Vous cherchez une tiny house en Belgique? Tiny House Heavens est votre specialiste en tiny houses modulaires pour le Benelux. Notre collection de 18 modeles uniques offre une solution pour chaque style de vie, des studios compacts de 13 m² aux maisons familiales spacieuses de 112 m² avec plusieurs chambres.",
+    "paragraph_2": "Chaque tiny house est construite avec des materiaux de haute qualite: un chassis en acier, une ossature bois et 150-200 mm d'isolation. Choisissez parmi trois niveaux de finition — House Kit pour les auto-constructeurs, Basic pour une maison entierement finie, ou Optima pour une experience cle en main.",
+    "paragraph_3": "Durable, abordable et econome en energie: nos maisons modulaires combinent le savoir-faire belge avec un design moderne. Que vous cherchiez un premier logement, souhaitiez placer un annexe dans votre jardin ou optiez pour une maison entierement autonome — nous vous accompagnons de la conception a la livraison."
   }
 }

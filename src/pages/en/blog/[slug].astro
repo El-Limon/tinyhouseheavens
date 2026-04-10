@@ -1,0 +1,125 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { t, getPagePath } from '../../../i18n/utils';
+
+const locale = 'en';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts
+    .filter(post => post.data.locale === 'en')
+    .map(post => ({
+      params: { slug: post.id.replace(/^en-/, '') },
+      props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const siteUrl = 'https://tinyhouseheavens.com';
+
+const blogPostingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  image: post.data.image ? `${siteUrl}${post.data.image}` : `${siteUrl}/images/brand/og-default.webp`,
+  datePublished: post.data.pubDate.toISOString(),
+  dateModified: post.data.pubDate.toISOString(),
+  author: {
+    '@type': 'Organization',
+    name: post.data.author,
+    url: siteUrl,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Tiny House Heavens',
+    logo: { '@type': 'ImageObject', url: `${siteUrl}/images/brand/logo.svg` },
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': `${siteUrl}${Astro.url.pathname}`,
+  },
+  inLanguage: 'en-GB',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/en/` },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/en/blog/` },
+    { '@type': 'ListItem', position: 3, name: post.data.title, item: `${siteUrl}${Astro.url.pathname}` },
+  ],
+};
+---
+
+<PageLayout locale={locale} title={`${post.data.title} | Tiny House Heavens`} description={post.data.description} image={post.data.image}>
+
+  <script type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <!-- Hero -->
+  <section class="pt-32 pb-12 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">
+    <div class="max-w-3xl mx-auto px-6">
+      <nav class="text-sm text-thh-charcoal/50 mb-6">
+        <a href={getPagePath(locale, 'blog')} class="hover:text-thh-green-600 transition-colors">{t(locale, 'blog.title')}</a>
+        <span class="mx-2">/</span>
+        <span class="text-thh-charcoal/70">{post.data.title}</span>
+      </nav>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-thh-charcoal leading-tight mb-4">{post.data.title}</h1>
+      <p class="text-lg text-thh-charcoal/70 mb-6">{post.data.description}</p>
+      <div class="flex items-center gap-4 text-sm text-thh-charcoal/50">
+        <span>{post.data.author}</span>
+        <span>&middot;</span>
+        <time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+      </div>
+    </div>
+  </section>
+
+  {post.data.image && (
+    <section class="bg-thh-cream">
+      <div class="max-w-4xl mx-auto px-6">
+        <img src={post.data.image} alt={post.data.title} class="w-full rounded-2xl shadow-lg" loading="eager" />
+      </div>
+    </section>
+  )}
+
+  <!-- Article -->
+  <article class="py-16 bg-thh-cream">
+    <div class="max-w-3xl mx-auto px-6 prose prose-lg prose-headings:font-bold prose-headings:text-thh-charcoal prose-p:text-thh-charcoal/80 prose-a:text-thh-green-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-thh-charcoal prose-li:text-thh-charcoal/80 prose-table:text-sm prose-th:bg-thh-green-50 prose-th:text-thh-charcoal prose-td:border-thh-charcoal/10">
+      <Content />
+    </div>
+  </article>
+
+  <!-- Tags -->
+  {post.data.tags.length > 0 && (
+    <section class="pb-8 bg-thh-cream">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="flex flex-wrap gap-2">
+          {post.data.tags.map(tag => (
+            <span class="px-3 py-1 bg-thh-green-50 text-thh-green-700 text-sm rounded-full">{tag}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-b from-thh-cream to-thh-green-50/30">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-thh-charcoal mb-4">{t(locale, 'cta.title')}</h2>
+      <p class="text-thh-charcoal/70 mb-8">{t(locale, 'cta.subtitle')}</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={getPagePath(locale, 'models')} class="inline-flex items-center justify-center px-6 py-3 bg-thh-green-500 text-white font-semibold rounded-xl hover:bg-thh-green-600 transition-colors shadow-md">
+          {t(locale, 'cta.view_models')}
+        </a>
+        <a href={getPagePath(locale, 'contact')} class="inline-flex items-center justify-center px-6 py-3 border-2 border-thh-green-500 text-thh-green-600 font-semibold rounded-xl hover:bg-thh-green-50 transition-colors">
+          {t(locale, 'cta.request_quote')}
+        </a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

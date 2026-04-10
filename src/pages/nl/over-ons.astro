@@ -1,12 +1,18 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import BrandPillars from '../../components/BrandPillars.astro';
-import { t } from '../../i18n/utils';
+import StructuredData from '../../components/StructuredData.astro';
+import { t, getPagePath } from '../../i18n/utils';
 
 const locale = 'nl';
 ---
 
-<PageLayout locale={locale} title={`${t(locale, 'about.title')} | Tiny House Heavens`} description="Leer meer over Tiny House Heavens, ons team en onze missie om duurzaam en betaalbaar wonen mogelijk te maken in de Benelux.">
+<PageLayout locale={locale} title={t(locale, 'seo.about_title')} description={t(locale, 'seo.about_desc')}>
+
+  <StructuredData type="breadcrumb" locale={locale} breadcrumbs={[
+    { name: 'Home', url: `/${locale}/` },
+    { name: t(locale, 'about.title'), url: getPagePath(locale, 'about') },
+  ]} />
 
   <!-- Hero -->
   <section class="pt-32 pb-16 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">
@@ -101,6 +107,17 @@ const locale = 'nl';
           <h3 class="text-lg font-bold mb-2 text-thh-charcoal">Klantgerichtheid</h3>
           <p class="text-sm text-thh-charcoal/70 leading-relaxed">Persoonlijke begeleiding van eerste contact tot oplevering en nazorg</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sustainability -->
+  <section class="py-16 bg-thh-cream">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-thh-charcoal text-center">Duurzaam Bouwen voor de Toekomst</h2>
+      <div class="text-thh-charcoal/80 leading-relaxed space-y-4">
+        <p>Duurzaamheid staat centraal in alles wat we doen bij Tiny House Heavens. Onze modulaire tiny houses zijn ontworpen om het energieverbruik te minimaliseren door superieure isolatie (150-200 mm), luchtdichte constructie en de mogelijkheid voor zonnepanelen en warmtepompen.</p>
+        <p>Door te kiezen voor compact wonen vermindert u niet alleen uw ecologische voetafdruk, maar ook uw maandelijkse kosten. Een kleiner woonoppervlak betekent minder energie voor verwarming en minder materiaalgebruik tijdens de bouw. Bekijk onze <a href={getPagePath(locale, 'models')} class="text-thh-green-600 hover:text-thh-green-700 underline">18 modellen</a> en ontdek welke tiny house bij uw duurzame levensstijl past.</p>
       </div>
     </div>
   </section>

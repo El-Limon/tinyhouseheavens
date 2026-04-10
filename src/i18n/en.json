@@ -59,7 +59,8 @@
     "recommended": "Recommended",
     "house_kit_features": ["Load-bearing timber frame structure", "Insulated floor, walls and ceiling", "OSB subfloor", "Wind and vapour barrier"],
     "basic_features": ["Everything from House Kit", "Windproof exterior facade", "Cement bathroom floor", "Internal cladding and plasterboard", "Metal roofing", "Gutters and drainage"],
-    "optima_features": ["Everything from Basic", "Pine/metal facade cladding", "Premium wood beam finishing", "Ceramic bathroom floor", "Electric underfloor heating", "50L hot water boiler", "Ventilation D system", "Indoor and outdoor lighting"]
+    "optima_features": ["Everything from Basic", "Pine/metal facade cladding", "Premium wood beam finishing", "Ceramic bathroom floor", "Electric underfloor heating", "50L hot water boiler", "Ventilation D system", "Indoor and outdoor lighting"],
+    "extra_costs_note": "Delivery, installation and foundation are not included in the price and are charged separately."
   },
   "pillars": {
     "title": "Why Tiny House Heavens?",
@@ -164,14 +165,32 @@
     "structured_data_desc": "Modular tiny houses designed for sustainable and affordable living in the Benelux"
   },
   "seo": {
-    "home_title": "Tiny House Heavens | Modular Tiny Houses in Belgium",
-    "home_desc": "Discover our collection of 18 modular tiny houses. Sustainable, affordable and ecological living in the Benelux. Request a quote today.",
-    "models_title": "Our Models | Tiny House Heavens",
-    "models_desc": "Browse our 18 tiny house models from 13m\u00b2 to 112m\u00b2. Entry, small, medium, large and special models with flexible finishing."
+    "home_title": "Tiny House Belgium | 18 Modular Tiny Houses | Tiny House Heavens",
+    "home_desc": "Buy a modular tiny house in Belgium. Discover 18 models from 13m² to 112m². Sustainable, affordable and ecological living in the Benelux. Request a free quote.",
+    "models_title": "Tiny House Models | 18 Modular Homes from 13-112m² | Tiny House Heavens",
+    "models_desc": "Browse all 18 tiny house models. From compact studios (13m²) to family homes (112m²). Choose from 3 finishing levels. Tiny houses for sale in Belgium.",
+    "about_title": "About Tiny House Heavens | Belgian Tiny House Builder",
+    "about_desc": "Learn more about Tiny House Heavens. Belgian craftsmanship, modular construction and sustainable materials. 18 tiny house models available in the Benelux.",
+    "services_title": "Services | From Design to Delivery of Your Tiny House | Tiny House Heavens",
+    "services_desc": "Full service for your tiny house: design, model selection, custom finishing, transport, foundation and aftercare. All-in-one in Belgium.",
+    "faq_title": "Frequently Asked Questions About Tiny Houses in Belgium | Tiny House Heavens",
+    "faq_desc": "Answers to questions about buying a tiny house, building permits in Belgium, prices, finishing levels, energy efficiency and more.",
+    "contact_title": "Contact & Free Quote | Tiny House Heavens",
+    "contact_desc": "Request a free quote for your modular tiny house. Visit us in Sint-Katelijne-Waver or contact us online.",
+    "blog_title": "Blog | Tips on Tiny Houses & Sustainable Living | Tiny House Heavens",
+    "blog_desc": "Read articles about tiny house living in Belgium, building permits, sustainable living, modular construction and more."
+  },
+  "home_content": {
+    "section_title": "Buy a Tiny House in Belgium",
+    "paragraph_1": "Looking for a tiny house in Belgium? Tiny House Heavens is your specialist in modular tiny houses for the Benelux. Our collection of 18 unique models offers a solution for every lifestyle, from compact 13 m² studios to spacious 112 m² family homes with multiple bedrooms.",
+    "paragraph_2": "Every tiny house is built with high-quality materials: a steel undercarriage, timber frame construction and 150-200 mm insulation. Choose from three finishing levels — House Kit for self-builders, Basic for a fully finished home, or Optima for a turnkey experience.",
+    "paragraph_3": "Sustainable, affordable and energy-efficient: our modular homes combine Belgian craftsmanship with modern design. Whether you are looking for a starter home, want to place an annex in your garden or choose a fully autonomous house — we guide you from design to delivery."
   },
   "cta": {
     "title": "Ready to get started?",
-    "subtitle": "Contact us for a free consultation and discover the possibilities"
+    "subtitle": "Contact us for a free consultation and discover the possibilities",
+    "view_models": "View our models",
+    "request_quote": "Request a quote"
   },
   "cookie": {
     "message": "We use cookies to improve your experience.",

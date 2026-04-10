@@ -7,20 +7,31 @@ interface BreadcrumbItem {
   url: string;
 }
 
-interface Props {
-  type: 'organization' | 'product' | 'breadcrumb';
-  locale: Locale;
-  breadcrumbs?: BreadcrumbItem[];
-  product?: {
-    name: string;
-    description: string;
-    image: string;
-    category: string;
-    buildingArea: number;
-  };
+interface FaqItem {
+  question: string;
+  answer: string;
 }
 
-const { type, locale, breadcrumbs, product } = Astro.props;
+interface Props {
+  type: 'organization' | 'product' | 'breadcrumb' | 'faqPage' | 'localBusiness' | 'webSite' | 'service';
+  locale: Locale;
+  breadcrumbs?: BreadcrumbItem[];
+  faqs?: FaqItem[];
+  product?: {
+    name: string;
+    slug: string;
+    description: string;
+    image: string;
+    images?: string[];
+    category: string;
+    buildingArea: number;
+    livingArea?: number;
+    dimensions?: { length: number; width: number };
+  };
+  services?: { name: string; description: string }[];
+}
+
+const { type, locale, breadcrumbs, product, faqs, services } = Astro.props;
 const siteUrl = 'https://tinyhouseheavens.com';
 
 function getOrganizationSchema() {
@@ -34,7 +45,7 @@ function getOrganizationSchema() {
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Fort 15',
-      addressLocality: 'St-Katelijne-Waver',
+      addressLocality: 'Sint-Katelijne-Waver',
       postalCode: '2860',
       addressCountry: 'BE',
     },
@@ -46,27 +57,42 @@ function getOrganizationSchema() {
       availableLanguage: ['Dutch', 'French', 'English'],
     },
     sameAs: [
-      'https://facebook.com/profile.php?id=61573215795089',
-      'https://instagram.com/tinyhouseheavens',
+      'https://www.facebook.com/tinyhouseheavens',
+      'https://www.instagram.com/tinyhouseheavens',
     ],
   };
 }
 
 function getProductSchema() {
   if (!product) return null;
-  return {
+  const imageUrl = (src: string) => src.startsWith('http') ? src : `${siteUrl}${src}`;
+  const allImages = product.images
+    ? [imageUrl(product.image), ...product.images.map(imageUrl)]
+    : [imageUrl(product.image)];
+
+  const schema: Record<string, any> = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: `Tiny House ${product.name}`,
     description: product.description,
-    image: product.image.startsWith('http') ? product.image : `${siteUrl}${product.image}`,
+    image: allImages,
+    sku: product.slug,
     brand: { '@type': 'Brand', name: 'Tiny House Heavens' },
-    category: 'Modular Homes',
-    additionalProperty: {
-      '@type': 'PropertyValue',
-      name: t(locale, 'models.building_area'),
-      value: `${product.buildingArea} m²`,
+    manufacturer: {
+      '@type': 'Organization',
+      name: 'Tiny House Heavens',
+      url: siteUrl,
     },
+    category: 'Modular Tiny Houses',
+    material: 'Timber frame, steel undercarriage, OSB panels, 150-200mm insulation',
+    countryOfOrigin: { '@type': 'Country', name: 'Belgium' },
+    additionalProperty: [
+      {
+        '@type': 'PropertyValue',
+        name: t(locale, 'models.building_area'),
+        value: `${product.buildingArea} m²`,
+      },
+    ],
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
@@ -74,6 +100,21 @@ function getProductSchema() {
       seller: { '@type': 'Organization', name: 'Tiny House Heavens' },
     },
   };
+
+  if (product.livingArea) {
+    schema.additionalProperty.push({
+      '@type': 'PropertyValue',
+      name: t(locale, 'models.living_area'),
+      value: `${product.livingArea} m²`,
+    });
+  }
+
+  if (product.dimensions) {
+    schema.width = { '@type': 'QuantitativeValue', value: product.dimensions.width, unitCode: 'MMT' };
+    schema.depth = { '@type': 'QuantitativeValue', value: product.dimensions.length, unitCode: 'MMT' };
+  }
+
+  return schema;
 }
 
 function getBreadcrumbSchema() {
@@ -90,15 +131,107 @@ function getBreadcrumbSchema() {
   };
 }
 
+function getFaqPageSchema() {
+  if (!faqs || faqs.length === 0) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+function getLocalBusinessSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${siteUrl}/#localbusiness`,
+    name: 'Tiny House Heavens',
+    image: `${siteUrl}/images/brand/og-default.webp`,
+    url: siteUrl,
+    telephone: '+32465600263',
+    email: 'info@tinyhouseheavens.com',
+    description: t(locale, 'common.structured_data_desc'),
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Fort 15',
+      addressLocality: 'Sint-Katelijne-Waver',
+      postalCode: '2860',
+      addressRegion: 'Antwerpen',
+      addressCountry: 'BE',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 51.0717,
+      longitude: 4.5283,
+    },
+    areaServed: [
+      { '@type': 'Country', name: 'Belgium' },
+      { '@type': 'Country', name: 'Netherlands' },
+      { '@type': 'Country', name: 'Luxembourg' },
+    ],
+    priceRange: '€€€',
+    sameAs: [
+      'https://www.facebook.com/tinyhouseheavens',
+      'https://www.instagram.com/tinyhouseheavens',
+    ],
+  };
+}
+
+function getWebSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Tiny House Heavens',
+    url: siteUrl,
+    inLanguage: ['nl', 'fr', 'en'],
+    publisher: {
+      '@type': 'Organization',
+      name: 'Tiny House Heavens',
+      url: siteUrl,
+    },
+  };
+}
+
+function getServiceSchema() {
+  if (!services || services.length === 0) return null;
+  return services.map(service => ({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.name,
+    description: service.description,
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Tiny House Heavens',
+      url: siteUrl,
+    },
+    areaServed: { '@type': 'Country', name: 'Belgium' },
+  }));
+}
+
 const schemas: Record<string, () => any> = {
   organization: getOrganizationSchema,
   product: getProductSchema,
   breadcrumb: getBreadcrumbSchema,
+  faqPage: getFaqPageSchema,
+  localBusiness: getLocalBusinessSchema,
+  webSite: getWebSiteSchema,
+  service: getServiceSchema,
 };
 
 const schema = schemas[type]?.();
 ---
 
-{schema && (
+{schema && Array.isArray(schema) && schema[0]?.['@type'] === 'Service' ? (
+  schema.map((s: any) => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  ))
+) : schema ? (
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-)}
+) : null}

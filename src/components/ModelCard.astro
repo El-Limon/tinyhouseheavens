@@ -38,7 +38,7 @@ const badgeColor = categoryColors[model.category] ?? 'bg-thh-green-100 text-thh-
     {model.heroImage ? (
       <img
         src={model.heroImage}
-        alt={`${model.name} tiny house`}
+        alt={`${model.name} tiny house ${model.buildingArea}m² - ${categoryText}`}
         class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         loading="lazy"
       />

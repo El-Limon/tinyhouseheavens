@@ -40,6 +40,8 @@ const ogLocaleMap: Record<Locale, string> = { nl: 'nl_BE', fr: 'fr_BE', en: 'en_
   <meta property="og:image" content={new URL(ogImage, Astro.site)} />
   <meta property="og:locale" content={ogLocaleMap[locale]} />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:site_name" content="Tiny House Heavens" />
   <meta name="twitter:card" content="summary_large_image" />
   {noIndex && <meta name="robots" content="noindex, nofollow" />}
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

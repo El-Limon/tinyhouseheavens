@@ -1,12 +1,18 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import BrandPillars from '../../components/BrandPillars.astro';
-import { t } from '../../i18n/utils';
+import StructuredData from '../../components/StructuredData.astro';
+import { t, getPagePath } from '../../i18n/utils';
 
 const locale = 'fr';
 ---
 
-<PageLayout locale={locale} title={`${t(locale, 'about.title')} | Tiny House Heavens`} description="Decouvrez Tiny House Heavens, notre equipe et notre mission pour un habitat durable et abordable au Benelux.">
+<PageLayout locale={locale} title={t(locale, 'seo.about_title')} description={t(locale, 'seo.about_desc')}>
+
+  <StructuredData type="breadcrumb" locale={locale} breadcrumbs={[
+    { name: 'Accueil', url: `/${locale}/` },
+    { name: t(locale, 'about.title'), url: getPagePath(locale, 'about') },
+  ]} />
 
   <!-- Hero -->
   <section class="pt-32 pb-16 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">
@@ -101,6 +107,17 @@ const locale = 'fr';
           <h3 class="text-lg font-bold mb-2 text-thh-charcoal">Orientation Client</h3>
           <p class="text-sm text-thh-charcoal/70 leading-relaxed">Accompagnement personnel du premier contact a la livraison et au service apres-vente</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sustainability -->
+  <section class="py-16 bg-thh-cream">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-thh-charcoal text-center">Construire Durablement pour l'Avenir</h2>
+      <div class="text-thh-charcoal/80 leading-relaxed space-y-4">
+        <p>La durabilite est au coeur de tout ce que nous faisons chez Tiny House Heavens. Nos tiny houses modulaires sont concues pour minimiser la consommation d'energie grace a une isolation superieure (150-200 mm), une construction etanche a l'air et la possibilite d'installer des panneaux solaires et des pompes a chaleur.</p>
+        <p>En choisissant un habitat compact, vous reduisez non seulement votre empreinte ecologique, mais aussi vos couts mensuels. Une surface habitable plus petite signifie moins d'energie pour le chauffage et moins de materiaux utilises lors de la construction. Decouvrez nos <a href={getPagePath(locale, 'models')} class="text-thh-green-600 hover:text-thh-green-700 underline">18 modeles</a> et trouvez la tiny house qui correspond a votre style de vie durable.</p>
       </div>
     </div>
   </section>

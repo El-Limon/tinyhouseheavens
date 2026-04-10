@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import StructuredData from '../../components/StructuredData.astro';
 import { t, getPagePath } from '../../i18n/utils';
 
 const locale = 'fr';
@@ -38,7 +39,13 @@ const services = [
 ];
 ---
 
-<PageLayout locale={locale} title={`${t(locale, 'services.title')} | Tiny House Heavens`} description="Decouvrez nos services: de la conception et du conseil a la livraison, l'installation et le service apres-vente de votre tiny house modulaire.">
+<PageLayout locale={locale} title={t(locale, 'seo.services_title')} description={t(locale, 'seo.services_desc')}>
+
+  <StructuredData type="service" locale={locale} services={services.map(s => ({ name: s.title, description: s.description }))} />
+  <StructuredData type="breadcrumb" locale={locale} breadcrumbs={[
+    { name: 'Accueil', url: `/${locale}/` },
+    { name: t(locale, 'services.title'), url: getPagePath(locale, 'services') },
+  ]} />
 
   <!-- Hero -->
   <section class="pt-32 pb-16 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">
@@ -87,5 +94,16 @@ const services = [
     </div>
   </section>
 
+  <!-- Why Choose Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-thh-charcoal text-center">Pourquoi Choisir Tiny House Heavens?</h2>
+      <div class="text-thh-charcoal/80 leading-relaxed space-y-4">
+        <p>Chez Tiny House Heavens, nous combinons le savoir-faire belge avec des techniques de construction modulaire innovantes. Nos tiny houses sont construites avec un chassis en acier et une ossature bois, garantissant une habitation solide, durable et bien isolee pour de nombreuses annees.</p>
+        <p>Avec <a href={getPagePath(locale, 'models')} class="text-thh-green-600 hover:text-thh-green-700 underline">18 modeles uniques</a> de 13 m² a 112 m², nous offrons une solution pour chaque situation: un premier logement, une dependance, un logement de vacances ou une maison familiale a part entiere. Chaque modele est entierement personnalisable et disponible en trois niveaux de finition.</p>
+        <p>Nous nous distinguons par notre approche personnelle. Du premier entretien-conseil a la livraison et au suivi: vous avez un interlocuteur fixe qui accompagne votre projet. <a href={getPagePath(locale, 'contact')} class="text-thh-green-600 hover:text-thh-green-700 underline">Contactez-nous aujourd'hui</a> pour un entretien sans engagement sur les possibilites.</p>
+      </div>
+    </div>
+  </section>
 
 </PageLayout>
