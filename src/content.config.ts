@@ -58,10 +58,15 @@ const blogCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.date(),
+    updatedDate: z.date().optional(),
     author: z.string().default('Tiny House Heavens'),
     image: z.string().optional(),
     tags: z.array(z.string()),
     locale: z.enum(['nl', 'fr', 'en']),
+    faqs: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })).optional(),
   }),
 });
 

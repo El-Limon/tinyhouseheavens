@@ -39,6 +39,9 @@ const ogLocaleMap: Record<Locale, string> = { nl: 'nl_BE', fr: 'fr_BE', en: 'en_
   <meta property="og:description" content={description} />
   <meta property="og:image" content={new URL(ogImage, Astro.site)} />
   <meta property="og:locale" content={ogLocaleMap[locale]} />
+  {alternateLocales.map(alt => (
+    <meta property="og:locale:alternate" content={ogLocaleMap[alt]} />
+  ))}
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:site_name" content="Tiny House Heavens" />
@@ -50,9 +53,6 @@ const ogLocaleMap: Record<Locale, string> = { nl: 'nl_BE', fr: 'fr_BE', en: 'en_
   <meta name="google-site-verification" content="rX-L_Maqj5wRIcJQBThxZ6mhKoA5kZd0CdmYEpg3Tec" />
   {noIndex && <meta name="robots" content="noindex, nofollow" />}
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <!-- GA4 — loaded dynamically by CookieConsent when user accepts -->
   <script is:inline>
     window.GA_MEASUREMENT_ID = 'G-97VPC8S4KD';

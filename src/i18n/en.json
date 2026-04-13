@@ -142,7 +142,9 @@
     "mission": "Our mission is to build energy-efficient, comfortable and fully modular Tiny House Units with unmatched value.",
     "mission_title": "Our Mission",
     "location_title": "Our Location",
-    "quality_title": "Quality as Foundation"
+    "quality_title": "Quality as Foundation",
+    "team_title": "Our Founder",
+    "team_bio": "With a passion for sustainable and affordable housing, Thomas founded Tiny House Heavens to make modular tiny house living accessible to everyone in the Benelux."
   },
   "services": {
     "title": "Our services"
@@ -218,5 +220,8 @@
   "popular": {
     "title": "Our most popular models",
     "subtitle": "Discover our most chosen tiny houses for sustainable and affordable living"
+  },
+  "testimonials": {
+    "title": "What Our Customers Say"
   }
 }

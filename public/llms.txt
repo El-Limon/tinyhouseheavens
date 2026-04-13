@@ -1,82 +1,69 @@
 # Tiny House Heavens
 
-> Belgian manufacturer of modular tiny houses, based in Sint-Katelijne-Waver (Antwerp province). We design and build 18 unique models ranging from 13 m² to 112 m², with three finishing levels. Serving Belgium and the Benelux region.
-
-## Company Info
-
-- **Name**: Tiny House Heavens
-- **Location**: Fort 15, 2860 Sint-Katelijne-Waver, Belgium
-- **Phone**: +32 465 600 263
-- **Email**: info@tinyhouseheavens.com
-- **Languages**: Dutch, French, English
-- **VAT**: BE0403.670.250
-- **Website**: https://tinyhouseheavens.com
-
-## What We Offer
-
-Tiny House Heavens produces fully modular tiny houses using frame-modular construction: a steel undercarriage with timber-frame walls insulated with 150-200 mm insulation. Units are transported and placed on-site.
-
-### Finishing Levels
-
-1. **House Kit** - Structural package for self-builders: timber frame, insulated floor/walls/ceiling, OSB subfloor, wind and vapour barrier
-2. **Basic** - Fully finished home: includes exterior facade, metal roofing, gutters, interior cladding, cement bathroom floor
-3. **Optima** - Turnkey premium: pine/metal facade cladding, ceramic bathroom floor, electric underfloor heating, 50L hot water boiler, ventilation D system, indoor and outdoor lighting
-
-### Services
-
-- Design and consultation
-- Model selection guidance
-- Custom finishing
-- Delivery and transport
-- Foundation and installation (screw foundations, concrete slabs)
-- Aftercare and warranty
-
-## Models (18 Total)
-
-### Entry Models (13-17 m²)
-- **Arden**: 22.5 m² building area, 16.8 m² living, compact entry-level
-- **Evoke**: 22.44 m² building area, 16.5 m² living, starter home
-
-### Small Models (20-28 m²)
-- **Baby**: 22.44 m² building area, 16.5 m² living, large 29.4 m² terrace
-- **Serein**: 26 m² building area, 20 m² living
-- **Auxin**: 28.8 m² building area, 21.6 m² living
-- **Elyra**: 28.8 m² building area, 21.6 m² living
-- **Noble**: 30 m² building area, 22 m² living
-- **Opale**: 28.8 m² building area, 21.6 m² living
-
-### Medium Models (35-52 m²)
-- **Spa Mirai**: 45 m² building area, 32.5 m² living, spa-inspired
-- **Solin**: 47.25 m² building area, 35.7 m² living, built-in sauna
-- **Liora**: 48 m² building area, 36 m² living
-- **Artem**: 52.5 m² building area, 40 m² living, multiple variants
-- **Vella**: 52.5 m² building area, 40 m² living
-
-### Large Models (45-112 m²)
-- **Velin**: 58.5 m² building area, 45 m² living
-- **Lyren**: 59.4 m² building area, 45 m² living
-- **Mini-Ophir**: 65 m² building area, 52 m² living
-- **Keiro**: 70 m² building area, 58 m² living
-
-### Special Models
-- **Ophir**: 91.8 m² building area, 78.4 m² living, flagship model with 3 variants and 2 bedrooms
-
-## Construction Quality
-
-- 200 mm insulation in floor and ceiling
-- 150 mm insulation in walls
-- Wind and vapour barrier membranes
-- OSB structural panels
-- Steel undercarriage for transport and durability
-- Timber-frame (houtskelet) construction
+> Belgian modular tiny house manufacturer in Sint-Katelijne-Waver. 20 models from 13m2 to 112m2 with three finishing levels (House Kit, Basic, Optima). Serving Belgium, Netherlands, and Luxembourg.
 
 ## Key Pages
 
-- Home: https://tinyhouseheavens.com/nl/
-- All Models: https://tinyhouseheavens.com/nl/modellen/
-- Services: https://tinyhouseheavens.com/nl/diensten/
-- About Us: https://tinyhouseheavens.com/nl/over-ons/
-- FAQ: https://tinyhouseheavens.com/nl/faq/
-- Contact: https://tinyhouseheavens.com/nl/contact/
+- [Home](https://tinyhouseheavens.com/en/): Overview of Tiny House Heavens with featured models, construction process, and finishing level comparison.
+- [All Models](https://tinyhouseheavens.com/en/models/): Complete catalog of 20 modular tiny house models from 13m2 to 112m2, filterable by category.
+- [Services](https://tinyhouseheavens.com/en/services/): Six services from design consultation through delivery, installation, and aftercare.
+- [About Us](https://tinyhouseheavens.com/en/about-us/): Company mission, values, construction methods, and location details.
+- [FAQ](https://tinyhouseheavens.com/en/faq/): 8 common questions about modular tiny houses, delivery times, permits, costs, and energy efficiency.
+- [Contact](https://tinyhouseheavens.com/en/contact/): Quote request form, phone, email, and address.
+
+## Blog
+
+- [Tiny House Costs in Belgium 2026](https://tinyhouseheavens.com/en/blog/how-much-does-a-tiny-house-cost-in-belgium/): Price ranges from EUR 25,000 to EUR 200,000 by size category, cost factors, additional expenses, and comparison to traditional housing.
+- [Permits Complete Guide](https://tinyhouseheavens.com/en/blog/tiny-house-permits-belgium-complete-guide/): Regional permit requirements for Flanders, Wallonia, and Brussels. Application process and timelines (30-120 days).
+- [Buying Guide](https://tinyhouseheavens.com/en/blog/buying-a-tiny-house-in-belgium-guide/): 8-step guide covering location, zoning, modular vs. on-wheels, finishing levels, build quality, costs, and builder selection.
+- [Finishing Level Guide](https://tinyhouseheavens.com/en/blog/house-kit-basic-optima-which-finishing-level/): Detailed comparison of House Kit, Basic, and Optima finishing with features, pros/cons, and pricing guidance.
+
+## Popular Models
+
+- [Evoke](https://tinyhouseheavens.com/en/models/evoke/): 54m2 medium model with 42.6m2 living space, gable roof, separate bedroom, kitchen-living area. Most popular mid-range model.
+- [Elyra](https://tinyhouseheavens.com/en/models/elyra/): 62.5m2 large model with 47.6m2 living space.
+- [Opale](https://tinyhouseheavens.com/en/models/opale/): 112.2m2 large model with 90.1m2 living space. Largest standard model.
+- [Ophir](https://tinyhouseheavens.com/en/models/ophir/): 91.8m2 special model with 78.4m2 living space, 2 bedrooms, 3 layout variants. Flagship model.
+- [Baby](https://tinyhouseheavens.com/en/models/baby/): 22.4m2 small model with 16.5m2 living space and 29.4m2 terrace. Entry-level.
+
+## Products Overview
+
+20 modular tiny house models in five categories:
+- **Instap (Entry)**: 13-17m2 living area, ideal for studios and starter homes
+- **Klein (Small)**: 20-28m2 living area, compact homes and guest houses
+- **Medium**: 32-42m2 living area, full-featured single-person or couple homes
+- **Groot (Large)**: 45-90m2 living area, family homes with multiple rooms
+- **Speciaal (Special)**: Custom configurations and flagship models
+
+### Finishing Levels
+1. **House Kit**: Structural shell for self-builders -- timber frame, 150-200mm insulation, OSB subfloor, wind/vapour barrier
+2. **Basic**: Fully finished -- exterior facade, metal roofing, gutters, interior cladding, cement bathroom floor
+3. **Optima**: Turnkey premium -- pine/metal facade, ceramic bathroom, electric underfloor heating, 50L boiler, Ventilation D system, full lighting
+
+### Construction
+- Steel undercarriage for transport and structural support
+- Timber-frame (houtskelet) walls
+- 200mm insulation in floor and ceiling, 150mm in walls
+- Wind and vapour barrier membranes
+- OSB structural panels
+- Built in workshop, transported to site
+
+## Key Facts
+
+- Location: Fort 15, 2860 Sint-Katelijne-Waver, Belgium (Antwerp province)
+- Models: 20 unique designs from 13m2 to 112m2
+- Finishing: Three levels (House Kit, Basic, Optima)
+- Price range: EUR 25,000 to EUR 200,000 depending on size and finishing
+- Service area: Belgium, Netherlands, Luxembourg
+- Languages: Dutch, French, English
+- VAT: BE0403.670.250
+
+## Contact
+
+- Website: https://tinyhouseheavens.com
+- Email: info@tinyhouseheavens.com
+- Phone: +32 465 600 263
+- Address: Fort 15, 2860 Sint-Katelijne-Waver, Belgium
+- Dutch site: https://tinyhouseheavens.com/nl/
 - French site: https://tinyhouseheavens.com/fr/
 - English site: https://tinyhouseheavens.com/en/

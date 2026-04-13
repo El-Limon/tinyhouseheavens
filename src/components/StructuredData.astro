@@ -13,7 +13,7 @@ interface FaqItem {
 }
 
 interface Props {
-  type: 'organization' | 'product' | 'breadcrumb' | 'faqPage' | 'localBusiness' | 'webSite' | 'service';
+  type: 'organization' | 'product' | 'breadcrumb' | 'faqPage' | 'localBusiness' | 'webSite' | 'service' | 'person';
   locale: Locale;
   breadcrumbs?: BreadcrumbItem[];
   faqs?: FaqItem[];
@@ -38,10 +38,22 @@ function getOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${siteUrl}/#organization`,
     name: 'Tiny House Heavens',
     url: siteUrl,
     logo: `${siteUrl}/images/brand/logo.svg`,
     description: t(locale, 'common.structured_data_desc'),
+    founder: {
+      '@type': 'Person',
+      '@id': `${siteUrl}/#founder`,
+    },
+    knowsAbout: [
+      'Modular tiny house construction',
+      'Timber frame and steel undercarriage building',
+      'Sustainable and energy-efficient housing',
+      'Belgian building permits and regulations',
+      'Turnkey tiny house delivery',
+    ],
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Fort 15',
@@ -59,6 +71,7 @@ function getOrganizationSchema() {
     sameAs: [
       'https://www.facebook.com/tinyhouseheavens',
       'https://www.instagram.com/tinyhouseheavens',
+      // TODO: Add LinkedIn, YouTube, Google Business Profile URLs when created
     ],
   };
 }
@@ -215,6 +228,28 @@ function getServiceSchema() {
   }));
 }
 
+function getPersonSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${siteUrl}/#founder`,
+    name: 'Thomas Jennes',
+    jobTitle: 'Founder',
+    image: `${siteUrl}/images/team/thomas-jennes.webp`,
+    url: `${siteUrl}/en/about-us/`,
+    worksFor: {
+      '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
+    },
+    knowsAbout: [
+      'Modular tiny house construction',
+      'Timber frame building',
+      'Sustainable housing in Belgium',
+      'Belgian building permits',
+    ],
+  };
+}
+
 const schemas: Record<string, () => any> = {
   organization: getOrganizationSchema,
   product: getProductSchema,
@@ -223,6 +258,7 @@ const schemas: Record<string, () => any> = {
   localBusiness: getLocalBusinessSchema,
   webSite: getWebSiteSchema,
   service: getServiceSchema,
+  person: getPersonSchema,
 };
 
 const schema = schemas[type]?.();

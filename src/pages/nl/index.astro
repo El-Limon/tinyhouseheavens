@@ -4,6 +4,7 @@ import Hero from '../../components/Hero.astro';
 import ModelCard from '../../components/ModelCard.astro';
 import BrandPillars from '../../components/BrandPillars.astro';
 import FinishingLevels from '../../components/FinishingLevels.astro';
+import Testimonials from '../../components/Testimonials.astro';
 import StructuredData from '../../components/StructuredData.astro';
 import { getCollection } from 'astro:content';
 import { t, getPagePath } from '../../i18n/utils';
@@ -75,6 +76,9 @@ const featuredModels = models.filter(m => m.data.featured).sort((a, b) => a.data
 
   <!-- Finishing Levels -->
   <FinishingLevels locale={locale} />
+
+  <!-- Testimonials -->
+  <Testimonials locale={locale} />
 
   <!-- SEO Content Section -->
   <section class="py-20 bg-white">

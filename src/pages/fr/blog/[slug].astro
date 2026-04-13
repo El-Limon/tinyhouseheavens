@@ -26,11 +26,11 @@ const blogPostingSchema = {
   description: post.data.description,
   image: post.data.image ? `${siteUrl}${post.data.image}` : `${siteUrl}/images/brand/og-default.webp`,
   datePublished: post.data.pubDate.toISOString(),
-  dateModified: post.data.pubDate.toISOString(),
+  dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
   author: {
-    '@type': 'Organization',
-    name: post.data.author,
-    url: siteUrl,
+    '@type': 'Person',
+    '@id': `${siteUrl}/#founder`,
+    name: 'Thomas Jennes',
   },
   publisher: {
     '@type': 'Organization',
@@ -53,12 +53,26 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 3, name: post.data.title, item: `${siteUrl}${Astro.url.pathname}` },
   ],
 };
+
+const faqPageSchema = post.data.faqs && post.data.faqs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: post.data.faqs.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+} : null;
 ---
 
 <PageLayout locale={locale} title={`${post.data.title} | Tiny House Heavens`} description={post.data.description} image={post.data.image}>
 
   <script type="application/ld+json" set:html={JSON.stringify(blogPostingSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {faqPageSchema && <script type="application/ld+json" set:html={JSON.stringify(faqPageSchema)} />}
 
   <!-- Hero -->
   <section class="pt-32 pb-12 bg-gradient-to-b from-thh-green-50/50 to-thh-cream">
@@ -71,9 +85,15 @@ const breadcrumbSchema = {
       <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-thh-charcoal leading-tight mb-4">{post.data.title}</h1>
       <p class="text-lg text-thh-charcoal/70 mb-6">{post.data.description}</p>
       <div class="flex items-center gap-4 text-sm text-thh-charcoal/50">
-        <span>{post.data.author}</span>
+        <span>Thomas Jennes</span>
         <span>&middot;</span>
         <time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('fr-BE', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+        {post.data.updatedDate && (
+          <>
+            <span>&middot;</span>
+            <span>Mis a jour: <time datetime={post.data.updatedDate.toISOString()}>{post.data.updatedDate.toLocaleDateString('fr-BE', { year: 'numeric', month: 'long', day: 'numeric' })}</time></span>
+          </>
+        )}
       </div>
     </div>
   </section>

@@ -142,7 +142,9 @@
     "mission": "Notre mission est de construire des Tiny House Units modulaires, economes en energie, confortables et d'une valeur incomparable.",
     "mission_title": "Notre Mission",
     "location_title": "Notre Emplacement",
-    "quality_title": "La Qualit\u00e9 comme Fondation"
+    "quality_title": "La Qualit\u00e9 comme Fondation",
+    "team_title": "Notre Fondateur",
+    "team_bio": "Avec une passion pour l'habitat durable et abordable, Thomas a fonde Tiny House Heavens pour rendre la vie en tiny house modulaire accessible a tous au Benelux."
   },
   "services": {
     "title": "Nos services"
@@ -196,6 +198,9 @@
   "popular": {
     "title": "Nos mod\u00e8les les plus populaires",
     "subtitle": "D\u00e9couvrez nos tiny houses les plus choisies pour un habitat durable et abordable"
+  },
+  "testimonials": {
+    "title": "Ce Que Disent Nos Clients"
   },
   "seo": {
     "home_title": "Tiny House Belgique | 20 Tiny Houses Modulaires | Tiny House Heavens",

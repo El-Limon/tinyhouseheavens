@@ -7,7 +7,15 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   site: 'https://tinyhouseheavens.com',
   output: 'static',
-  integrations: [sitemap(), mdx()],
+  integrations: [
+    sitemap({
+      serialize(item) {
+        item.lastmod = new Date().toISOString();
+        return item;
+      },
+    }),
+    mdx(),
+  ],
   redirects: {
     '/': '/nl/',
     '/nl/elementor-23523/': '/nl/',

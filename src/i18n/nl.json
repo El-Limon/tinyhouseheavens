@@ -142,7 +142,9 @@
     "mission": "Onze missie is het bouwen van energie-efficiente, comfortabele en volledig modulaire Tiny House Units met onvergelijkbare waarde.",
     "mission_title": "Onze Missie",
     "location_title": "Onze Locatie",
-    "quality_title": "Kwaliteit als Fundament"
+    "quality_title": "Kwaliteit als Fundament",
+    "team_title": "Onze Oprichter",
+    "team_bio": "Met een passie voor duurzaam en betaalbaar wonen richtte Thomas Tiny House Heavens op om modulair tiny house wonen toegankelijk te maken voor iedereen in de Benelux."
   },
   "services": {
     "title": "Onze diensten"
@@ -196,6 +198,9 @@
   "popular": {
     "title": "Onze populairste modellen",
     "subtitle": "Ontdek onze meest gekozen tiny houses voor duurzaam en betaalbaar wonen"
+  },
+  "testimonials": {
+    "title": "Wat Onze Klanten Zeggen"
   },
   "seo": {
     "home_title": "Tiny House Kopen in Belgie | 20 Modulaire Tiny Houses | Tiny House Heavens",
