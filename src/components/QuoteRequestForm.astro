@@ -259,11 +259,36 @@ const autoResponse = t(locale, 'contact.auto_response');
       }
 
       try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' },
-        });
+        const formData = new FormData(form);
+
+        // Fire CRM webhook in parallel. Don't block UX on failure — FormSubmit is the source of truth for the email.
+        const crmUrl = import.meta.env.PUBLIC_CRM_WEBHOOK_URL;
+        const crmSecret = import.meta.env.PUBLIC_CRM_WEBHOOK_SECRET;
+        const crmPromise = crmUrl && crmSecret
+          ? fetch(crmUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'x-webhook-secret': crmSecret },
+              body: JSON.stringify({
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                message: formData.get('message'),
+                model_interest: formData.get('model'),
+                has_land: formData.get('has_land'),
+                locale: formData.get('locale') || 'nl',
+                source: 'website',
+              }),
+            }).catch((err) => { console.warn('CRM webhook failed:', err); })
+          : Promise.resolve();
+
+        const [response] = await Promise.all([
+          fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' },
+          }),
+          crmPromise,
+        ]);
         const result = await response.json();
 
         if (result.success) {
