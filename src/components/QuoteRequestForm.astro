@@ -65,8 +65,13 @@ const autoResponse = t(locale, 'contact.auto_response');
     <input type="hidden" name="_autoresponse" value={autoResponse} />
     <input type="hidden" name="_cc" value="thomas.jennes@proton.me" />
 
-    <!-- Honeypot (Formsubmit also has built-in honeypot) -->
+    <!-- Honeypots: FormSubmit's built-in + CSS-hidden fields that bots fill because they read the DOM but skip display:none aria rules. Must stay empty. -->
     <input type="text" name="_honey" style="display:none" />
+    <div class="hp-field" aria-hidden="true">
+      <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+      <label>Company<input type="text" name="company" tabindex="-1" autocomplete="off" /></label>
+    </div>
+    <input type="hidden" name="form_rendered_at" id="quote-form-rendered-at" />
 
     <!-- Name + Email row -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -207,6 +212,18 @@ const autoResponse = t(locale, 'contact.auto_response');
   </div>
 </div>
 
+<style>
+  /* CSS-hidden honeypot wrapper. Bots that parse the DOM and fill every input will populate these; real users never see them. Using position+opacity (not display:none) so a subset of bots that skip display:none still get caught. */
+  .hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+  }
+</style>
+
 <script>
   function initQuoteForm() {
     const form = document.getElementById('quote-form') as HTMLFormElement | null;
@@ -218,6 +235,10 @@ const autoResponse = t(locale, 'contact.auto_response');
       const locale = document.documentElement.lang || 'nl';
       nextInput.value = window.location.origin + `/${locale}/contact?success=true`;
     }
+
+    // Stamp the moment the form mounted so the CRM can reject sub-second submits as bots.
+    const renderedAtInput = document.getElementById('quote-form-rendered-at') as HTMLInputElement | null;
+    if (renderedAtInput) renderedAtInput.value = String(Date.now());
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -277,6 +298,9 @@ const autoResponse = t(locale, 'contact.auto_response');
                 has_land: formData.get('has_land'),
                 locale: formData.get('locale') || 'nl',
                 source: 'website',
+                website: formData.get('website'),
+                company: formData.get('company'),
+                form_rendered_at: Number(formData.get('form_rendered_at')) || null,
               }),
             }).catch((err) => { console.warn('CRM webhook failed:', err); })
           : Promise.resolve();
