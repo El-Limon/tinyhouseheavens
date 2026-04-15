@@ -18,6 +18,9 @@ jobs:
       - run: npm ci
 
       - run: npm run build
+        env:
+          PUBLIC_CRM_WEBHOOK_URL: ${{ secrets.PUBLIC_CRM_WEBHOOK_URL }}
+          PUBLIC_CRM_WEBHOOK_SECRET: ${{ secrets.PUBLIC_CRM_WEBHOOK_SECRET }}
 
       - name: Deploy to Hostinger via rsync
         env:
