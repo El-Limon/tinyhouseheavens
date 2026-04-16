@@ -134,6 +134,11 @@
     "required_field": "Verplicht veld",
     "invalid_email": "Ongeldig e-mailadres",
     "form_subtitle": "Vul het formulier in en ontvang zo snel mogelijk een persoonlijke offerte.",
+    "finish_level": "Gewenste afwerkingsgraad",
+    "select_finish_level": "Selecteer een afwerkingsniveau",
+    "finish_housekit": "House Kit — Zelfbouw casco",
+    "finish_basic": "Basic — Volledig afgewerkt",
+    "finish_optima": "Optima — Sleutel-op-de-deur",
     "message_placeholder": "Vertel ons over uw project, wensen of vragen...",
     "auto_response": "Bedankt voor uw offerte aanvraag bij Tiny House Heavens! Wij hebben uw bericht goed ontvangen en nemen zo snel mogelijk contact met u op. Met vriendelijke groeten, Tiny House Heavens"
   },

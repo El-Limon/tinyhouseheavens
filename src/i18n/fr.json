@@ -134,6 +134,11 @@
     "required_field": "Champ obligatoire",
     "invalid_email": "Adresse e-mail invalide",
     "form_subtitle": "Remplissez le formulaire et recevez un devis personnalis\u00e9 dans les plus brefs d\u00e9lais.",
+    "finish_level": "Niveau de finition souhaité",
+    "select_finish_level": "Sélectionnez un niveau de finition",
+    "finish_housekit": "House Kit — Autoconstruction gros œuvre",
+    "finish_basic": "Basic — Entièrement fini",
+    "finish_optima": "Optima — Clé sur porte",
     "message_placeholder": "Parlez-nous de votre projet, vos souhaits ou questions...",
     "auto_response": "Merci pour votre demande de devis chez Tiny House Heavens! Nous avons bien re\u00e7u votre message et nous vous contacterons dans les plus brefs d\u00e9lais. Cordialement, Tiny House Heavens"
   },
