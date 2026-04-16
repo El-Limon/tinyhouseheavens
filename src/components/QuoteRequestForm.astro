@@ -240,8 +240,13 @@ const autoResponse = t(locale, 'contact.auto_response');
     const renderedAtInput = document.getElementById('quote-form-rendered-at') as HTMLInputElement | null;
     if (renderedAtInput) renderedAtInput.value = String(Date.now());
 
+    // Submission lock — prevents duplicate submits even if the event fires twice
+    let submitting = false;
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (submitting) return;
+
       let hasError = false;
 
       // Validate required fields
@@ -270,6 +275,8 @@ const autoResponse = t(locale, 'contact.auto_response');
       }
 
       if (hasError) return;
+
+      submitting = true;
 
       // Disable button to prevent double submit
       const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
@@ -320,14 +327,16 @@ const autoResponse = t(locale, 'contact.auto_response');
           const success = document.getElementById('quote-success');
           if (success) success.classList.remove('hidden');
         } else {
-          // Re-enable button on failure
+          console.error('FormSubmit rejected submission:', result);
+          submitting = false;
           if (submitBtn) {
             submitBtn.disabled = false;
             submitBtn.textContent = originalText;
           }
         }
-      } catch (_) {
-        // Re-enable button on error
+      } catch (err) {
+        console.error('Form submission error:', err);
+        submitting = false;
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.textContent = originalText;
