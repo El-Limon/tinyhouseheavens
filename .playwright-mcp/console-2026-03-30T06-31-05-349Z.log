@@ -1,0 +1,7 @@
+[      -1ms] [WARNING] Error with Permissions-Policy header: Unrecognized feature: 'bluetooth'. @ :0
+[     612ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://www.instagram.com/api/v1/users/web_profile_info/?username=tinyhouseheavens:0
+[     636ms] [ERROR] ErrorUtils caught an error:
+
+Please wait a few minutes before you try again. [Caught in: caught error in module c [from CometTransientDialogProvider.react] (base)]
+
+Subsequent non-fatal errors won't be logged; see https://fburl.com/debugjs. {clientTime: 1774852265, componentStackFrames: Array(129), extra: Object, guardList: Array(1), hash: nqi5qi} @ https://static.cdninstagram.com/rsrc.php/v4/ya/r/R1pEz0OuWy4.js:78

@@ -1,0 +1,240 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "Tiny House Heavens Home" [ref=e6] [cursor=pointer]:
+        - /url: /en
+        - img [ref=e8]
+        - generic [ref=e13]:
+          - generic [ref=e14]: Tiny House
+          - generic [ref=e15]: Heavens
+      - navigation "Main navigation" [ref=e16]:
+        - link "Home" [ref=e17] [cursor=pointer]:
+          - /url: /en
+        - link "Models" [ref=e18] [cursor=pointer]:
+          - /url: /en/models
+        - link "About us" [ref=e19] [cursor=pointer]:
+          - /url: /en/about-us
+        - link "Services" [ref=e20] [cursor=pointer]:
+          - /url: /en/services
+        - link "Contact" [ref=e21] [cursor=pointer]:
+          - /url: /en/contact
+        - link "FAQ" [ref=e22] [cursor=pointer]:
+          - /url: /en/faq
+        - link "Blog" [ref=e23] [cursor=pointer]:
+          - /url: /en/blog
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - link "NL" [ref=e26] [cursor=pointer]:
+            - /url: /nl/over-ons/
+          - link "FR" [ref=e27] [cursor=pointer]:
+            - /url: /fr/a-propos/
+          - link "EN" [ref=e28] [cursor=pointer]:
+            - /url: /en/about-us/
+        - link "Request a quote" [ref=e29] [cursor=pointer]:
+          - /url: /en/contact
+          - text: Request a quote
+          - img [ref=e30]
+  - main [ref=e32]:
+    - generic [ref=e34]:
+      - heading "About us" [level=1] [ref=e35]
+      - paragraph [ref=e36]: Simple living, great thinking
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - heading "Our Mission" [level=2] [ref=e40]
+        - paragraph [ref=e41]: Our mission is to build energy-efficient, comfortable and fully modular Tiny House Units with unmatched value.
+      - generic [ref=e42]:
+        - paragraph [ref=e43]: Tiny House Heavens designs and produces fully modular tiny houses with a focus on quality, sustainability and affordability. Our units are built with frame-modular construction, meaning each home can be custom configured and easily transported.
+        - paragraph [ref=e44]: With a collection of 20 unique models -- from compact 13 m² studios to spacious 112 m² family homes -- we offer a solution for every lifestyle. Whether you're looking for a starter home, a garden annex, or a fully autonomous house, we make it possible.
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e52]: Our values
+        - heading "Why Tiny House Heavens?" [level=2] [ref=e54]
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - img [ref=e58]
+          - heading "Innovative" [level=3] [ref=e64]
+          - paragraph [ref=e65]: Modern designs with smart storage and smart home technology
+        - generic [ref=e67]:
+          - img [ref=e69]
+          - heading "Scalable" [level=3] [ref=e75]
+          - paragraph [ref=e76]: Modular systems that expand without major renovations
+        - generic [ref=e78]:
+          - img [ref=e80]
+          - heading "Affordable" [level=3] [ref=e83]
+          - paragraph [ref=e84]: Lower entry and running costs
+        - generic [ref=e86]:
+          - img [ref=e88]
+          - heading "Ecological" [level=3] [ref=e93]
+          - paragraph [ref=e94]: Sustainable materials and energy-efficient systems
+    - generic [ref=e98]:
+      - generic [ref=e99]:
+        - heading "Our Location" [level=2] [ref=e100]
+        - paragraph [ref=e101]: Tiny House Heavens is located at a unique site at Fort 15 in Sint-Katelijne-Waver, in the heart of the province of Antwerp. From here we serve customers throughout Belgium and across Europe.
+        - generic [ref=e102]:
+          - img [ref=e103]
+          - generic [ref=e106]:
+            - paragraph [ref=e107]: Fort 15
+            - paragraph [ref=e108]: 2860 Sint-Katelijne-Waver
+            - paragraph [ref=e109]: Belgium
+      - iframe [ref=e111]:
+        
+    - generic [ref=e113]:
+      - heading "Quality as Foundation" [level=2] [ref=e114]
+      - generic [ref=e115]:
+        - generic [ref=e116]:
+          - img [ref=e118]
+          - heading "Craftsmanship" [level=3] [ref=e120]
+          - paragraph [ref=e121]: Every tiny house is built with care and precision by experienced craftsmen
+        - generic [ref=e122]:
+          - img [ref=e124]
+          - heading "Build Quality" [level=3] [ref=e126]
+          - paragraph [ref=e127]: 200mm insulation, timber frame (HSB) construction and high-quality materials for years of living comfort
+        - generic [ref=e128]:
+          - img [ref=e130]
+          - heading "Customer Focus" [level=3] [ref=e132]
+          - paragraph [ref=e133]: Personal guidance from first contact to delivery and aftercare
+    - generic [ref=e135]:
+      - heading "Our Founder" [level=2] [ref=e136]
+      - generic [ref=e137]:
+        - img "Thomas Jennes, Founder of Tiny House Heavens" [ref=e138]
+        - heading "Thomas Jennes" [level=3] [ref=e139]
+        - paragraph [ref=e140]: Founder
+        - paragraph [ref=e141]: With a passion for sustainable and affordable housing, Thomas founded Tiny House Heavens to make modular tiny house living accessible to everyone across Europe.
+    - generic [ref=e143]:
+      - heading "Building Sustainably for the Future" [level=2] [ref=e144]
+      - generic [ref=e145]:
+        - paragraph [ref=e146]: Sustainability is at the heart of everything we do at Tiny House Heavens. Our modular tiny houses are designed to minimise energy consumption through superior insulation (150-200 mm), airtight construction and the option for solar panels and heat pumps.
+        - paragraph [ref=e147]:
+          - text: By choosing compact living, you reduce not only your ecological footprint but also your monthly costs. A smaller living area means less energy for heating and fewer materials used during construction. Explore our
+          - link "20 models" [ref=e148] [cursor=pointer]:
+            - /url: /en/models
+          - text: and discover which tiny house suits your sustainable lifestyle.
+  - contentinfo [ref=e149]:
+    - generic [ref=e150]:
+      - generic [ref=e152]: "');\">"
+      - generic [ref=e153]:
+        - heading "Ready to get started?" [level=2] [ref=e154]
+        - paragraph [ref=e155]: Contact us for a free consultation and discover the possibilities
+        - link "Request a quote" [ref=e156] [cursor=pointer]:
+          - /url: /en/contact
+          - text: Request a quote
+          - img [ref=e157]
+    - generic [ref=e160]:
+      - generic [ref=e161]:
+        - link "Tiny House Heavens" [ref=e162] [cursor=pointer]:
+          - /url: /en
+          - img [ref=e164]
+          - generic [ref=e167]:
+            - generic [ref=e168]: Tiny House
+            - generic [ref=e169]: Heavens
+        - paragraph [ref=e170]: Simple living, great thinking
+        - paragraph [ref=e171]: Modular tiny houses designed for sustainable and comfortable living. Belgian craftsmanship with Scandinavian design.
+      - generic [ref=e172]:
+        - heading "Navigation" [level=3] [ref=e173]
+        - list [ref=e174]:
+          - listitem [ref=e175]:
+            - link "Home" [ref=e176] [cursor=pointer]:
+              - /url: /en
+          - listitem [ref=e177]:
+            - link "Models" [ref=e178] [cursor=pointer]:
+              - /url: /en/models
+          - listitem [ref=e179]:
+            - link "About us" [ref=e180] [cursor=pointer]:
+              - /url: /en/about-us
+          - listitem [ref=e181]:
+            - link "Services" [ref=e182] [cursor=pointer]:
+              - /url: /en/services
+          - listitem [ref=e183]:
+            - link "Contact" [ref=e184] [cursor=pointer]:
+              - /url: /en/contact
+          - listitem [ref=e185]:
+            - link "FAQ" [ref=e186] [cursor=pointer]:
+              - /url: /en/faq
+          - listitem [ref=e187]:
+            - link "Blog" [ref=e188] [cursor=pointer]:
+              - /url: /en/blog
+      - generic [ref=e189]:
+        - heading "Our most popular models" [level=3] [ref=e190]
+        - list [ref=e191]:
+          - listitem [ref=e192]:
+            - link "Opale" [ref=e193] [cursor=pointer]:
+              - /url: /en/models/opale
+          - listitem [ref=e194]:
+            - link "Ophir" [ref=e195] [cursor=pointer]:
+              - /url: /en/models/ophir
+          - listitem [ref=e196]:
+            - link "Keiro" [ref=e197] [cursor=pointer]:
+              - /url: /en/models/keiro
+          - listitem [ref=e198]:
+            - link "Baby" [ref=e199] [cursor=pointer]:
+              - /url: /en/models/baby
+          - listitem [ref=e200]:
+            - link "Vella" [ref=e201] [cursor=pointer]:
+              - /url: /en/models/vella
+      - generic [ref=e202]:
+        - heading "Contact" [level=3] [ref=e203]
+        - list [ref=e204]:
+          - listitem [ref=e205]:
+            - img [ref=e206]
+            - generic [ref=e209]: Fort 15, 2860 St-Katelijne-Waver, Belgium
+          - listitem [ref=e210]:
+            - img [ref=e211]
+            - link "+32 465 600 263" [ref=e213] [cursor=pointer]:
+              - /url: tel:+32465600263
+          - listitem [ref=e214]:
+            - img [ref=e215]
+            - link "info@tinyhouseheavens.be" [ref=e217] [cursor=pointer]:
+              - /url: mailto:info@tinyhouseheavens.be
+      - generic [ref=e218]:
+        - heading "Follow us" [level=3] [ref=e219]
+        - generic [ref=e220]:
+          - link "Facebook" [ref=e221] [cursor=pointer]:
+            - /url: https://www.facebook.com/tinyhouseheavens
+            - img [ref=e222]
+          - link "Instagram" [ref=e224] [cursor=pointer]:
+            - /url: https://www.instagram.com/tinyhouseheavens
+            - img [ref=e225]
+        - heading "Language" [level=3] [ref=e227]
+        - generic [ref=e228]:
+          - link "NL" [ref=e229] [cursor=pointer]:
+            - /url: /nl/over-ons/
+          - link "FR" [ref=e230] [cursor=pointer]:
+            - /url: /fr/a-propos/
+          - link "EN" [ref=e231] [cursor=pointer]:
+            - /url: /en/about-us/
+    - generic [ref=e233]:
+      - generic [ref=e234]:
+        - generic [ref=e235]: © 2026 Tiny House Heavens.
+        - generic [ref=e236]: All rights reserved.
+      - generic [ref=e237]:
+        - link "Privacy policy" [ref=e238] [cursor=pointer]:
+          - /url: /en/privacy
+        - generic [ref=e239]: "|"
+        - link "Terms and conditions" [ref=e240] [cursor=pointer]:
+          - /url: /en/terms
+        - generic [ref=e241]: "|"
+        - generic [ref=e242]: BTW BE0403.670.250
+  - dialog "Cookie notice" [ref=e243]:
+    - generic [ref=e245]:
+      - paragraph [ref=e246]:
+        - text: We use cookies to improve your experience.
+        - link "More info" [ref=e247] [cursor=pointer]:
+          - /url: /en/privacy
+      - generic [ref=e248]:
+        - button "Decline" [ref=e249]
+        - button "Accept" [ref=e250]
+  - generic [ref=e253]:
+    - button "Menu" [ref=e254]:
+      - img [ref=e256]
+      - generic: Menu
+    - button "Inspect" [ref=e260]:
+      - img [ref=e262]
+      - generic: Inspect
+    - button "Audit" [ref=e264]:
+      - img [ref=e266]
+      - generic: Audit
+    - button "Settings" [ref=e269]:
+      - img [ref=e271]
+      - generic: Settings

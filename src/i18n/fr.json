@@ -10,7 +10,7 @@
   },
   "hero": {
     "title": "Simple living, great thinking",
-    "subtitle": "Tiny houses modulaires concues pour un habitat durable et abordable au Benelux",
+    "subtitle": "Tiny houses modulaires concues pour un habitat durable et abordable dans toute l'Europe",
     "cta": "Decouvrez nos modeles",
     "quote_cta": "Demander un devis",
     "scroll": "Defiler vers le bas"
@@ -103,15 +103,15 @@
     "title": "Comment ca marche",
     "step1": {
       "title": "Choisissez votre modele",
-      "desc": "Decouvrez nos 20 modeles et trouvez la tiny house parfaite"
+      "desc": "20 modeles fixes. Nous vous aidons a choisir celui qui convient a votre situation et a votre budget."
     },
     "step2": {
-      "title": "Selectionnez la finition",
-      "desc": "Choisissez entre House Kit, Basic ou Optima"
+      "title": "Choisissez votre formule",
+      "desc": "House Kit, Basic ou Optima. Trois formules claires, sans surprises ni suppléments."
     },
     "step3": {
-      "title": "Nous livrons et installons",
-      "desc": "Nous assurons le transport, les fondations et l'installation"
+      "title": "Nous nous occupons de tout",
+      "desc": "Transport, fondations, installation et service apres-vente. Vous choisissez, nous livrons cle en main."
     }
   },
   "contact": {
@@ -130,6 +130,9 @@
     "select_model": "Selectionnez un modele",
     "details": "Coordonn\u00e9es",
     "address_label": "Adresse",
+    "by_appointment_title": "Visite sur rendez-vous",
+    "by_appointment_text": "Envie de passer nous voir? C'est toujours possible sur rendez-vous. Appelez-nous ou envoyez un e-mail pour convenir d'un moment.",
+    "by_appointment_home": "Envie de passer nous voir? Une visite est toujours possible sur rendez-vous.",
     "follow": "Suivez-nous",
     "required_field": "Champ obligatoire",
     "invalid_email": "Adresse e-mail invalide",
@@ -149,10 +152,24 @@
     "location_title": "Notre Emplacement",
     "quality_title": "La Qualit\u00e9 comme Fondation",
     "team_title": "Notre Fondateur",
-    "team_bio": "Avec une passion pour l'habitat durable et abordable, Thomas a fonde Tiny House Heavens pour rendre la vie en tiny house modulaire accessible a tous au Benelux."
+    "team_bio": "Avec une passion pour l'habitat durable et abordable, Thomas a fonde Tiny House Heavens pour rendre la vie en tiny house modulaire accessible a tous en Europe."
   },
   "services": {
-    "title": "Nos services"
+    "title": "Nos services",
+    "hero_subtitle": "Trois formules. Un processus. Nous vous accompagnons du choix à la remise des clés.",
+    "proces_title": "Le processus de A à Z",
+    "proces_subtitle": "Du premier contact à la livraison : voici comment nous travaillons.",
+    "proces": {
+      "step1": "Premier contact et analyse des besoins",
+      "step2": "Sélection du modèle et de la formule",
+      "step3": "Devis et contrat",
+      "step4": "Production dans notre atelier",
+      "step5": "Transport et installation",
+      "step6": "Livraison et service après-vente"
+    },
+    "final_cta_title": "Pas encore sûr de votre formule ?",
+    "final_cta_desc": "Planifiez un entretien sans engagement. Nous vous aidons à choisir le bon modèle et la bonne formule.",
+    "final_cta_button": "Planifier un entretien"
   },
   "faq": {
     "title": "Questions frequentes"
@@ -187,7 +204,7 @@
     "cookie_notice": "Avis de cookies",
     "cookie_link": "En savoir plus",
     "brand_desc": "Tiny houses modulaires con\u00e7ues pour un habitat durable et confortable. Savoir-faire belge, design scandinave.",
-    "structured_data_desc": "Tiny houses modulaires con\u00e7ues pour un habitat durable et abordable au Benelux"
+    "structured_data_desc": "Tiny houses modulaires con\u00e7ues pour un habitat durable et abordable dans toute l'Europe"
   },
   "cta": {
     "title": "Pr\u00eat \u00e0 commencer?",
@@ -209,11 +226,11 @@
   },
   "seo": {
     "home_title": "Tiny House Belgique | 20 Tiny Houses Modulaires | Tiny House Heavens",
-    "home_desc": "Acheter une tiny house en Belgique? Decouvrez 20 modeles modulaires de 13m² a 112m². Habitat durable, abordable et ecologique au Benelux. Demandez un devis gratuit.",
+    "home_desc": "Acheter une tiny house en Belgique? Decouvrez 20 modeles modulaires de 13m² a 112m². Habitat durable, abordable et ecologique dans toute l'Europe. Demandez un devis gratuit.",
     "models_title": "Modeles de Tiny Houses | 20 Maisons Modulaires de 13-112m² | Tiny House Heavens",
     "models_desc": "Decouvrez nos 20 modeles de tiny houses modulaires. Des studios compacts (13m²) aux maisons familiales (112m²). 3 niveaux de finition. Tiny house a vendre en Belgique.",
     "about_title": "A Propos de Tiny House Heavens | Constructeur de Tiny Houses en Belgique",
-    "about_desc": "Decouvrez Tiny House Heavens. Savoir-faire belge, construction modulaire et materiaux durables. 20 modeles de tiny houses disponibles au Benelux.",
+    "about_desc": "Decouvrez Tiny House Heavens. Savoir-faire belge, construction modulaire et materiaux durables. 20 modeles de tiny houses disponibles dans toute l'Europe.",
     "services_title": "Services | De la Conception a la Livraison de Votre Tiny House | Tiny House Heavens",
     "services_desc": "Service complet pour votre tiny house: conception, selection du modele, finition sur mesure, transport, fondation et suivi. Tout-en-un en Belgique.",
     "faq_title": "Questions Frequentes sur les Tiny Houses en Belgique | Tiny House Heavens",
@@ -224,9 +241,9 @@
     "blog_desc": "Lisez nos articles sur la vie en tiny house en Belgique, les permis, l'habitat durable, la construction modulaire et plus encore."
   },
   "home_content": {
-    "section_title": "Acheter une Tiny House en Belgique",
-    "paragraph_1": "Vous cherchez une tiny house en Belgique? Tiny House Heavens est votre specialiste en tiny houses modulaires pour le Benelux. Notre collection de 20 modeles uniques offre une solution pour chaque style de vie, des studios compacts de 13 m² aux maisons familiales spacieuses de 112 m² avec plusieurs chambres.",
-    "paragraph_2": "Chaque tiny house est construite avec des materiaux de haute qualite: un chassis en acier, une ossature bois et 150-200 mm d'isolation. Choisissez parmi trois niveaux de finition — House Kit pour les auto-constructeurs, Basic pour une maison entierement finie, ou Optima pour une experience cle en main.",
-    "paragraph_3": "Durable, abordable et econome en energie: nos maisons modulaires combinent le savoir-faire belge avec un design moderne. Que vous cherchiez un premier logement, souhaitiez placer un annexe dans votre jardin ou optiez pour une maison entierement autonome — nous vous accompagnons de la conception a la livraison."
+    "section_title": "Une tiny house a votre mesure",
+    "paragraph_1": "Chez Tiny House Heavens, nous concevons des tiny houses modulaires qui evoluent avec votre vie. 20 modeles, des studios compacts de 13 m² aux maisons familiales spacieuses de 112 m² avec plusieurs chambres — pour que vous trouviez toujours un design qui correspond a votre facon de vivre.",
+    "paragraph_2": "Chaque modele repose sur un chassis en acier, avec une ossature bois et 150-200 mm d'isolation pour un interieur chaleureux et silencieux. C'est vous qui decidez jusqu'ou nous allons : House Kit pour les auto-constructeurs, Basic pour une maison entierement finie, ou Optima pour une experience cle en main.",
+    "paragraph_3": "Durable, abordable et econome en energie : un design moderne allie au savoir-faire, livre dans toute l'Europe. Que ce soit pour un premier logement, un annexe dans le jardin ou une maison entierement autonome — nous vous accompagnons du premier croquis a la livraison."
   }
 }

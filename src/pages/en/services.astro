@@ -1,47 +1,22 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import StructuredData from '../../components/StructuredData.astro';
+import FinishingLevels from '../../components/FinishingLevels.astro';
 import { t, getPagePath } from '../../i18n/utils';
 
 const locale = 'en';
 
-const services = [
-  {
-    title: 'Design & Advice',
-    description: 'Our team guides you in choosing the ideal model and optimal configuration for your situation. We discuss your wishes, budget and location to offer a tailored solution.',
-    icon: '<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" /></svg>',
-  },
-  {
-    title: 'Model Selection',
-    description: 'Choose from our collection of 20 unique models. From compact 13 m² units to spacious 112 m² family homes, there is always a model that fits your lifestyle.',
-    icon: '<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>',
-  },
-  {
-    title: 'Custom Finishing',
-    description: 'Choose between three finishing levels: House Kit (self-build kit), Basic (finished base) or Optima (turnkey). Each level can be further personalised to your wishes.',
-    icon: '<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>',
-  },
-  {
-    title: 'Delivery & Transport',
-    description: 'We arrange the complete transport of your tiny house to the desired location. Our modular units are designed to be transported safely and efficiently.',
-    icon: '<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H16.5V6.375c0-.621-.504-1.125-1.125-1.125H2.25" /></svg>',
-  },
-  {
-    title: 'Foundation & Installation',
-    description: 'From screw foundations to concrete slabs, we advise and realise the right foundation. After placement, we take care of all connections and proper installation.',
-    icon: '<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.384-3.204A1 1 0 015 11.075V8.25a1 1 0 01.553-.894l5.447-2.724a1 1 0 01.894 0l5.447 2.724A1 1 0 0118 8.25v2.825a1 1 0 01-1.036.891L11.42 15.17z" /></svg>',
-  },
-  {
-    title: 'Aftercare',
-    description: 'After delivery, we are here for you. Our aftercare service includes warranty work, maintenance tips and help with any questions about your tiny house.',
-    icon: '<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>',
-  },
-];
+const services = [1, 2, 3].map((n) => ({
+  name: t(locale, `how_it_works.step${n}.title`),
+  description: t(locale, `how_it_works.step${n}.desc`),
+}));
+
+const procesSteps = [1, 2, 3, 4, 5, 6].map((n) => t(locale, `services.proces.step${n}`));
 ---
 
 <PageLayout locale={locale} title={t(locale, 'seo.services_title')} description={t(locale, 'seo.services_desc')}>
 
-  <StructuredData type="service" locale={locale} services={services.map(s => ({ name: s.title, description: s.description }))} />
+  <StructuredData type="service" locale={locale} services={services} />
   <StructuredData type="breadcrumb" locale={locale} breadcrumbs={[
     { name: 'Home', url: `/${locale}/` },
     { name: t(locale, 'services.title'), url: getPagePath(locale, 'services') },
@@ -52,35 +27,41 @@ const services = [
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h1 class="text-4xl md:text-5xl font-bold mb-4 text-thh-charcoal">{t(locale, 'services.title')}</h1>
       <p class="text-lg text-thh-charcoal/70 max-w-2xl mx-auto">
-        From first design to delivery and beyond: we guide you every step of the way
+        {t(locale, 'services.hero_subtitle')}
       </p>
     </div>
   </section>
 
-  <!-- Services Grid -->
-  <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service, i) => (
-          <div class="group bg-thh-cream/50 rounded-2xl p-8 hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-thh-green-100">
-            <div class="w-14 h-14 bg-thh-green-100 text-thh-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-thh-green-500 group-hover:text-white transition-colors">
-              <Fragment set:html={service.icon} />
-            </div>
-            <div class="text-sm font-bold text-thh-green-500/50 mb-2">{String(i + 1).padStart(2, '0')}</div>
-            <h3 class="text-xl font-bold mb-3 text-thh-charcoal">{service.title}</h3>
-            <p class="text-sm text-thh-charcoal/70 leading-relaxed">{service.description}</p>
+  <!-- 3-step workflow -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-thh-charcoal">{t(locale, 'how_it_works.title')}</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {[1, 2, 3].map((step) => (
+          <div class="text-center relative">
+            <div class="text-6xl font-bold text-thh-green-100 mb-4">{`0${step}`}</div>
+            <h3 class="text-xl font-bold mb-3 text-thh-charcoal">{t(locale, `how_it_works.step${step}.title`)}</h3>
+            <p class="text-thh-charcoal/70 leading-relaxed">{t(locale, `how_it_works.step${step}.desc`)}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Process Timeline -->
-  <section class="py-16 bg-thh-cream">
+  <!-- Finishing Levels / Packages -->
+  <FinishingLevels locale={locale} />
+
+  <!-- 6-step Proces Timeline -->
+  <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-12 text-thh-charcoal text-center">The Process</h2>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-3 text-thh-charcoal">{t(locale, 'services.proces_title')}</h2>
+        <p class="text-thh-charcoal/70">{t(locale, 'services.proces_subtitle')}</p>
+      </div>
       <div class="space-y-8">
-        {['Initial contact and needs analysis', 'Model selection and configuration', 'Quote and agreement', 'Production in our workshop', 'Transport and placement', 'Delivery and aftercare'].map((step, i) => (
+        {procesSteps.map((step, i) => (
           <div class="flex items-start gap-6">
             <div class="w-12 h-12 shrink-0 bg-thh-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
               {i + 1}
@@ -94,15 +75,15 @@ const services = [
     </div>
   </section>
 
-  <!-- Why Choose Section -->
-  <section class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-8 text-thh-charcoal text-center">Why Choose Tiny House Heavens?</h2>
-      <div class="text-thh-charcoal/80 leading-relaxed space-y-4">
-        <p>At Tiny House Heavens, we combine Belgian craftsmanship with innovative modular construction techniques. Our tiny houses are built with a steel undercarriage and timber frame, ensuring a solid, durable and well-insulated home that lasts for years to come.</p>
-        <p>With <a href={getPagePath(locale, 'models')} class="text-thh-green-600 hover:text-thh-green-700 underline">20 unique models</a> from 13 m² to 112 m², we offer a solution for every situation: a starter home, an annex, a holiday retreat or a full family home. Every model is fully customisable and available in three finishing levels.</p>
-        <p>We distinguish ourselves through our personal approach. From the first consultation to delivery and aftercare: you have a dedicated contact who guides your project. <a href={getPagePath(locale, 'contact')} class="text-thh-green-600 hover:text-thh-green-700 underline">Get in touch today</a> for a no-obligation conversation about the possibilities.</p>
-      </div>
+  <!-- Final CTA -->
+  <section class="py-20 bg-thh-green-50/50">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-thh-charcoal">{t(locale, 'services.final_cta_title')}</h2>
+      <p class="text-lg text-thh-charcoal/70 mb-8">{t(locale, 'services.final_cta_desc')}</p>
+      <a href={getPagePath(locale, 'contact')} class="inline-flex items-center gap-2 px-8 py-4 bg-thh-green-600 text-white font-semibold rounded-lg hover:bg-thh-green-700 transition-colors">
+        {t(locale, 'services.final_cta_button')}
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </a>
     </div>
   </section>
 

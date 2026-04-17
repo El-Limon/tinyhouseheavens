@@ -184,11 +184,10 @@ function getLocalBusinessSchema() {
       latitude: 51.0717,
       longitude: 4.5283,
     },
-    areaServed: [
-      { '@type': 'Country', name: 'Belgium' },
-      { '@type': 'Country', name: 'Netherlands' },
-      { '@type': 'Country', name: 'Luxembourg' },
-    ],
+    areaServed: {
+      '@type': 'Place',
+      name: 'Europe',
+    },
     priceRange: '€€€',
     sameAs: [
       'https://www.facebook.com/tinyhouseheavens',

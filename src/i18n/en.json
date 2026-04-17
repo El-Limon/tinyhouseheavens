@@ -10,7 +10,7 @@
   },
   "hero": {
     "title": "Simple living, great thinking",
-    "subtitle": "Modular tiny houses designed for sustainable and affordable living in the Benelux",
+    "subtitle": "Modular tiny houses designed for sustainable and affordable living across Europe",
     "cta": "Discover our models",
     "quote_cta": "Request a quote",
     "scroll": "Scroll down"
@@ -103,15 +103,15 @@
     "title": "How it works",
     "step1": {
       "title": "Choose your model",
-      "desc": "Discover our 20 models and find the perfect tiny house"
+      "desc": "20 fixed models. We help you pick the right one for your situation and budget."
     },
     "step2": {
-      "title": "Select finishing",
-      "desc": "Choose between House Kit, Basic or Optima finishing"
+      "title": "Choose your package",
+      "desc": "House Kit, Basic or Optima. Three clear options, no surprises, no extras."
     },
     "step3": {
-      "title": "We deliver and install",
-      "desc": "We take care of transport, foundation and installation"
+      "title": "We handle everything",
+      "desc": "Transport, foundation, installation and aftercare. You choose, we deliver turnkey."
     }
   },
   "contact": {
@@ -130,6 +130,9 @@
     "select_model": "Select a model",
     "details": "Contact details",
     "address_label": "Address",
+    "by_appointment_title": "Visits by appointment",
+    "by_appointment_text": "Want to drop by? A visit is always possible by appointment. Call or email us to arrange a time.",
+    "by_appointment_home": "Want to drop by? A visit is always possible by appointment.",
     "follow": "Follow us",
     "required_field": "Required field",
     "invalid_email": "Invalid email address",
@@ -144,10 +147,24 @@
     "location_title": "Our Location",
     "quality_title": "Quality as Foundation",
     "team_title": "Our Founder",
-    "team_bio": "With a passion for sustainable and affordable housing, Thomas founded Tiny House Heavens to make modular tiny house living accessible to everyone in the Benelux."
+    "team_bio": "With a passion for sustainable and affordable housing, Thomas founded Tiny House Heavens to make modular tiny house living accessible to everyone across Europe."
   },
   "services": {
-    "title": "Our services"
+    "title": "Our services",
+    "hero_subtitle": "Three packages. One process. We guide you from choice to keys.",
+    "proces_title": "The process from A to Z",
+    "proces_subtitle": "From first contact to delivery: here's how we work.",
+    "proces": {
+      "step1": "Initial contact and needs analysis",
+      "step2": "Model selection and package choice",
+      "step3": "Quote and agreement",
+      "step4": "Production in our workshop",
+      "step5": "Transport and placement",
+      "step6": "Delivery and aftercare"
+    },
+    "final_cta_title": "Not sure which package is right?",
+    "final_cta_desc": "Book a no-obligation consultation. We'll help you pick the right model and package.",
+    "final_cta_button": "Book a consultation"
   },
   "faq": {
     "title": "Frequently asked questions"
@@ -182,15 +199,15 @@
     "cookie_notice": "Cookie notice",
     "cookie_link": "More info",
     "brand_desc": "Modular tiny houses designed for sustainable and comfortable living. Belgian craftsmanship with Scandinavian design.",
-    "structured_data_desc": "Modular tiny houses designed for sustainable and affordable living in the Benelux"
+    "structured_data_desc": "Modular tiny houses designed for sustainable and affordable living across Europe"
   },
   "seo": {
     "home_title": "Tiny House Belgium | 20 Modular Tiny Houses | Tiny House Heavens",
-    "home_desc": "Buy a modular tiny house in Belgium. Discover 20 models from 13m² to 112m². Sustainable, affordable and ecological living in the Benelux. Request a free quote.",
+    "home_desc": "Buy a modular tiny house in Belgium. Discover 20 models from 13m² to 112m². Sustainable, affordable and ecological living across Europe. Request a free quote.",
     "models_title": "Tiny House Models | 20 Modular Homes from 13-112m² | Tiny House Heavens",
     "models_desc": "Browse all 20 tiny house models. From compact studios (13m²) to family homes (112m²). Choose from 3 finishing levels. Tiny houses for sale in Belgium.",
     "about_title": "About Tiny House Heavens | Belgian Tiny House Builder",
-    "about_desc": "Learn more about Tiny House Heavens. Belgian craftsmanship, modular construction and sustainable materials. 20 tiny house models available in the Benelux.",
+    "about_desc": "Learn more about Tiny House Heavens. Belgian craftsmanship, modular construction and sustainable materials. 20 tiny house models available across Europe.",
     "services_title": "Services | From Design to Delivery of Your Tiny House | Tiny House Heavens",
     "services_desc": "Full service for your tiny house: design, model selection, custom finishing, transport, foundation and aftercare. All-in-one in Belgium.",
     "faq_title": "Frequently Asked Questions About Tiny Houses in Belgium | Tiny House Heavens",
@@ -201,10 +218,10 @@
     "blog_desc": "Read articles about tiny house living in Belgium, building permits, sustainable living, modular construction and more."
   },
   "home_content": {
-    "section_title": "Buy a Tiny House in Belgium",
-    "paragraph_1": "Looking for a tiny house in Belgium? Tiny House Heavens is your specialist in modular tiny houses for the Benelux. Our collection of 20 unique models offers a solution for every lifestyle, from compact 13 m² studios to spacious 112 m² family homes with multiple bedrooms.",
-    "paragraph_2": "Every tiny house is built with high-quality materials: a steel undercarriage, timber frame construction and 150-200 mm insulation. Choose from three finishing levels — House Kit for self-builders, Basic for a fully finished home, or Optima for a turnkey experience.",
-    "paragraph_3": "Sustainable, affordable and energy-efficient: our modular homes combine Belgian craftsmanship with modern design. Whether you are looking for a starter home, want to place an annex in your garden or choose a fully autonomous house — we guide you from design to delivery."
+    "section_title": "A tiny house shaped around you",
+    "paragraph_1": "At Tiny House Heavens, we design modular tiny houses that grow with your life. 20 models, from compact 13 m² studios to spacious 112 m² family homes with multiple bedrooms — so there's always a design that fits the way you actually want to live.",
+    "paragraph_2": "Every model sits on a steel undercarriage, with timber frame construction and 150-200 mm insulation for a warm, quiet interior. You decide how far we go: House Kit for self-builders, Basic for a fully finished home, or Optima for a turnkey experience.",
+    "paragraph_3": "Sustainable, affordable and energy-efficient: modern design paired with craftsmanship, delivered across Europe. Whether it's a starter home, a garden annex or a fully autonomous house — we walk with you from first sketch to delivery."
   },
   "cta": {
     "title": "Ready to get started?",
